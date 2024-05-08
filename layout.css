@@ -1,0 +1,121 @@
+.content{
+  background-image: url(assets/background.jpg);
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.content .judul{
+  color: black;
+  font-size: 7rem;
+}
+
+.content .content-main {
+  display: flex;
+  position: absolute;
+  background-color: bisque;
+  width: 20rem;
+  height: 100vh;
+  left: -100%;
+  top: 0.5rem;
+  z-index: 999;
+  transition: 0.3s;
+}
+
+.content-main.active {
+  left: 0;
+}
+
+.content .hamburger-menu{
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+}
+
+.content .content-main{
+  display: inline-block;
+  align-items: center
+}
+
+.content .content-menu{
+  display: block;
+  margin-left: 2rem;
+  position: absolute;
+  top: 40%;
+}
+.content .content-menu a,
+.content .content-menu1 a,
+.content .content-menu2 a,
+.content .about-us a{
+ color: black;
+ text-decoration: none;
+ display: flex;
+ gap: 1rem;
+ align-items: center;
+}
+
+.content .content-menu1{
+  display: block;
+  margin-left: 2rem;
+  position: absolute;
+  top: 50%;
+}
+
+.content .content-menu2{
+  display: block;
+  margin-left: 2rem;
+  position: absolute;
+  top: 60%;
+}
+
+.content .about-us{
+  position: absolute;
+  display: flex;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.content .navbar bg-body-tertiary{
+  right: 0;
+}
+
+.company-profil{
+  text-align: center;
+}
+
+.team-contener .team-profil{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+}
+
+.isi-kotak {
+  display: inline-block;
+  align-items: center
+}
+
+.kotak .isi-kotak1{
+  display: block;
+  margin-left: 2rem;
+  position: absolute;
+  top: 120%;
+}
+
+
+.kotak2 .isi-kotak2{
+  display: block;
+  margin-left: 2rem;
+  position: absolute;
+  top: 120%;
+  left: 15rem;
+  left: 15%;
+}
