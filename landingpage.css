@@ -1,0 +1,363 @@
+body{
+    background-color: #FBF4EA;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2, p, h1, h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/*head area*/
+.side-bar{
+    width: 25px;
+    border-radius: 12px;
+    background-color: #EDC9C4;
+    padding : 11px;
+    margin-left: 80px;
+    margin-top: 35px;
+    float : left
+}
+
+.search{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    padding: 11px;
+    border-radius: 12px;
+    background-color: #EDC9C4;
+    transition: box-shadow 0.25s;
+}
+
+.search:focus-within{
+    box-shadow: 0 0 23px #000;
+}
+
+.search-bar{
+    width: 25px;
+}
+
+.search-input{
+    font-size: 20px;
+    height: 25px;
+    color: #000000;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-color: #EDC9C4;
+    width: 240px;
+}
+
+.search-input::placeholder{
+    letter-spacing: 5px;
+    margin-left: 10px;
+}
+
+.share-bar{
+    width: 25px;
+    border-radius: 12px;
+    background-color: #EDC9C4;
+    padding : 11px;
+    margin: 35px 80px 10px 25px;
+}
+
+.flex-row-float{
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+
+.position  {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.background-pict{
+    background-image: url('pict_CP/delivery-man-giving-groceries-order-customer\ 1.png');
+    height: 70%;
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+.layer-pict{
+    background-color: rgba(255, 243, 226, 0.45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heading-superstore{
+    font-size: 105px;
+    text-align: center;
+    padding-top: 209px;
+    margin: 0px 0px;
+    color: #000;
+    text-shadow: -6px 3px #ffffff;
+}
+
+.p-katakana{
+    font-size: 24px;
+    color: #a82e26;
+    text-align: center;
+    padding-top: 20px;
+    margin: 0px;
+    font-weight: bold;
+}
+
+/*main area*/
+.img-icon{
+    width: 45px;
+    height: 45px;
+}
+
+.groupping{
+    margin-top :644px;
+    display: flex;
+    flex-direction: space-between;
+    justify-content: center;
+}
+
+.h2-groupping{
+    justify-content: center;
+    font-size: 24px;
+    margin-top: 8px;
+    padding-left: 18px;
+}
+
+.p-groupping{
+    font-weight: 400;
+    text-align: center;
+}
+
+.head-group{
+    padding: 0px 0px 18px 0px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-group{
+    border-radius: 12px;
+    background-color: #EDC9C4;
+    padding: 28px;
+    margin-right: 29px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.box-group:hover{
+    background-color: #E74646;
+    color: #ffffff;
+}
+
+/*footer area*/
+.footer-side{
+    margin-top: 105px;
+    padding-top: 28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    background-color: #EDC9C4;
+    background-size: cover;
+}
+
+.left-h1{
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.flex-footer {
+    display: flex;
+    flex-direction: space-between;
+}
+
+.p-menu-footer{
+    font-size: 16px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #000;
+    text-underline-offset: 7px;
+}
+
+a.p-menu-footer:hover{
+    color: #a82e26;
+}
+
+.line{
+    box-sizing: border-box;
+    border-top-width: 2px;
+    border-top-style: solid ;
+    color: #000;
+    margin: 5px 0px 10px;
+}
+
+.p-footer{
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    padding-top: 16px;
+    padding-right: 725px;
+}
+
+.sosmed-footer{
+    width: 31px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    padding-top: 3px;
+}
+
+.sosmed-footer-github{
+    padding-right: 0px;
+}
+
+.logo-footer{
+    height: 30px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+}
+
+/*message icon*/
+.button-faq{
+    position: fixed; 
+    right: 28px;
+    bottom: 28px; 
+    width: 50px;
+    height: 50px;
+    background-color: #EDC9C4;
+    box-shadow: 14px 6px 11px rgba(0,0,0,0.2);
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-button-faq{
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}
+
+button:hover{
+    background-color: #E74646;
+}
+
+.popup-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.46);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: 0;
+}
+
+.popup-container.active{
+    opacity: 1;
+    pointer-events: auto;
+    transition: .4s ease;
+}
+
+.popup-container .popup-box{
+    width: max-content;
+    background: #E74646;
+    border-radius: 12px;
+    box-shadow: 14px 16px 11px rgba(0,0,0,0.109);
+    padding: 30px;
+    transform: scale(0);
+}
+
+.popup-container.active .popup-box{
+    transform: scale(1);
+    transition: .4s ease;
+    transition-delay: .15s;
+}
+
+.popup-box h2{
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.popup-box p{
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.form-message{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 27px 27px 0px 27px;
+    letter-spacing: 3px;
+}
+
+.form-message textarea{
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.form-message-area{
+    border-radius: 9px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 400px;
+    padding: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.form-message .button-message{
+    width: 150px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 13px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.img-close{
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+}
+
+.img-message{
+    background-color: #EDC9C4;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.img-message:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+}
