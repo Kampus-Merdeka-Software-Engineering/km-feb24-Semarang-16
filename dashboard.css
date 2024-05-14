@@ -122,6 +122,11 @@ ul li a span{
   margin: 120px 0;
 }
 
+/*codingan baru untuk nambahin cursor di tombol menu*/
+.menu span {
+  cursor: pointer;
+}
+
 ul li a:hover {
   background-color: #E74646;
   border-top-left-radius: 30px;
