@@ -1,0 +1,351 @@
+body{
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #FBF4EA;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  background-color: rgb(252, 183, 183);
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.menu {
+display: flex;
+align-items: center;
+}
+
+.menu .material-symbols-outlined{
+margin: 0px 5px;
+padding: 5px;
+background-color: #EDC9C4;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.p-navbar{
+font-optical-sizing: auto;
+font-weight: 600;
+font-style: normal;
+font-size: medium;
+margin-left: 20px;
+}
+
+.menu2{
+display: flex;
+align-items: center;
+}
+
+.search{
+display: flex;
+align-items: center;
+padding: 3px;
+border-radius: 10px;
+background-color: #EDC9C4;
+}
+
+.search-input{
+font-size: 16px;
+color: #333;
+outline: none;
+border: none;
+background: transparent;
+width: 200px;
+}
+
+.search-input::placeholder, .search .material-symbols-outlined{
+color: rgba(0, 0, 0, 0.5);
+}
+
+.share .material-symbols-outlined{
+margin: 0px 15px;
+padding: 5px;
+background-color: #EDC9C4;
+border-radius: 10px;
+}
+
+.header{
+background: linear-gradient(180deg, rgba(214,121,118,0.821187850140056) 37%, rgba(2,0,36,0) 100%);
+width: auto;
+height: 230px;
+}
+
+.icon{
+  height: 60px;
+  width: 50px;
+  margin-top: 8%;
+}
+/* Sidebar */
+
+.sidebar{
+height: 100%;
+width: 250px;
+position: absolute;
+background-color: #fff;
+transition: 0.5s ease;
+}
+
+ul li{
+list-style: none;
+}
+
+ul li a{
+color: #333;
+font-weight: 500;
+padding: 5px 0;
+display: block;
+text-transform: capitalize;
+text-decoration: none;
+transition: 0.2s ease-out;
+display: flex;
+align-items: center;
+margin: 20px 0;
+}
+
+ul li a span{
+width: 40px;
+text-align: center;
+}
+
+.sidebar-toggle {
+display: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #EDC9C4;
+  transition: 0.5s ease;
+}
+
+.sidebar-toggle:checked + .sidebar {
+left: 0;
+}
+
+.side-menu{
+  margin: 120px 0;
+}
+
+ul li a:hover {
+  background-color: #E74646;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  color: #FBF4EA;
+}
+/* title insight */
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h1-title{
+  padding-left: 30px;
+  font-size: 40px;
+  margin-top: 10%;
+}
+
+.title .material-symbols-outlined{
+font-size: 50px;
+}
+
+.card {
+  font-size: 20px;
+  margin-bottom: 8px;
+  width: 12rem;
+  height: 15rem;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 30px;
+  display: flex;
+  top: 15rem;
+  position: absolute;
+  left: 4rem;
+  text-align: center;
+}
+
+.card1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px;
+  top: 15.8rem;
+  position: absolute;
+  display: flex;
+  width: 40rem;
+  height: 5.5rem;
+  right: 4.3rem;
+  text-align: center;
+}
+
+.card2 {
+  font-size: 20px;
+  width: 40rem;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  top: 25rem;
+  position: absolute;
+  right: 4.3rem;
+  height: 5.5rem;
+  text-align: center;
+}
+
+.card3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px;
+  top: 38.6rem;
+  position: absolute;
+  display: flex;
+  width: 40rem;
+  height: 5.5rem;
+  text-align: center;
+  left: 4.3rem;
+}
+
+.card4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 20px;
+  top: 48.2rem;
+  position: absolute;
+  display: flex;
+  width: 40rem;
+  height: 5.5rem;
+  text-align: center;
+  left: 4.3rem;
+}
+
+.card5 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  width: 12rem;
+  height: 15rem;
+  border: 1px solid #e7c3c3;
+  background-color: rgb(252, 222, 177);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 30px;
+  display: flex;
+  top: 38rem;
+  position: absolute;
+  right: 4rem;
+  text-align: center;
+}
+
+/*footer area*/
+.footer-side{
+margin-top: 50rem;
+padding-top: 28px;
+padding-left: 28px;
+padding-right: 28px;
+background-color: #EDC9C4;
+background-size: cover;
+}
+
+.pesan{
+  right: 2rem;
+  position: absolute;
+  top: 66rem;
+}
+
+.left-h1{
+font-size: 20px;
+padding-bottom: 20px;
+}
+
+.flex-footer {
+display: flex;
+flex-direction: space-between;
+}
+
+.p-menu-footer{
+font-size: 16px;
+padding-right: 15px;
+padding-bottom: 20px;
+letter-spacing: 2px;
+font-weight: 500;
+color: #000;
+text-underline-offset: 7px;
+}
+
+a.p-menu-footer:hover{
+color: #a82e26;
+}
+
+.line{
+box-sizing: border-box;
+border-top-width: 2px;
+border-top-style: solid ;
+color: #000;
+margin: 5px 0px 10px;
+}
+
+.p-footer{
+font-size: 15px;
+font-weight: 600;
+padding-bottom: 20px;
+padding-top: 16px;
+padding-right: 725px;
+}
+
+.sosmed-footer{
+width: 31px;
+padding-right: 10px;
+padding-bottom: 20px;
+padding-top: 3px;
+}
+
+.sosmed-footer-github{
+padding-right: 0px;
+}
+
+.logo-footer{
+height: 30px;
+padding-right: 15px;
+padding-bottom: 2px;
+}
+
+.flex-footer .sosmed {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
