@@ -23,65 +23,25 @@
     </head>
 
     <body>
-        <div class="header">
-    <!-- Navbar -->
+    <!-- header/navigation section -->
         <nav>
-            <div class="menu">
-                <span id="menu-button" class="menu material-symbols-outlined">menu</span>
-                <p class="p-navbar">Superstore Analytics</p>
-            </div>
-            <div class="menu2">
-                <div class="search">
-                    <span class="search material-symbols-outlined">search</span>
-                    <input class="search-input" type="search" placeholder="Search..." />
+            <h1 class="nav-h1">Superstore Analytics</h1>
+               <div class="nav-menu-right">
+                   <div class="nav-menu">
+                       <a href="home.html" aria-current="page" class="nav-section-menu">Home</a>
+                       <a href="#" class="nav-section-menu">Dashboard</a>
+                       <a href="insight.html" class="nav-section-menu">Insight</a>
+                       <a href="#" class="nav-section-menu">Recomendation</a>
+                   </div>
+                       <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
                 </div>
-                <div class="share">
-                    <span class="share material-symbols-outlined">send</span>
-                </div>
-            </div>
-        </nav>
-
+       </nav>
+    
     <!--Title Insight-->
         <div class="title">
-            <span class="title material-symbols-outlined" >search_insights</span>
+            <span class="material-symbols-outlined md-50">search_insights</span>
             <h1 class="h1-title">Insight</h1>
         </div>
-        </div>
-
-    <!-- Sidebar -->
-        <label for="sidebar-toggle">
-            <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
-            <div class="sidebar">
-            <div class="menu" style="padding: 15px 15px">
-                <span id="menu-button" class="menu material-symbols-outlined">menu</span>
-                <p>Superstore Analytics</p>
-            </div>
-            <div class="side-menu">
-                <ul>
-                <li>
-                    <a href="index.html"><span class="material-symbols-outlined">dashboard</span>
-                    <p>Dashboard</p></a>
-                </li>
-                <li>
-                    <a href="insight.html"><span class="material-symbols-outlined">search_insights</span>
-                    <p>Insight</p></a>
-                </li>
-                <li>
-                    <a href="#"><span class="material-symbols-outlined">description</span>
-                    <p>Recomendation</p></a>
-                </li>
-                </ul>
-            </div>
-            <div class="about-us">
-                <ul>
-                <li>
-                    <a href="#"><span class="material-symbols-outlined">account_circle</span>
-                    <p>About Us</p></a>
-                </li>
-                </ul>
-            </div>
-            </div>
-        </label>
 
     <!--question-->
         <div class="question">
@@ -212,22 +172,13 @@
         </div>
 
     <!-- footer section -->
-    <div class="footer-side">
-        <div class="flex-footer">
-            <h1 class="left-h1">Superstore Analytics</h1>
-        </div>
-
-        <div class="p-menu-footer">
-            <a href="index.html" class="p-menu-footer">Home</a>
-            <a href="#" class="p-menu-footer">Dashboard</a>
-            <a href="insight.html" aria-current="page" class="p-menu-footer">Insight</a>
-            <a href="#" class="p-menu-footer">Recomendation</a>
-        </div>
-
+       <div class="footer-side">
+        <h1 class="left-h1">Superstore Analytics</h1>
+        
         <div class="line"></div>
         <div class="flex-footer">
             <p class="p-footer">© 2024 Team 16 Section Semarang, All rights reserved</p>
-            <div>
+            <div class="sosmed-flex-footer">
                 <a href="https://www.instagram.com/"><img src="./pict_CP/sosmed-ig.png" class="sosmed-footer"></a>
                 <a href="https://id-id.facebook.com/"><img src="./pict_CP/sosmed-fb.png" class="sosmed-footer"></a>
                 <a href="https://twitter.com/"><img src="./pict_CP/sosmed-x twt.png" class="sosmed-footer"></a>
@@ -237,6 +188,29 @@
         </div>
             <img src="./pict_CP/revou_png-removebg-preview.png" class="logo-footer">
             <img src="./pict_CP/km png.png" class="logo-footer">
+    </div>
+
+    <!-- message icon -->
+    <button class="message-icon" id="messageIcon">
+        <span class="material-symbols-outlined"> mode_comment</span>
+    </button>
+
+    <!-- message pop pup -->
+    <div class="popup-overlay"></div>
+    <div class="popup-container" id="popupContainer">
+        <div class="popup-box">
+            <span class="material-symbols-outlined close-button" id="closePopup">close</span>
+            <div class="message-head">
+                <h2>Message Us!</h2>
+                <p>Feel free to message with us! </p>
+            </div>
+            <div class="form-message">
+                <input type="text" placeholder="Name" required class="form-message-area">
+                <input type="text" placeholder="E-mail" required class="form-message-area">
+                <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                <button class="button-message">Submit</button>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
