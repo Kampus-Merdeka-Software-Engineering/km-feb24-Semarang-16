@@ -13,76 +13,83 @@
     />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- header/navigation section -->
     <nav>
-      <div class="menu">
-        <span id="menu-button" class="menu material-symbols-outlined"
-          >menu</span
+      <h1 class="nav-h1">Superstore Analytics</h1>
+      <div class="nav-menu-right">
+        <div class="nav-menu">
+          <a href="home.html" aria-current="page" class="nav-section-menu"
+            >Home</a
+          >
+          <a href="dashboard.html" class="nav-section-menu">Dashboard</a>
+          <a href="insight.html" class="nav-section-menu">Insight</a>
+          <a href="#" class="nav-section-menu">Recomendation</a>
+        </div>
+        <a href="#" class="nav-section-menu icon-nav"
+          ><span class="material-symbols-outlined">Group</span></a
         >
-        <p>Superstore Analytics</p>
       </div>
-      <div class="menu2">
-        <div class="search">
-          <span class="search material-symbols-outlined">search</span>
-          <input class="search-input" type="search" placeholder="Search..." />
-        </div>
-        <div class="share">
-          <span class="share material-symbols-outlined">send</span>
-        </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <span class="material-symbols-outlined">menu</span>
       </div>
     </nav>
 
     <!-- Sidebar -->
-    <label for="sidebar-toggle">
-      <input type="checkbox" id="sidebar-toggle" class="sidebar-toggle" />
-      <div class="sidebar">
-        <div class="menu" style="padding: 15px 15px">
-          <span id="menu-button" class="menu material-symbols-outlined"
-            >menu</span
-          >
-          <p>Superstore Analytics</p>
-        </div>
-        <div class="side-menu">
-          <ul>
-            <li>
-              <a href="#"
-                ><span class="material-symbols-outlined">dashboard</span>
-                <p>Dashboard</p></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><span class="material-symbols-outlined">search_insights</span>
-                <p>Insight</p></a
-              >
-            </li>
-            <li>
-              <a href="#"
-                ><span class="material-symbols-outlined">description</span>
-                <p>Recomendation</p></a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="about-us">
-          <ul>
-            <li>
-              <a href="#"
-                ><span class="material-symbols-outlined">account_circle</span>
-                <p>About Us</p></a
-              >
-            </li>
-          </ul>
-        </div>
+    <div class="sidebar" id="sidebar">
+      <div
+        class="menu"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <h1 class="nav-h1">Superstore Analytics</h1>
+        <span
+          id="menu-button"
+          class="menu material-symbols-outlined"
+          style="font-size: 30px"
+          >close</span
+        >
       </div>
-    </label>
+      <div class="side-menu">
+        <ul>
+          <li>
+            <a href="#"
+              ><span class="material-symbols-outlined">dashboard</span>
+              <p>Dashboard</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-symbols-outlined">search_insights</span>
+              <p>Insight</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-symbols-outlined">description</span>
+              <p>Recomendation</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><span class="material-symbols-outlined">Group</span>
+              <p>About Team</p></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Dashboard -->
+    <!--Title Insight-->
+    <div class="title">
+      <span class="material-symbols-outlined md-50">dashboard</span>
+      <h1 class="h1-title">Dashboard</h1>
+    </div>
+
     <div class="dashboard">
-      <div class="title">
-        <img src="assets/dashboard_4882406.png" width="50px" />
-        <h1>Dashboard</h1>
-      </div>
       <div class="insight">
         <div class="result">
           <div class="sub-result">
@@ -106,30 +113,40 @@
           <div class="year">
             <div class="select-btn">
               <span class="btn-text">Select Year</span>
-              <span class="arrow-dwn material-symbols-outlined">expand_more</span>
+              <span class="arrow-dwn material-symbols-outlined"
+                >expand_more</span
+              >
             </div>
             <ul class="list-items">
               <li class="item">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">2017</span>
               </li>
               <li class="item">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">2016</span>
               </li>
               <li class="item">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">2015</span>
               </li>
               <li class="item">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">2014</span>
               </li>
@@ -138,30 +155,40 @@
           <div class="region">
             <div class="select-btn2">
               <span class="btn-text2">Select Region</span>
-              <span class="arrow-dwn material-symbols-outlined">expand_more</span>
+              <span class="arrow-dwn material-symbols-outlined"
+                >expand_more</span
+              >
             </div>
             <ul class="list-items">
               <li class="item2">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">West</span>
               </li>
               <li class="item2">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">South</span>
               </li>
               <li class="item2">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">East</span>
               </li>
               <li class="item2">
                 <span class="checkbox">
-                  <span class="check-icon material-symbols-outlined">check</span>
+                  <span class="check-icon material-symbols-outlined"
+                    >check</span
+                  >
                 </span>
                 <span class="item-text">Central</span>
               </li>
@@ -183,16 +210,7 @@
 
     <!-- Footer -->
     <div class="footer-side">
-      <div class="flex-footer">
-        <h1 class="left-h1">Superstore Analytics</h1>
-      </div>
-
-      <div class="p-menu-footer">
-        <a href="#" aria-current="page" class="p-menu-footer">Home</a>
-        <a href="#" class="p-menu-footer">Dashboard</a>
-        <a href="#" class="p-menu-footer">Insight</a>
-        <a href="#" class="p-menu-footer">Recomendation</a>
-      </div>
+      <h1 class="left-h1">Superstore Analytics</h1>
 
       <div class="line"></div>
       <div class="flex-footer">
@@ -219,19 +237,58 @@
           /></a>
         </div>
       </div>
-      <img
-        src="assets/revou_png-removebg-preview.png"
-        class="logo-footer"
-      />
+      <img src="assets/revou_png-removebg-preview.png" class="logo-footer" />
       <img src="assets/km png.png" class="logo-footer" />
     </div>
 
-    <!-- message section -->
-    <button class="button-faq">
-      <img src="assets/conversation_942802.png" class="img-button-faq" />
+    <!-- message icon -->
+    <button class="message-icon" id="messageIcon">
+      <span class="material-symbols-outlined"> mode_comment</span>
     </button>
 
+    <!-- message pop pup -->
+    <div class="popup-overlay"></div>
+    <div class="popup-container" id="popupContainer">
+      <div class="popup-box">
+        <span class="material-symbols-outlined close-button" id="closePopup"
+          >close</span
+        >
+        <div class="message-head">
+          <h2>Message Us!</h2>
+          <p>Feel free to message with us!</p>
+        </div>
+        <div class="form-message">
+          <input
+            type="text"
+            placeholder="Name"
+            required
+            class="form-message-area"
+          />
+          <input
+            type="text"
+            placeholder="E-mail"
+            required
+            class="form-message-area"
+          />
+          <textarea
+            placeholder="Message"
+            required
+            class="form-message-area email"
+          ></textarea>
+          <button class="button-message">Submit</button>
+        </div>
+      </div>
+    </div>
+
     <!-- JavaScript -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="dashboard.js"></script>
   </body>
 </html>

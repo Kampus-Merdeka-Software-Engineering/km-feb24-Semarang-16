@@ -39,11 +39,13 @@ setInterval(() => {
 }, 5000); 
 
 //pop up
-const messageIcon = document.getElementById('messageIcon');
-const popupContainer = document.getElementById('popupContainer');
-const closePopup = document.getElementById('closePopup');
-const overlay = document.querySelector('.popup-overlay');
+document.addEventListener('DOMContentLoaded', () => {
+  const messageIcon = document.getElementById('messageIcon');
+  const popupContainer = document.getElementById('popupContainer');
+  const closePopup = document.getElementById('closePopup');
+  const overlay = document.querySelector('.popup-overlay');
 
+<<<<<<< HEAD
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
     popupContainer.style.display = 'none';
@@ -69,3 +71,27 @@ overlay.addEventListener('click', () => {
 
 
 
+=======
+  // Mengatur agar popup message tidak muncul saat pertama kali membuka webpage
+  popupContainer.style.display = 'none';
+  overlay.style.display = 'none';
+
+  messageIcon.addEventListener('click', () => {
+      popupContainer.style.display = 'block';
+      overlay.style.display = 'block';
+  });
+
+  closePopup.addEventListener('click', () => {
+      popupContainer.style.display = 'none';
+      overlay.style.display = 'none'; 
+  });
+
+  // Menutup pop-up box jika user mengklik di luar box area
+  overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+          popupContainer.style.display = 'none';
+          overlay.style.display = 'none';
+      }
+  });
+});
+>>>>>>> 6042b5cc8095002b5daaaf11f9b12f5ed979132c
