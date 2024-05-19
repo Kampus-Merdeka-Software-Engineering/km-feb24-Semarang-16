@@ -11,34 +11,31 @@ document.body.addEventListener("click", (ev) => {
 });
 
 //pop up
-const messageIcon = document.getElementById('messageIcon');
-const popupContainer = document.getElementById('popupContainer');
-const closePopup = document.getElementById('closePopup');
-const overlay = document.querySelector('.popup-overlay');
+document.addEventListener('DOMContentLoaded', () => {
+    const messageIcon = document.getElementById('messageIcon');
+    const popupContainer = document.getElementById('popupContainer');
+    const closePopup = document.getElementById('closePopup');
+    const overlay = document.querySelector('.popup-overlay');
 
-let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
-
-window.addEventListener('DOMContentLoaded', () => {
-    // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
+    // Mengatur agar popup message tidak muncul saat pertama kali membuka webpage
     popupContainer.style.display = 'none';
     overlay.style.display = 'none';
-});
 
-messageIcon.addEventListener('click', () => {
-    if (!popupOpened) {
+    messageIcon.addEventListener('click', () => {
         popupContainer.style.display = 'block';
-        overlay.style.display = 'block'; 
-        popupOpened = true;
-    }
-});
+        overlay.style.display = 'block';
+    });
 
-closePopup.addEventListener('click', () => {
-    popupContainer.style.display = 'none';
-    overlay.style.display = 'none'; 
-});
+    closePopup.addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+        overlay.style.display = 'none'; 
+    });
 
-// menutup pop-up box jika user mengklik di luar box area
-overlay.addEventListener('click', () => {
-    popupContainer.style.display = 'none';
-    overlay.style.display = 'none';
+    // Menutup pop-up box jika user mengklik di luar box area
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+            popupContainer.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    });
 });
