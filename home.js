@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
+
+>>>>>>> parent of 8b830aa (adjust media query, revisi minor)
 =======
 let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
 
@@ -68,6 +73,7 @@ overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -95,5 +101,7 @@ overlay.addEventListener('click', () => {
   });
 });
 >>>>>>> 6042b5cc8095002b5daaaf11f9b12f5ed979132c
+=======
+>>>>>>> parent of 8b830aa (adjust media query, revisi minor)
 =======
 >>>>>>> parent of 8b830aa (adjust media query, revisi minor)

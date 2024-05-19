@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
+
+>>>>>>> parent of 8b830aa (adjust media query, revisi minor)
 =======
 let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
 
