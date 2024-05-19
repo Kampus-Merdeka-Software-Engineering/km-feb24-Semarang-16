@@ -1,11 +1,3 @@
-//toggle menu
-const toggleButton = document.getElementById('toggle-button');
-const navLists = document.getElementById('nav-menu-right');
-
-toggleButton.addEventListener('click', () => {
-    navLists.classList.toggle('active');
-})
-
 //question
 document.body.addEventListener("click", (ev) => {
     const isExpandableTitle = !!ev.target.closest(".expandable__title-bar");
@@ -26,6 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.querySelector('.popup-overlay');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
+
+>>>>>>> parent of 8b830aa (adjust media query, revisi minor)
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
 =======
@@ -36,14 +33,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <<<<<<< HEAD
 messageIcon.addEventListener('click', () => {
-    const isVisible = popupContainer.style.display === 'block';
-    popupContainer.style.display = isVisible ? 'none' : 'block';
-    overlay.style.display = isVisible ? 'none' : 'block';
+    if (!popupOpened) {
+        popupContainer.style.display = 'block';
+        overlay.style.display = 'block'; 
+        popupOpened = true;
+    }
 });
 
 closePopup.addEventListener('click', () => {
     popupContainer.style.display = 'none';
-    overlay.style.display = 'none';
+    overlay.style.display = 'none'; 
 });
 =======
     messageIcon.addEventListener('click', () => {
