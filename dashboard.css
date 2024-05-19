@@ -1,90 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-body{
+body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  background: #FBF4EA;
+  background: #fbf4ea;
 }
 
 /* navigation area */
-nav{
-  background-color: #EDC9C4;
-  width: auto;
-  height: 20px;
+nav {
+  background-color: #edc9c4;
+  height: 10px;
   padding: 25px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
   position: sticky;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 1000;
-  }
-  
-  .nav-h1{
+}
+
+.nav-h1 {
   font-size: 24px;
   text-shadow: 3px 3px #fff;
-  margin-top: auto;
-  margin-bottom: auto;
-  }
-  
-  .nav-menu{
-  margin-right: 40px;
-  }
-  
-  .nav-menu-right{
+  margin: 0;
+}
+
+.nav-menu {
   display: flex;
-  flex-direction: row;
-  }
-  
-  .nav-section-menu{
+  margin-right: 40px;
+}
+
+.nav-menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-section-menu {
   cursor: pointer;
   color: #000;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  height: 20px;
   padding: 10px;
   margin-right: 10px;
   border-radius: 10px;
-  }
-  
-  .nav-section-menu:hover{
-  background-color: #E15240;
-  color: #fff ;
-  }
-  
-  .icon-nav{
+}
+
+.nav-section-menu:hover {
+  background-color: #e15240;
+  color: #fff;
+}
+
+.icon-nav {
   color: #000;
   text-decoration: none;
   font-size: 30px;
   cursor: pointer;
   padding: 10px;
   margin: -10px;
-  }
-  
-  .icon-nav:hover{
-  background-color: #E15240;
-  border-radius: 50%;
-  color: #fff;
-  }
-
-/* Sidebar */
-
-.sidebar{
-  height: 100%;
-  width: 250px;
-  position: absolute;
-  background-color: #fff;
-  transition: 0.5s ease;
 }
 
-ul li{
+.icon-nav:hover {
+  background-color: #e15240;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  font-size: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 100%;
+  position: fixed;
+  top: -300%;
+  left: 0;
+  background-color: #edc9c4;
+  transition: top 0.5s ease;
+  z-index: 1100; /* Ensure sidebar is above navbar */
+  max-height: none; /* Allow height to be determined by content */
+}
+
+.sidebar.open {
+  top: 0; /* Ensure sidebar covers the navbar */
+}
+
+ul li {
   list-style: none;
 }
 
-ul li a{
+ul li a {
   color: #333;
   font-weight: 500;
   padding: 5px 0;
@@ -97,43 +111,20 @@ ul li a{
   margin: 20px 0;
 }
 
-ul li a span{
+ul li a span {
   width: 40px;
   text-align: center;
 }
 
-.sidebar-toggle {
-  display: none;
-}
-
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  background-color: #EDC9C4;
-  transition: 0.5s ease;
-}
-
-.sidebar-toggle:checked + .sidebar {
-  left: 0;
-}
-
-.side-menu{
-  margin: 120px 0;
-}
-
-/*codingan baru untuk nambahin cursor di tombol menu*/
 .menu span {
   cursor: pointer;
 }
 
 ul li a:hover {
-  background-color: #E74646;
+  background-color: #e74646;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  color: #FBF4EA;
+  color: #fbf4ea;
 }
 
 /* title insight */
@@ -143,62 +134,68 @@ ul li a:hover {
   justify-content: center;
   height: 300px;
   width: auto;
-  background-image: linear-gradient(180deg, rgba(232, 182, 175) 48%, rgba(232, 182, 175,0.001));
-  }
-  
-  .h1-title{
-    padding-left: 30px;
-    font-size: 40px;
-  }
-  
-  .md-50{
+  background-image: linear-gradient(
+    180deg,
+    rgba(232, 182, 175) 48%,
+    rgba(232, 182, 175, 0.001)
+  );
+}
+
+.h1-title {
+  padding-left: 30px;
+  font-size: 40px;
+}
+
+.md-50 {
   font-size: 50px !important ;
-  }
+}
 
 /* Dashboard */
-.insight{
+.insight {
   display: flex;
   margin: 10px 42px;
   justify-content: space-between;
   align-items: center;
 }
 
-.insight .result{
+.insight .result {
   display: flex;
 }
 
-.filter{
+.filter {
   display: flex;
 }
 
-.year, .region{
+.year,
+.region {
   margin-left: 30px;
   width: 185px;
 }
 
-.insight .result .sub-result{
+.insight .result .sub-result {
   text-align: center;
   width: 150px;
   height: 80px;
-  border: #E74646 2px solid;
+  border: #e74646 2px solid;
   background-color: #fff;
   margin: 5px;
 }
 
-.insight .result .sub-result .p-title{
+.insight .result .sub-result .p-title {
   font-size: 15px;
   font-weight: 300;
   margin: 15px 0px 5px 0px;
 }
 
-.insight .result .sub-result .p-result{
+.insight .result .sub-result .p-result {
   font-size: 26px;
   font-weight: 700;
   margin: 5px 0px 15px 0px;
   letter-spacing: 2px;
 }
 
-.select-btn, .select-btn2{
+.select-btn,
+.select-btn2 {
   display: flex;
   height: 50px;
   align-items: center;
@@ -209,31 +206,31 @@ ul li a:hover {
   background-color: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-.select-btn .btn-text, 
-.select-btn2 .btn-text2{
+.select-btn .btn-text,
+.select-btn2 .btn-text2 {
   font-size: 17px;
   font-weight: 400;
   color: #333;
   margin-right: 10px;
 }
 .select-btn .arrow-dwn,
-.select-btn2 .arrow-dwn{
+.select-btn2 .arrow-dwn {
   display: flex;
   height: 21px;
   width: 21px;
   color: #fff;
   font-size: 14px;
   border-radius: 50%;
-  background: #E74646;
+  background: #e74646;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
 }
 .select-btn.open .arrow-dwn,
-.select-btn2.open .arrow-dwn{
+.select-btn2.open .arrow-dwn {
   transform: rotate(-180deg);
 }
-.list-items{
+.list-items {
   position: absolute;
   margin-top: 15px;
   border-radius: 8px;
@@ -243,11 +240,11 @@ ul li a:hover {
   display: none;
 }
 .select-btn.open ~ .list-items,
-.select-btn2.open ~ .list-items{
+.select-btn2.open ~ .list-items {
   display: block;
 }
 .list-items .item,
-.list-items .item2{
+.list-items .item2 {
   display: flex;
   align-items: center;
   list-style: none;
@@ -258,17 +255,17 @@ ul li a:hover {
   border-radius: 8px;
 }
 .list-items .item:hover,
-.list-items .item2:hover{
+.list-items .item2:hover {
   background-color: rgba(231, 70, 70, 0.1);
 }
 .item .item-text,
-.item2 .item-text{
+.item2 .item-text {
   font-size: 16px;
   font-weight: 400;
   color: #333;
 }
 .item .checkbox,
-.item2 .checkbox{
+.item2 .checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,22 +277,22 @@ ul li a:hover {
   transition: all 0.3s ease-in-out;
 }
 .item.checked .checkbox,
-.item2.checked2 .checkbox{
-  background-color: #E74646;
-  border-color: #E74646;
+.item2.checked2 .checkbox {
+  background-color: #e74646;
+  border-color: #e74646;
 }
-.checkbox .check-icon{
+.checkbox .check-icon {
   color: #fff;
   font-size: 11px;
   transform: scale(0);
   transition: all 0.2s ease-in-out;
 }
 .item.checked .check-icon,
-.item2.checked2 .check-icon{
+.item2.checked2 .check-icon {
   transform: scale(1);
 }
 
-.content{
+.content {
   height: 300px;
   width: 94%;
   margin: 5px 3%;
@@ -304,72 +301,71 @@ ul li a:hover {
   align-items: center;
 }
 
-.content .grafik{
+.content .grafik {
   width: 33%;
   height: 100%;
   background-color: #fff;
 }
 
 /* footer area */
-.footer-side{
+.footer-side {
   bottom: 0%;
   padding: 25px;
-  background-color: #EDC9C4;
+  background-color: #edc9c4;
   background-size: cover;
   bottom: 0;
-  }
-  
-  .left-h1{
+}
+
+.left-h1 {
   font-size: 20px;
   padding-bottom: 15px;
   margin: 0px;
-  }
-  
-  .flex-footer {
+}
+
+.flex-footer {
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
-  height: 31px;
-  }
-  
-  .sosmed-flex-footer{
+}
+
+.sosmed-flex-footer {
   display: flex;
   flex-direction: row;
   margin-left: 760px;
-  }
-  
-  .line{
+}
+
+.line {
   box-sizing: border-box;
   border-top-width: 2px;
-  border-top-style: solid ;
+  border-top-style: solid;
   color: #000;
-  }
-  
-  .p-footer{
+}
+
+.p-footer {
   font-size: 15px;
   font-weight: 600;
   padding-top: 9px;
   height: 15px;
   margin: 0px;
-  }
-  
-  .sosmed-footer{
+}
+
+.sosmed-footer {
   width: 31px;
   padding-right: 10px;
-  }
-  
-  .sosmed-footer-github{
+}
+
+.sosmed-footer-github {
   padding-right: 0px;
-  }
-  
-  .logo-footer{
+}
+
+.logo-footer {
   height: 40px;
   padding-right: 15px;
   padding-top: 15px;
-  }
-  
-  /* message icon */
-  .message-icon{
+}
+
+/* message icon */
+.message-icon {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -377,33 +373,33 @@ ul li a:hover {
   border-radius: 50%;
   position: fixed;
   border: none;
-  background-color: #EDC9C4;
+  background-color: #edc9c4;
   right: 20px;
   bottom: 30px;
   width: 60px;
-  height: 60px; 
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   z-index: 1000;
-  }
-  
-  .message-icon:hover{
+}
+
+.message-icon:hover {
   color: #fff;
-  background-color: #E15240;
-  }
-  
-  /* message area */
-  .form-message{
+  background-color: #e15240;
+}
+
+/* message area */
+.form-message {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  }
-  
-  .form-message-area{
-  font-family: 'Montserrat, sans-serif';
+}
+
+.form-message-area {
+  font-family: "Montserrat, sans-serif";
   font-size: 18px;
   width: 400px;
   height: 10px;
@@ -411,13 +407,13 @@ ul li a:hover {
   border-radius: 10px;
   margin-bottom: 15px;
   border: none;
-  }
-  
-  .email {
+}
+
+.email {
   height: 120px;
-  }
-  
-  .button-message{
+}
+
+.button-message {
   width: 150px;
   padding: 10px;
   border-radius: 10px;
@@ -426,58 +422,58 @@ ul li a:hover {
   background-color: #fff;
   border: none;
   cursor: pointer;
-  }
-  
-  .button-message:hover{
+}
+
+.button-message:hover {
   background-color: #ffe5ca;
-  }
-  
-  .message-head{
+}
+
+.message-head {
   text-align: center;
   justify-items: center;
   color: #fff;
-  }
-  
-  .message-head h2{
+}
+
+.message-head h2 {
   margin-bottom: 15px;
   font-size: 28px;
-  }
-  
-  .message-head p{
+}
+
+.message-head p {
   margin-bottom: 25px;
   font-size: 20px;
-  }
-  
-  .popup-box{
+}
+
+.popup-box {
   width: 600px;
   border-radius: 10px;
   padding: 20px;
-  background-color: #E15240;
+  background-color: #e15240;
   position: relative;
-  }
-  
-  .popup-container{
+}
+
+.popup-container {
   display: none;
   width: auto;
   position: fixed;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  }
-  
-  .close-button{
+}
+
+.close-button {
   color: #fff !important;
   font-size: 40px !important;
   cursor: pointer;
   color: #000;
   float: right;
-  }
-  
-  .popup-overlay {
+}
+
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -486,4 +482,283 @@ ul li a:hover {
   background-color: rgba(237, 201, 196, 0.65);
   display: none;
   z-index: 999;
+}
+
+
+@media (max-width: 912px) {
+  .nav-menu {
+    display: none;
   }
+
+  .nav-menu-right .icon-nav {
+    display: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .menu{
+    padding: 10px 25px;
+  }
+
+  .sidebar ul li a span {
+    display: inline-block;
+  }
+
+  .sidebar ul li a p {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .title {
+    height: auto;
+    padding: 20px;
+  }
+
+  .h1-title {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .md-50 {
+    font-size: 40px !important ;
+  }
+
+  .insight {
+    align-items: stretch;
+    margin: 10px 20px;
+  }
+
+  .result {
+    align-items: stretch;
+  }
+
+  .insight .result .sub-result {
+    width: 100px;
+    height: 60px;
+    margin: 5px;
+  }
+
+  .insight .result .sub-result .p-title{
+    font-size: 10px;
+    margin: 5px 0px;
+  }
+
+  .insight .result .sub-result .p-result{
+    font-size: 16px;
+    margin: 5px 0px;
+    letter-spacing: 1px;
+  } 
+
+  .year,
+  .region {
+    margin: 10px;
+    width: auto;
+  }
+
+  .select-btn,
+  .select-btn2 {
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  .select-btn .btn-text,
+  .select-btn2 .btn-text2 {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  .select-btn .arrow-dwn,
+  .select-btn2 .arrow-dwn {
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+  }
+
+  .list-items {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .list-items .item,
+  .list-items .item2 {
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  .item .item-text,
+  .item2 .item-text {
+    font-size: 14px;
+  }
+
+  .flex-footer {
+    align-items: center;
+    text-align: center;
+  }
+
+  .sosmed-flex-footer {
+    margin-left: 0;
+  }
+
+  .message-icon {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .nav-h1{
+    font-size: 16px;
+  }
+
+  .hamburger-menu span{
+    font-size: 24px;
+  }
+
+  .menu{
+    padding: 10px 25px;
+  }
+
+  .menu span{
+    font-size: 24px;
+  }
+
+  ul li a{
+    padding: 5px 0;
+    margin: 5px 0;
+  }
+
+  ul li a span{
+    font-size: 20px;
+  }
+
+  ul li a p{
+    font-size: 12px;
+  }
+
+  .insight {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .insight .result {
+    flex-direction: column;
+  }
+
+  .insight .result .sub-result {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+  }
+
+  .insight .result .sub-result .p-title {
+    font-size: 12px;
+  }
+
+  .insight .result .sub-result .p-result {
+    font-size: 20px;
+  }
+
+  .filter {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .year,
+  .region {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .select-btn,
+  .select-btn2 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .select-btn .btn-text,
+  .select-btn2 .btn-text2 {
+    font-size: 14px;
+  }
+
+  .list-items {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .list-items .item,
+  .list-items .item2 {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .item .item-text,
+  .item2 .item-text {
+    font-size: 14px;
+  }
+
+  .content {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .content .grafik {
+    width: 100%;
+    height: 200px;
+    margin: 10px 0;
+  }
+
+  .footer-side {
+    padding: 10px;
+  }
+
+  .left-h1 {
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+
+  .sosmed-footer {
+    width: 15px;
+    padding: 0;
+  }
+
+  .p-footer {
+    font-size: 7px;
+    padding: 10px 10px 10px 0;
+  }
+
+  .flex-footer{
+    padding: 0;
+  }
+
+  .logo-footer{
+    padding: 5px 5px 5px 0;
+    height: 20px;
+  }
+
+  .message-icon{
+    height: 30px;
+    width: 30px;
+  }
+
+  .message-icon span{
+    font-size: 12px;
+  }
+
+  .message-head h2 {
+    font-size: 18px;
+  }
+
+  .message-head p {
+    font-size: 12px;
+  }
+
+  .form-message-area {
+    width: 90%;
+  }
+
+  .button-message {
+    width: 100%;
+  }
+}
