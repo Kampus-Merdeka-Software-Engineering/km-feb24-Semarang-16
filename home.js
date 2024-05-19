@@ -1,3 +1,11 @@
+//toggle menu
+const toggleButton = document.getElementById('toggle-button');
+const navLists = document.getElementById('nav-menu-right');
+
+toggleButton.addEventListener('click', () => {
+    navLists.classList.toggle('active');
+})
+
 // slider
 let list = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
@@ -36,8 +44,6 @@ const popupContainer = document.getElementById('popupContainer');
 const closePopup = document.getElementById('closePopup');
 const overlay = document.querySelector('.popup-overlay');
 
-let popupOpened = false; // menandakan apakah pop-up sudah pernah dibuka
-
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
     popupContainer.style.display = 'none';
@@ -45,16 +51,14 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 messageIcon.addEventListener('click', () => {
-    if (!popupOpened) {
-        popupContainer.style.display = 'block';
-        overlay.style.display = 'block'; 
-        popupOpened = true;
-    }
+    const isVisible = popupContainer.style.display === 'block';
+    popupContainer.style.display = isVisible ? 'none' : 'block';
+    overlay.style.display = isVisible ? 'none' : 'block';
 });
 
 closePopup.addEventListener('click', () => {
     popupContainer.style.display = 'none';
-    overlay.style.display = 'none'; 
+    overlay.style.display = 'none';
 });
 
 // menutup pop-up box jika user mengklik di luar box area
@@ -62,3 +66,6 @@ overlay.addEventListener('click', () => {
     popupContainer.style.display = 'none';
     overlay.style.display = 'none';
 });
+
+
+
