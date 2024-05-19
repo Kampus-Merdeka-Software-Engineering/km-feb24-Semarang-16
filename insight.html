@@ -18,15 +18,10 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
 
-        <!--js-->
-        <script src="./insight.js" defer></script>
     </head>
 
     <body>
     <!-- header/navigation section -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     <nav>
         <h1 class="nav-h1">Superstore Analytics</h1>
 
@@ -42,43 +37,19 @@
                     <a href="insight.html" class="nav-section-menu">Insight</a>
                     <a href="#" class="nav-section-menu">Recomendation</a>
                     <a href="#" class="nav-section-menu about-team">About Team</a>
-=======
-=======
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
-=======
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
-        <nav>
-            <h1 class="nav-h1">Superstore Analytics</h1>
-               <div class="nav-menu-right">
-                   <div class="nav-menu">
-                       <a href="home.html" aria-current="page" class="nav-section-menu">Home</a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       <a href="dashboard.html" class="nav-section-menu">Dashboard</a>
-=======
-                       <a href="#" class="nav-section-menu">Dashboard</a>
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
-=======
-                       <a href="#" class="nav-section-menu">Dashboard</a>
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
-                       <a href="insight.html" class="nav-section-menu">Insight</a>
-                       <a href="#" class="nav-section-menu">Recomendation</a>
-                   </div>
-                       <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 6042b5cc8095002b5daaaf11f9b12f5ed979132c
-=======
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
-=======
->>>>>>> parent of 8b830aa (adjust media query, revisi minor)
                 </div>
-       </nav>
+                    <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
+            </div>
+        </div>
+    </nav>
+
     
     <!--Title Insight-->
         <div class="title">
-            <span class="material-symbols-outlined md-50">search_insights</span>
-            <h1 class="h1-title">Insight</h1>
+            <div class="overlay-title">
+                <span class="material-symbols-outlined md-50">search_insights</span>
+                <h1 class="h1-title">Insight</h1>
+            </div>
         </div>
 
     <!--question-->
@@ -189,7 +160,7 @@
             </div>
 
             <!--question 6-->
-            <div class="expandable">
+            <div class="expandable q6">
                 <div class="expandable__title-bar">
                     <span class="expandable__title">
                         <p class="p-number">06</p>
@@ -210,7 +181,7 @@
         </div>
 
     <!-- footer section -->
-       <div class="footer-side">
+    <div class="footer-side">
         <h1 class="left-h1">Superstore Analytics</h1>
         
         <div class="line"></div>
@@ -237,12 +208,12 @@
     <div class="popup-overlay"></div>
     <div class="popup-container" id="popupContainer">
         <div class="popup-box">
-            <span class="material-symbols-outlined close-button" id="closePopup">close</span>
+            <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
             <div class="message-head">
                 <h2>Message Us!</h2>
                 <p>Feel free to message with us! </p>
             </div>
-            <div class="form-message">
+            <div class="form-message" id="messageBox">
                 <input type="text" placeholder="Name" required class="form-message-area">
                 <input type="text" placeholder="E-mail" required class="form-message-area">
                 <textarea placeholder="Message" required class="form-message-area email"></textarea>
@@ -254,5 +225,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!--js-->
+    <script src="./insight.js" ></script>
     </body>
 </html>
