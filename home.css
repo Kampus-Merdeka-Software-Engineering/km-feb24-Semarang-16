@@ -18,10 +18,10 @@ nav{
     background-color: #EDC9C4;
     width: auto;
     height: max-content;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
