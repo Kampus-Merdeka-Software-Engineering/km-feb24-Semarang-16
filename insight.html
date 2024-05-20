@@ -204,23 +204,26 @@
         <span class="material-symbols-outlined"> mode_comment</span>
     </button>
 
-    <!-- message pop pup -->
-    <div class="popup-overlay"></div>
-    <div class="popup-container" id="popupContainer">
-        <div class="popup-box">
-            <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
-            <div class="message-head">
-                <h2>Message Us!</h2>
-                <p>Feel free to message with us! </p>
-            </div>
-            <div class="form-message" id="messageBox">
-                <input type="text" placeholder="Name" required class="form-message-area">
-                <input type="text" placeholder="E-mail" required class="form-message-area">
-                <textarea placeholder="Message" required class="form-message-area email"></textarea>
-                <button class="button-message">Submit</button>
+        <!-- message pop pup -->
+        <div class="popup-overlay"></div>
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-box">
+                <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
+                <div class="message-head">
+                    <h2>Message Us!</h2>
+                    <p>Feel free to message with us! </p>
+                </div>
+                <form action="#" method="post" id="messageForm">
+                    <div class="form-message" id="messageBox">
+                        <input type="text" placeholder="Name" required class="form-message-area">
+                        <input type="email" placeholder="E-mail" required class="form-message-area">
+                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                        <button class="button-message" type="submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
+
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -23,6 +23,7 @@ const messageIcon = document.getElementById('messageIcon');
 const popupContainer = document.getElementById('popupContainer');
 const closePopup = document.getElementById('closePopup');
 const overlay = document.querySelector('.popup-overlay');
+const messageForm = document.getElementById('messageForm');
 
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
@@ -45,4 +46,10 @@ closePopup.addEventListener('click', () => {
 overlay.addEventListener('click', () => {
     popupContainer.style.display = 'none';
     overlay.style.display = 'none';
+});
+
+messageForm.addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  messageForm.reset();
+  alert('Form submitted successfully!');
 });
