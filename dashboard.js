@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Manipulasi JSON
+// Manipulasi Data JSON
 document.addEventListener("DOMContentLoaded", function () {
   fetch("./data_set/superstor_dataset.json")
     .then((response) => response.json())
