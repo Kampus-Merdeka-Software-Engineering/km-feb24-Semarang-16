@@ -2,51 +2,67 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   background: #fbf4ea;
+}
+
+h2,
+p,
+h1,
+h3 {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* navigation area */
 nav {
   background-color: #edc9c4;
-  height: 10px;
-  padding: 25px;
+  width: auto;
+  height: max-content;
   top: 0;
   left: 0;
   right: 0;
-  position: sticky;
+  position: fixed;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+  padding: 20px;
 }
 
 .nav-h1 {
   font-size: 24px;
   text-shadow: 3px 3px #fff;
-  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .nav-menu {
-  display: flex;
   margin-right: 40px;
+  display: block;
 }
 
-.nav-menu-right {
+.nav-menu-right-container {
   display: flex;
-  align-items: center;
+  flex-direction: row;
 }
 
 .nav-section-menu {
   cursor: pointer;
   color: #000;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
+  height: 20px;
   padding: 10px;
-  margin-right: 10px;
   border-radius: 10px;
+}
+
+.nav-section-menu.about-team {
+  display: none;
 }
 
 .nav-section-menu:hover {
@@ -57,7 +73,6 @@ nav {
 .icon-nav {
   color: #000;
   text-decoration: none;
-  font-size: 30px;
   cursor: pointer;
   padding: 10px;
   margin: -10px;
@@ -69,81 +84,45 @@ nav {
   color: #fff;
 }
 
-.hamburger-menu {
+.toggle-button {
+  position: absolute;
+  top: 8px;
+  right: 15px;
   display: none;
-  cursor: pointer;
-}
-
-.hamburger-menu span {
-  font-size: 30px;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 100%;
-  position: fixed;
-  top: -300%;
-  left: 0;
-  background-color: #edc9c4;
-  transition: top 0.5s ease;
-  z-index: 1100; /* Ensure sidebar is above navbar */
-  max-height: none; /* Allow height to be determined by content */
-}
-
-.sidebar.open {
-  top: 0; /* Ensure sidebar covers the navbar */
-}
-
-ul li {
-  list-style: none;
-}
-
-ul li a {
-  color: #333;
-  font-weight: 500;
-  padding: 5px 0;
-  display: block;
-  text-transform: capitalize;
-  text-decoration: none;
-  transition: 0.2s ease-out;
-  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
-}
-
-ul li a span {
-  width: 40px;
-  text-align: center;
-}
-
-.menu span {
-  cursor: pointer;
-}
-
-ul li a:hover {
-  background-color: #e74646;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  color: #fbf4ea;
+  padding: 10px;
 }
 
 /* title insight */
 .title {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
+  height: 400px;
   width: auto;
-  background-image: linear-gradient(
-    180deg,
-    rgba(232, 182, 175) 48%,
-    rgba(232, 182, 175, 0.001)
-  );
+  background-image: url("./assets/delivery-man-giving-groceries-order-customer\ 1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay-title {
+  background-color: rgba(237, 201, 196, 0.65);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .h1-title {
   padding-left: 30px;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 .md-50 {
@@ -152,46 +131,41 @@ ul li a:hover {
 
 /* Dashboard */
 .insight {
-  display: flex;
-  margin: 10px 42px;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 50px;
+  padding: 20px;
 }
 
-.insight .result {
-  display: flex;
+.result {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.sub-result {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.p-title{
+  text-align: center;
+  font-weight: 300;
+  margin: 0px 10px 10px 10px;
+}
+
+.p-result{
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .filter {
-  display: flex;
-}
-
-.year,
-.region {
-  margin-left: 30px;
-  width: 185px;
-}
-
-.insight .result .sub-result {
-  text-align: center;
-  width: 150px;
-  height: 80px;
-  border: #e74646 2px solid;
-  background-color: #fff;
-  margin: 5px;
-}
-
-.insight .result .sub-result .p-title {
-  font-size: 15px;
-  font-weight: 300;
-  margin: 15px 0px 5px 0px;
-}
-
-.insight .result .sub-result .p-result {
-  font-size: 26px;
-  font-weight: 700;
-  margin: 5px 0px 15px 0px;
-  letter-spacing: 2px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }
 
 .select-btn,
@@ -218,10 +192,8 @@ ul li a:hover {
   display: flex;
   height: 21px;
   width: 21px;
-  color: #fff;
+  color: #000;
   font-size: 14px;
-  border-radius: 50%;
-  background: #e74646;
   align-items: center;
   justify-content: center;
   transition: 0.3s;
@@ -258,59 +230,12 @@ ul li a:hover {
 .list-items .item2:hover {
   background-color: rgba(231, 70, 70, 0.1);
 }
-.item .item-text,
-.item2 .item-text {
-  font-size: 16px;
-  font-weight: 400;
-  color: #333;
-}
-.item .checkbox,
-.item2 .checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  border-radius: 4px;
-  margin-right: 12px;
-  border: 1.5px solid #c0c0c0;
-  transition: all 0.3s ease-in-out;
-}
-.item.checked .checkbox,
-.item2.checked2 .checkbox {
-  background-color: #e74646;
-  border-color: #e74646;
-}
-.checkbox .check-icon {
-  color: #fff;
-  font-size: 11px;
-  transform: scale(0);
-  transition: all 0.2s ease-in-out;
-}
-.item.checked .check-icon,
-.item2.checked2 .check-icon {
-  transform: scale(1);
-}
-
-.content {
-  height: 300px;
-  width: 94%;
-  margin: 5px 3%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.content .grafik {
-  width: 33%;
-  height: 100%;
-  background-color: #fff;
-}
 
 /* footer area */
 .footer-side {
+  width: auto;
   bottom: 0%;
-  padding: 25px;
+  padding: 20px;
   background-color: #edc9c4;
   background-size: cover;
   bottom: 0;
@@ -318,20 +243,20 @@ ul li a:hover {
 
 .left-h1 {
   font-size: 20px;
-  padding-bottom: 15px;
-  margin: 0px;
+  padding-bottom: 10px;
 }
 
 .flex-footer {
   display: flex;
   justify-content: space-between;
-  padding-top: 15px;
+  padding-top: 10px;
+  height: 31px;
+  bottom: 0px;
 }
 
 .sosmed-flex-footer {
   display: flex;
   flex-direction: row;
-  margin-left: 760px;
 }
 
 .line {
@@ -346,7 +271,6 @@ ul li a:hover {
   font-weight: 600;
   padding-top: 9px;
   height: 15px;
-  margin: 0px;
 }
 
 .sosmed-footer {
@@ -450,6 +374,8 @@ ul li a:hover {
   padding: 20px;
   background-color: #e15240;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-container {
@@ -481,284 +407,185 @@ ul li a:hover {
   height: 100%;
   background-color: rgba(237, 201, 196, 0.65);
   display: none;
-  z-index: 999;
+  z-index: 1000;
 }
 
-
-@media (max-width: 912px) {
-  .nav-menu {
-    display: none;
+/* Mobile View */
+@media (max-width: 768px) {
+  /* Navbar */
+  nav {
+    padding: 0px;
   }
 
-  .nav-menu-right .icon-nav {
-    display: none;
+  .nav-h1 {
+    font-size: 18px;
+    padding: 20px 0px 20px 20px;
   }
 
-  .hamburger-menu {
+  .toggle-button {
     display: block;
   }
 
-  .menu{
-    padding: 10px 25px;
+  .toggle-button:hover {
+    background-color: #e15240;
+    color: #fff;
+    border-radius: 50%;
   }
 
-  .sidebar ul li a span {
-    display: inline-block;
+  .nav-menu-right {
+    display: none;
+    width: 100%;
+    border-top: 1px solid #000;
+    margin-bottom: 20px;
   }
 
-  .sidebar ul li a p {
-    display: inline-block;
-    margin: 0;
+  .nav-menu-right-container {
+    margin-top: 10px;
   }
 
-  .title {
-    height: auto;
-    padding: 20px;
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .h1-title {
-    font-size: 28px;
-    padding: 10px;
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0px 10px;
   }
 
-  .md-50 {
-    font-size: 40px !important ;
+  .nav-menu a {
+    padding: 15px 0px 15px 20px;
+    font-size: 16px;
   }
 
+  .icon-nav.material-symbols-outlined {
+    display: none;
+  }
+
+  .nav-section-menu.about-team {
+    display: block;
+  }
+
+  .active {
+    display: block;
+  }
+
+  /* Title */
+
+  /* Dashboard */
   .insight {
-    align-items: stretch;
-    margin: 10px 20px;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
   }
 
   .result {
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
   }
 
-  .insight .result .sub-result {
-    width: 100px;
-    height: 60px;
-    margin: 5px;
-  }
-
-  .insight .result .sub-result .p-title{
-    font-size: 10px;
-    margin: 5px 0px;
-  }
-
-  .insight .result .sub-result .p-result{
-    font-size: 16px;
-    margin: 5px 0px;
-    letter-spacing: 1px;
-  } 
-
-  .year,
-  .region {
-    margin: 10px;
-    width: auto;
-  }
-
-  .select-btn,
-  .select-btn2 {
-    height: 40px;
-    padding: 0 10px;
-  }
-
-  .select-btn .btn-text,
-  .select-btn2 .btn-text2 {
-    font-size: 14px;
-    margin-right: 5px;
-  }
-
-  .select-btn .arrow-dwn,
-  .select-btn2 .arrow-dwn {
-    height: 18px;
-    width: 18px;
-    font-size: 12px;
-  }
-
-  .list-items {
-    margin-top: 10px;
-    padding: 10px;
-  }
-
-  .list-items .item,
-  .list-items .item2 {
-    height: 40px;
-    padding: 0 10px;
-  }
-
-  .item .item-text,
-  .item2 .item-text {
-    font-size: 14px;
-  }
-
+  /* Footer */
   .flex-footer {
-    align-items: center;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .sosmed-flex-footer {
-    margin-left: 0;
+    margin-top: 40px;
   }
 
-  .message-icon {
-    bottom: 20px;
-    right: 20px;
-  }
-}
-
-@media (max-width: 450px) {
-  .nav-h1{
-    font-size: 16px;
+  .logo-footer {
+    padding-top: 80px;
   }
 
-  .hamburger-menu span{
-    font-size: 24px;
-  }
-
-  .menu{
-    padding: 10px 25px;
-  }
-
-  .menu span{
-    font-size: 24px;
-  }
-
-  ul li a{
-    padding: 5px 0;
-    margin: 5px 0;
-  }
-
-  ul li a span{
-    font-size: 20px;
-  }
-
-  ul li a p{
-    font-size: 12px;
-  }
-
-  .insight {
-    flex-direction: column;
-    margin: 10px;
-  }
-
-  .insight .result {
-    flex-direction: column;
-  }
-
-  .insight .result .sub-result {
-    width: 100%;
-    height: auto;
-    margin: 5px 0;
-  }
-
-  .insight .result .sub-result .p-title {
-    font-size: 12px;
-  }
-
-  .insight .result .sub-result .p-result {
-    font-size: 20px;
-  }
-
-  .filter {
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .year,
-  .region {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .select-btn,
-  .select-btn2 {
-    width: 100%;
-    margin: 0;
-  }
-
-  .select-btn .btn-text,
-  .select-btn2 .btn-text2 {
-    font-size: 14px;
-  }
-
-  .list-items {
-    width: 100%;
-    margin-top: 5px;
-  }
-
-  .list-items .item,
-  .list-items .item2 {
-    height: auto;
-    padding: 10px 0;
-  }
-
-  .item .item-text,
-  .item2 .item-text {
-    font-size: 14px;
-  }
-
-  .content {
-    flex-wrap: wrap;
-    height: auto;
-  }
-
-  .content .grafik {
-    width: 100%;
-    height: 200px;
-    margin: 10px 0;
-  }
-
-  .footer-side {
-    padding: 10px;
-  }
-
-  .left-h1 {
-    font-size: 12px;
-    padding-bottom: 10px;
-  }
-
-  .sosmed-footer {
-    width: 15px;
-    padding: 0;
-  }
-
-  .p-footer {
-    font-size: 7px;
-    padding: 10px 10px 10px 0;
-  }
-
-  .flex-footer{
-    padding: 0;
-  }
-
-  .logo-footer{
-    padding: 5px 5px 5px 0;
-    height: 20px;
-  }
-
-  .message-icon{
-    height: 30px;
-    width: 30px;
-  }
-
-  .message-icon span{
-    font-size: 12px;
-  }
-
-  .message-head h2 {
-    font-size: 18px;
-  }
-
-  .message-head p {
-    font-size: 12px;
+  /* Popup */
+  .popup-box {
+    width: 350px;
   }
 
   .form-message-area {
-    width: 90%;
+    width: 270px;
   }
 
   .button-message {
+    width: 100px;
+    border-radius: 7px;
+    font-size: 16px;
+  }
+
+  .message-head h2 {
+    font-size: 24px;
+  }
+
+  .message-head p {
+    font-size: 16px;
+  }
+}
+
+/* tablet view */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Navbar */
+  nav {
+    padding: 0px;
+  }
+
+  .nav-h1 {
+    font-size: 18px;
+    padding: 20px 0px 20px 20px;
+  }
+
+  .toggle-button {
+    display: block;
+  }
+
+  .toggle-button:hover {
+    background-color: #e15240;
+    color: #fff;
+    border-radius: 50%;
+  }
+
+  .nav-menu-right {
+    display: none;
     width: 100%;
+    border-top: 1px solid #000;
+    margin-bottom: 20px;
+  }
+
+  .nav-menu-right-container {
+    margin-top: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+    width: 100%;
+    border-radius: 5px;
+    margin: 0px 10px;
+  }
+
+  .nav-menu a {
+    padding: 15px 0px 15px 20px;
+  }
+
+  .icon-nav.material-symbols-outlined {
+    display: none;
+  }
+
+  .nav-section-menu.about-team {
+    display: block;
+  }
+
+  .active {
+    display: block;
   }
 }
