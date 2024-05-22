@@ -1,3 +1,4 @@
+/* tampilan body */
 body{
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -6,7 +7,6 @@ body{
 }
 
 /* Navbar */
-
 nav {
   display: flex;
   background-color: #EDC9C4;
@@ -18,9 +18,16 @@ nav {
   right: 0;
   left: 0;
   top: 0;
+  width: auto;
 }
 
-.menu2{
+/* icon menu mode tablet */
+.hamburger-menu{
+  display: none;
+}
+
+/*  */
+/* .menu2{
   right: 2rem;
   top: 2rem;
 }
@@ -28,7 +35,7 @@ nav {
 .menu {
 display: flex;
 align-items: center;
-}
+} */
 
 .menu .material-symbols-outlined{
 margin: 0px 5px;
@@ -46,30 +53,15 @@ font-size: medium;
 margin-left: 20px;
 }
 
-.menu2{
+.abouts a{
 display: flex;
 align-items: center;
+color: #000;
+text-decoration: none;
 }
 
-.search{
-display: flex;
-align-items: center;
-padding: 3px;
-border-radius: 10px;
-background-color: #EDC9C4;
-}
-
-.search-input{
-font-size: 16px;
-color: #333;
-outline: none;
-border: none;
-background: transparent;
-width: 200px;
-}
-
-.search-input::placeholder, .search .material-symbols-outlined{
-color: rgba(0, 0, 0, 0.5);
+.abouts a:hover{
+  color: #a82e26;
 }
 
 .share .material-symbols-outlined{
@@ -82,22 +74,13 @@ border-radius: 10px;
 .header{
 background: linear-gradient(180deg, rgba(214,121,118,0.821187850140056) 37%, rgba(2,0,36,0) 100%);
 width: auto;
-height: 470px;
+height: 100%;
 }
 
 .icon{
   height: 60px;
   width: 60px;
   margin-top: 8%;
-}
-/* Sidebar */
-
-.sidebar{
-height: 100%;
-width: 250px;
-position: absolute;
-background-color: #fff;
-transition: 0.5s ease;
 }
 
 ul li{
@@ -124,7 +107,7 @@ text-align: center;
 
 .sidebar-toggle {
 display: none;
-}
+} */
 
 .sidebar {
   height: 100%;
@@ -134,10 +117,6 @@ display: none;
   left: -250px;
   background-color: #EDC9C4;
   transition: 0.5s ease;
-}
-
-.sidebar-toggle:checked + .sidebar {
-left: 0;
 }
 
 .side-menu{
@@ -150,7 +129,6 @@ ul li a:hover {
   border-bottom-left-radius: 30px;
   color: #FBF4EA;
 }
-/* title insight */
 
 .title {
   display: flex;
@@ -170,127 +148,30 @@ font-size: 50px;
 }
 
 .card {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 8px;
   border: 1px solid #e7c3c3;
   background-color: rgb(252, 222, 177);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
-  margin: 20px;
+  margin: 2rem auto;
   top: 15rem;
-  position: absolute;
   display: flex;
   width: 65rem;
   height: 5.5rem;
   right: 4.3rem;
   text-align: center;
-}
-
-.card1 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  border: 1px solid #e7c3c3;
-  background-color: rgb(252, 222, 177);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 20px;
-  top: 25rem;
-  position: absolute;
-  display: flex;
-  width: 65rem;
-  height: 5.5rem;
-  right: 4.3rem;
-  text-align: center;
-}
-
-.card2 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  border: 1px solid #e7c3c3;
-  background-color: rgb(252, 222, 177);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 20px;
-  top: 35rem;
-  position: absolute;
-  display: flex;
-  width: 65rem;
-  height: 5.5rem;
-  right: 4.3rem;
-  text-align: center;
-}
-
-.card3 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  border: 1px solid #e7c3c3;
-  background-color: rgb(252, 222, 177);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 20px;
-  top: 45rem;
-  position: absolute;
-  display: flex;
-  width: 65rem;
-  height: 5.5rem;
-  right: 4.3rem;
-  text-align: center;
-}
-
-.card4 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  border: 1px solid #e7c3c3;
-  background-color: rgb(252, 222, 177);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 20px;
-  top: 55rem;
-  position: absolute;
-  display: flex;
-  width: 65rem;
-  height: 5.5rem;
-  right: 4.3rem;
-  text-align: center;
-}
-
-.card5 {
-  font-size: 20px;
-  margin-bottom: 8px;
-  border: 1px solid #e7c3c3;
-  background-color: rgb(252, 222, 177);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  padding: 20px;
-  margin: 20px;
-  top: 65rem;
-  position: absolute;
-  display: flex;
-  width: 65rem;
-  height: 5.5rem;
-  right: 4.3rem;
-  text-align: center;
+  justify-content: center;
 }
 
 /*footer area*/
 .footer-side{
-margin-top: 50rem;
+margin-top: 5rem;
 padding-top: 28px;
 padding-left: 28px;
 padding-right: 28px;
 background-color: #EDC9C4;
-background-size: cover;
-}
-
-.pesan{
-  right: 2rem;
-  position: absolute;
-  top: 81rem;
 }
 
 .left-h1{
@@ -298,12 +179,27 @@ font-size: 20px;
 padding-bottom: 20px;
 }
 
-.flex-footer {
+.footer-side .flex-footer {
 display: flex;
+justify-content: space-between;
 flex-direction: space-between;
+align-items: center;
 }
 
-.p-menu-footer{
+.footer-side .flex-footers{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+.footer-side .flex-footers .sosmed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .menu-footer a{
 font-size: 16px;
 padding-right: 15px;
 padding-bottom: 20px;
@@ -311,9 +207,10 @@ letter-spacing: 2px;
 font-weight: 500;
 color: #000;
 text-underline-offset: 7px;
+text-decoration: none;
 }
 
-a.p-menu-footer:hover{
+.header .menu-footer a:hover{
 color: #a82e26;
 }
 
@@ -355,4 +252,82 @@ padding-bottom: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* laptop */
+@media(max-width:996px){
+  html{
+    font-size: 62.5%;
+  }
+}
+
+/* tablet */
+@media(max-width:768px){
+  html{
+    font-size: 55%;
+  }
+
+  .header{
+    margin-top: 5rem;
+  }
+
+  .header .menu-footer {
+    position: absolute;
+    top: 100%;
+    background-color: #EDC9C4;
+    width: 35rem;
+    height: 100vh;
+    left: -100%;
+  }
+
+  .menu-footer.active {
+    left: 0;
+  }
+
+  .header .menu-footer a {
+    display: block;
+    margin: 1.5rem;
+    padding: 1rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+  }
+
+  .card{
+    width: auto;
+    height: 100%;
+  }
+
+  .footer-side .flex-footers {
+   display: block;
+  }
+
+  .footer-side .flex-footers .p-footer{
+    font-size: 1.5rem;
+    width: 38rem;
+    height: 100%;
+  }
+
+  nav{
+    width: auto;
+  }
+
+  .header{
+    width: auto;
+  }
+
+  .hamburger-menu{
+    display: inline-block;
+  }
+
+  .header .menu-footer.active{
+    left: 0;
+  }
+}
+
+/* mobile phone */
+@media(max-width:450px){
+  html{
+    font-size: 50%;
+  }
+
 }
