@@ -9,7 +9,7 @@ body{
 
 nav {
   display: flex;
-  background-color: rgb(252, 183, 183);
+  background-color: #EDC9C4;
   justify-content: space-between;
   align-items: center;
   padding: 15px 15px;
@@ -18,6 +18,11 @@ nav {
   right: 0;
   left: 0;
   top: 0;
+}
+
+.menu2{
+  right: 2rem;
+  top: 2rem;
 }
 
 .menu {
@@ -77,12 +82,12 @@ border-radius: 10px;
 .header{
 background: linear-gradient(180deg, rgba(214,121,118,0.821187850140056) 37%, rgba(2,0,36,0) 100%);
 width: auto;
-height: 230px;
+height: 470px;
 }
 
 .icon{
   height: 60px;
-  width: 50px;
+  width: 60px;
   margin-top: 8%;
 }
 /* Sidebar */
@@ -151,6 +156,7 @@ ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 10rem;
 }
 
 .h1-title{
@@ -166,18 +172,18 @@ font-size: 50px;
 .card {
   font-size: 20px;
   margin-bottom: 8px;
-  width: 12rem;
-  height: 15rem;
   border: 1px solid #e7c3c3;
   background-color: rgb(252, 222, 177);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
-  margin: 30px;
-  display: flex;
+  margin: 20px;
   top: 15rem;
   position: absolute;
-  left: 4rem;
+  display: flex;
+  width: 65rem;
+  height: 5.5rem;
+  right: 4.3rem;
   text-align: center;
 }
 
@@ -190,10 +196,10 @@ font-size: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
   margin: 20px;
-  top: 15.8rem;
+  top: 25rem;
   position: absolute;
   display: flex;
-  width: 40rem;
+  width: 65rem;
   height: 5.5rem;
   right: 4.3rem;
   text-align: center;
@@ -201,18 +207,19 @@ font-size: 50px;
 
 .card2 {
   font-size: 20px;
-  width: 40rem;
+  margin-bottom: 8px;
   border: 1px solid #e7c3c3;
   background-color: rgb(252, 222, 177);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
   margin: 20px;
-  display: flex;
-  top: 25rem;
+  top: 35rem;
   position: absolute;
-  right: 4.3rem;
+  display: flex;
+  width: 65rem;
   height: 5.5rem;
+  right: 4.3rem;
   text-align: center;
 }
 
@@ -225,13 +232,13 @@ font-size: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
   margin: 20px;
-  top: 38.6rem;
+  top: 45rem;
   position: absolute;
   display: flex;
-  width: 40rem;
+  width: 65rem;
   height: 5.5rem;
+  right: 4.3rem;
   text-align: center;
-  left: 4.3rem;
 }
 
 .card4 {
@@ -243,30 +250,30 @@ font-size: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
   margin: 20px;
-  top: 48.2rem;
+  top: 55rem;
   position: absolute;
   display: flex;
-  width: 40rem;
+  width: 65rem;
   height: 5.5rem;
+  right: 4.3rem;
   text-align: center;
-  left: 4.3rem;
 }
 
 .card5 {
   font-size: 20px;
   margin-bottom: 8px;
-  width: 12rem;
-  height: 15rem;
   border: 1px solid #e7c3c3;
   background-color: rgb(252, 222, 177);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   padding: 20px;
-  margin: 30px;
-  display: flex;
-  top: 38rem;
+  margin: 20px;
+  top: 65rem;
   position: absolute;
-  right: 4rem;
+  display: flex;
+  width: 65rem;
+  height: 5.5rem;
+  right: 4.3rem;
   text-align: center;
 }
 
@@ -283,7 +290,7 @@ background-size: cover;
 .pesan{
   right: 2rem;
   position: absolute;
-  top: 66rem;
+  top: 81rem;
 }
 
 .left-h1{
