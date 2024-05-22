@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Capstone Project | group16</title>
+
+        <!-- Style CSS -->
+        <link rel="stylesheet" type="text/css" href="home.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+        <!-- Icons -->
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
+    </head>
+
+    <body>
+        <!-- header/navigation section -->
+        <nav>
+                <h1 class="nav-h1">Superstore Analytics</h1>
+
+                <a href="#" class="toggle-button" id="toggle-button">
+                    <span class="material-symbols-outlined">Menu</span>
+                </a>
+
+                <div class="nav-menu-right" id="nav-menu-right">
+                    <div class="nav-menu-right-container">
+                        <div class="nav-menu">
+                            <a href="home.html" aria-current="page" class="nav-section-menu">Home</a>
+                            <a href="#" class="nav-section-menu">Dashboard</a>
+                            <a href="insight.html" class="nav-section-menu">Insight</a>
+                            <a href="#" class="nav-section-menu">Recomendation</a>
+                            <a href="#" class="nav-section-menu about-team">About Team</a>
+                        </div>
+                            <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
+                    </div>
+                </div>
+        </nav>
+
+        <!-- card slider -->
+       <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <p class="p-slider">Browse your sales, stock, and customer data through impressive interactive visualizations. 
+                        With dynamic and easy-to-understand charts, you'll see patterns and trends that might have been missed before.</p>
+                </div>
+
+                <div class="item">
+                    <p class="p-slider">Understand your shopping behavior and customer preferences through in-depth segmentation analysis. 
+                        With a better understanding of your customer base, you can improve the customer experience and increase loyalty.</p>
+                </div>
+
+                <div class="item">
+                    <p class="p-slider">Get a complete insight into your store's performance through customized, easy-to-understand reports. 
+                        This analysis helps you identify growth opportunities and capture potential problems before they become bigger problems.</p>
+                </div>
+            </div>
+
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        
+        <!-- box grouping -->
+        <div class="groupping">
+            <!-- Dashboard -->
+            <a href="#">
+                <div class="box-groupping">
+                    <span class="material-symbols-outlined md-40">dashboard</span>
+                    <div class="title-grouping">
+                        <h2>Dashboard</h2>
+                        <p class="p-box">A set of graphical of live data</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Insight -->
+            <a href="insight.html">
+                <div class="box-groupping">
+                    <span class="material-symbols-outlined md-40">search_insights</span>
+                    <div class="title-grouping">
+                        <h2>Insight</h2>
+                        <p class="p-box">The knowledge gained through analyzing data</p>
+                    </div>
+                </div>
+            </a>
+            <!-- Recomendation -->
+            <a href="#">
+                <div class="box-groupping recomendation">
+                    <span class="material-symbols-outlined md-40">description</span>
+                    <div class="title-grouping">
+                        <h2>Recomendation</h2>
+                        <p class="p-box">A suggestion that something is suitable for a particular purpose</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- footer section -->
+        <div class="footer-side">
+            <h1 class="left-h1">Superstore Analytics</h1>
+            
+            <div class="line"></div>
+            <div class="flex-footer">
+                <p class="p-footer">© 2024 Team 16 Section Semarang, All rights reserved</p>
+                <div class="sosmed-flex-footer">
+                    <a href="https://www.instagram.com/"><img src="./pict_CP/sosmed-ig.png" class="sosmed-footer"></a>
+                    <a href="https://id-id.facebook.com/"><img src="./pict_CP/sosmed-fb.png" class="sosmed-footer"></a>
+                    <a href="https://twitter.com/"><img src="./pict_CP/sosmed-x twt.png" class="sosmed-footer"></a>
+                    <a href="https://www.linkedin.com/"><img src="./pict_CP/sosmed-linkedin.png" class="sosmed-footer"></a>
+                    <a href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-Semarang-16.git"><img src="./pict_CP/sosmed-github.png" class="sosmed-footer sosmed-footer-github"></a>
+                </div>
+            </div>
+                <img src="./pict_CP/revou_png-removebg-preview.png" class="logo-footer">
+                <img src="./pict_CP/km png.png" class="logo-footer">
+        </div>
+
+        <!-- message icon -->
+        <button class="message-icon" id="messageIcon">
+            <span class="material-symbols-outlined"> mode_comment</span>
+        </button>
+
+        <!-- message pop pup -->
+        <div class="popup-overlay"></div>
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-box">
+                <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
+                <div class="message-head">
+                    <h2>Message Us!</h2>
+                    <p>Feel free to message with us! </p>
+                </div>
+                <form action="#" method="post" id="messageForm">
+                    <div class="form-message" id="messageBox">
+                        <input type="text" placeholder="Name" required class="form-message-area">
+                        <input type="email" placeholder="E-mail" required class="form-message-area">
+                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                        <button class="button-message" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="./home.js"></script>
+    </body>
+</html>

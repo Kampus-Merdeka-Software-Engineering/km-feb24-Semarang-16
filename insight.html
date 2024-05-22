@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Capstone Project | group16</title>
+
+        <!-- Style CSS -->
+        <link rel="stylesheet" type="text/css" href="insight.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+        <!-- Icons -->
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+
+    </head>
+
+    <body>
+    <!-- header/navigation section -->
+    <nav>
+        <h1 class="nav-h1">Superstore Analytics</h1>
+
+        <a href="#" class="toggle-button" id="toggle-button">
+            <span class="material-symbols-outlined">Menu</span>
+        </a>
+
+        <div class="nav-menu-right" id="nav-menu-right">
+            <div class="nav-menu-right-container">
+                <div class="nav-menu">
+                    <a href="home.html" aria-current="page" class="nav-section-menu">Home</a>
+                    <a href="#" class="nav-section-menu">Dashboard</a>
+                    <a href="insight.html" class="nav-section-menu">Insight</a>
+                    <a href="#" class="nav-section-menu">Recomendation</a>
+                    <a href="#" class="nav-section-menu about-team">About Team</a>
+                </div>
+                    <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
+            </div>
+        </div>
+    </nav>
+
+    
+    <!--Title Insight-->
+        <div class="title">
+            <div class="overlay-title">
+                <span class="material-symbols-outlined md-50">search_insights</span>
+                <h1 class="h1-title">Insight</h1>
+            </div>
+        </div>
+
+    <!--question-->
+        <div class="question">
+            <!--question 1-->
+                <div class="expandable">
+                    <div class="expandable__title-bar">
+                        <span class="expandable__title">
+                            <p class="p-number">01</p>
+                            <p class="p-question">How is the sales performance throughout the period 2014-2017?</p>
+                        </span>
+                        <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                    </div>
+                    
+                    <div class="expandable__content-wrapper">
+                        <div class="expandable__content">
+                            <div class="box-content"></div>
+                            <div>
+                                <p>The highest sales were in November 2017 at 48.520</p>
+                                <p>The sales trend is relatively the same almost every year, namely that in Q4 it increased while in Q1 it decreased.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!--question 2-->
+            <div class="expandable">
+                <div class="expandable__title-bar">
+                    <span class="expandable__title">
+                        <p class="p-number">02</p>
+                        <p class="p-question">Which location generates the highest total sales?</p>
+                    </span>
+                    <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                </div>
+                
+                <div class="expandable__content-wrapper">
+                    <div class="expandable__content">
+                        <div class="box-content"></div>
+                        <div>
+                            <p>The west is the region that has the highest sales and total orders.</p>
+                            <p>Of all the states in the United States, California is the state with the highest sales and total orders.</p>
+                            <p>It can be said that the west is the most profitable State.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--question 3-->
+            <div class="expandable">
+                <div class="expandable__title-bar">
+                    <span class="expandable__title">
+                        <p class="p-number">03</p>
+                        <p class="p-question">Which product categories are the best-selling and most profitable?</p>
+                    </span>
+                    <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                </div>
+
+                <div class="expandable__content-wrapper">
+                    <div class="expandable__content">
+                        <div class="box-content"></div>
+                        <div>
+                            <p>Technology and Furniture are the 2 best Selling categories based on Total Sales. .</p>
+                            <p>Office Supplies is the most items have been sold.</p>
+                            <p>Products in the Furniture and office supplies category can be the main focus for marketing strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--question 4-->
+            <div class="expandable">
+                <div class="expandable__title-bar">
+                    <span class="expandable__title">
+                        <p class="p-number">04</p>
+                        <p class="p-question">What is the correlation between sales and products that have discounts?</p>
+                    </span>
+                    <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                </div>
+                
+                <div class="expandable__content-wrapper">
+                    <div class="expandable__content">
+                        <div class="box-content"></div>
+                        <div>
+                            <p>Product’s that have discounts tend to affect the level of sales trend every month.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--question 5-->
+            <div class="expandable">
+                <div class="expandable__title-bar">
+                    <span class="expandable__title">
+                        <p class="p-number">05</p>
+                        <p class="p-question">Which customer segmentation makes the most purchase transactions?</p>
+                    </span>
+                    <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                </div>
+                
+                <div class="expandable__content-wrapper">
+                    <div class="expandable__content">
+                        <div class="box-content"></div>
+                        <div>
+                            <p>The Consumer is the Segmentation with the highest purchase transactions, followed by the Corporate and Home Officer segments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--question 6-->
+            <div class="expandable q6">
+                <div class="expandable__title-bar">
+                    <span class="expandable__title">
+                        <p class="p-number">06</p>
+                        <p class="p-question">Which shipping mode is the choice of customers?</p>
+                    </span>
+                    <ion-icon name="chevron-down-outline" class="expandable__icon"></ion-icon>
+                </div>
+                
+                <div class="expandable__content-wrapper">
+                    <div class="expandable__content">
+                        <div class="box-content"></div>
+                        <div>
+                            <p>Standard class as a preferably shipping mode from customer crossover all the region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- footer section -->
+    <div class="footer-side">
+        <h1 class="left-h1">Superstore Analytics</h1>
+        
+        <div class="line"></div>
+        <div class="flex-footer">
+            <p class="p-footer">© 2024 Team 16 Section Semarang, All rights reserved</p>
+            <div class="sosmed-flex-footer">
+                <a href="https://www.instagram.com/"><img src="./pict_CP/sosmed-ig.png" class="sosmed-footer"></a>
+                <a href="https://id-id.facebook.com/"><img src="./pict_CP/sosmed-fb.png" class="sosmed-footer"></a>
+                <a href="https://twitter.com/"><img src="./pict_CP/sosmed-x twt.png" class="sosmed-footer"></a>
+                <a href="https://www.linkedin.com/"><img src="./pict_CP/sosmed-linkedin.png" class="sosmed-footer"></a>
+                <a href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-Semarang-16.git"><img src="./pict_CP/sosmed-github.png" class="sosmed-footer sosmed-footer-github"></a>
+            </div>
+        </div>
+            <img src="./pict_CP/revou_png-removebg-preview.png" class="logo-footer">
+            <img src="./pict_CP/km png.png" class="logo-footer">
+    </div>
+
+    <!-- message icon -->
+    <button class="message-icon" id="messageIcon">
+        <span class="material-symbols-outlined"> mode_comment</span>
+    </button>
+
+        <!-- message pop pup -->
+        <div class="popup-overlay"></div>
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-box">
+                <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
+                <div class="message-head">
+                    <h2>Message Us!</h2>
+                    <p>Feel free to message with us! </p>
+                </div>
+                <form action="#" method="post" id="messageForm">
+                    <div class="form-message" id="messageBox">
+                        <input type="text" placeholder="Name" required class="form-message-area">
+                        <input type="email" placeholder="E-mail" required class="form-message-area">
+                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                        <button class="button-message" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!--js-->
+    <script src="./insight.js" ></script>
+    </body>
+</html>
