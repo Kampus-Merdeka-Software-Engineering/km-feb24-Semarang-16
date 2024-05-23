@@ -1,3 +1,10 @@
+const hm = document.querySelector('.menu-footer');
+
+document.querySelector('#hamburger-menu-button').onclick = (e) => {
+    hm.classList.toggle('active');
+    e.preventDefault();
+}
+
 //question
 document.body.addEventListener("click", (ev) => {
     const isExpandableTitle = !!ev.target.closest(".expandable__title-bar");
@@ -40,3 +47,4 @@ items2.forEach(item => {
         item.classList.toggle("checked2");
     });
 })
+
