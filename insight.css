@@ -232,8 +232,6 @@ nav{
 
 .overlay-title{
   background-color: rgba(237, 201, 196, 0.65);
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -261,7 +259,7 @@ font-family: "Montserrat", sans-serif;
 
 .p-question{
 font-size: 24px;
-font-weight: 400;
+font-weight: 500;
 margin: 0px;
 padding-top: 1px;
 font-family: "Montserrat", sans-serif;
@@ -485,109 +483,17 @@ margin: 20px 15px;
   }
 
   .sosmed-flex-footer{
-      margin-top: 40px;
+      padding-top: 30px;
   }
 
   .logo-footer{
-      padding-top: 80px;
-  }
-}
-
-/* slider */
-.slider{
-  background-image: url(./assets/delivery-man-giving-groceries-order-customer\ 1.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  width: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.list{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  top: 0;
-  left: 0;
-  transition: 3s ease;
-}
-
-.list p{
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 30px;
-  font-weight: 600;
-  margin: auto 312px;
-}
-
-.item{
-  background-color: rgba(232, 182, 175, 0.65);
-  width: 100%;
-  max-width: 1920px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.item p{
-  width: 900px;
-  margin: auto 312px;
-}
-
-.dots{
-  position: absolute;
-  bottom: 10px;
-  color: #fff;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.dots li{
-  list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  margin: 10px;
-  border-radius: 25px;
-  transition: 3s;
-}
-
-.dots li.active{
-  width: 40px;
-}
-
-@media (max-width: 768px){
-  .item p{
-      width: 500px;
-      margin: auto 50px;
+      margin-top: 70px;
   }
 
-  .list p {
-      font-size: 20px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px){
-  .item p{
-      width: 700px;
-      margin: auto 187px;
-  }
-
-  .list p {
-      font-size: 28px;
-  }
+  .card{
+      width: auto;
+      height: 100%;
+    }
 }
 
 /* message icon */
