@@ -53,3 +53,66 @@ messageForm.addEventListener('submit', function(event) {
   messageForm.reset();
   alert('Form submitted successfully!');
 });
+
+//fetch data and manipulation 
+    //Event on ready DOM
+        document.addEventListener("DOMContentLoaded", function () {
+        //Fetch data
+            fetch('./data_set/superstor_dataset.json')
+                .then((response) => response.json())
+                .then((data) => {
+                    //question 5
+                    function countUniqueSegmentations(data) {
+                        let uniqueCustomers = new Map();
+                    
+                        data.forEach(item => {
+                            // Menambahkan Customer ID unik ke Map
+                            uniqueCustomers.set(item["Customer ID"], item["Segment"]);
+                        });
+                    
+                        let counts = { Consumer: 0, Corporate: 0, "Home Office": 0 };
+                    
+                        // Menghitung jumlah banyaknya segmentation
+                        uniqueCustomers.forEach(segmentation => {
+                            if (counts.hasOwnProperty(segmentation)) {
+                                counts[segmentation]++;
+                            }
+                        });
+                        return counts;
+                    }
+                    
+                    let segmentationCounts = countUniqueSegmentations(data);
+                    console.log(segmentationCounts);
+
+                    //visualisation question 5
+                    const ctx = document.getElementById('myChart');
+                    let labels = Object.keys(segmentationCounts);
+                    let totalSegmentations = Object.values(segmentationCounts).reduce((acc, val) => acc + val, 0);
+                    let output = {};
+                    for (let key in segmentationCounts) {
+                        output[key] = ((segmentationCounts[key] / totalSegmentations) * 100).toFixed(1);
+                    }
+
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: '% of Cutomers by Segmentation',
+                                data: Object.values(output),
+                                backgroundColor : [
+                                    'rgba(168, 46, 38, 1)',
+                                    'rgba(191, 102, 99, 1)',
+                                    'rgba(217, 167, 165, 1)'
+                                ]
+                            }]
+                        },
+                        options : {
+                            width : 400,
+                            responsive : true,
+                            maintainAspectRatio : false,
+                        }
+                            });
+                    })
+            });
+

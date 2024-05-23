@@ -349,9 +349,14 @@ padding: 100px 0px;
 
 .box-content{
 background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
 width: 400px !important;
 height: 300px !important;
 margin: 25px;
+padding: 20px;
+border-radius: 10px;
 }
 
 .q6{
@@ -387,7 +392,8 @@ margin: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 15px 10px 15px;
+    margin: 20px 0px 10px 0px;
+    padding: 0px;
   }
 
   .expandable__content p{
