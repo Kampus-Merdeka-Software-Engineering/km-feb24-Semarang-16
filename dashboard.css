@@ -95,7 +95,7 @@ nav {
   padding: 10px;
 }
 
-/* title insight */
+/* title */
 .title {
   position: relative;
   display: flex;
@@ -490,18 +490,23 @@ nav {
   }
 
   /* Footer */
-  .flex-footer {
+  .flex-footer{
     display: flex;
     flex-direction: column;
   }
 
-  .sosmed-flex-footer {
-    margin-top: 40px;
+  .sosmed-flex-footer{
+      padding-top: 30px;
   }
 
-  .logo-footer {
-    padding-top: 80px;
+  .logo-footer{
+      margin-top: 70px;
   }
+
+  .card{
+      width: auto;
+      height: 100%;
+    }
 
   /* Popup */
   .popup-box {

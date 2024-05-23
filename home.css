@@ -323,78 +323,83 @@ nav{
     }
 }
 
-/* footer area */
-.footer-side{
+ /* footer area */
+ .footer-side{
     width: auto;
     bottom: 0%;
     padding: 20px;
     background-color: #EDC9C4;
     background-size: cover;
     bottom: 0;
-}
-
-.left-h1{
+  }
+  
+  .left-h1{
     font-size: 20px;
     padding-bottom: 10px;
-}
-
-.flex-footer {
+  }
+  
+  .flex-footer {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
     height: 31px;
     bottom: 0px;
-}
-
-.sosmed-flex-footer{
+  }
+  
+  .sosmed-flex-footer{
     display: flex;
     flex-direction: row;
-}
-
-.line{
+  }
+  
+  .line{
     box-sizing: border-box;
     border-top-width: 2px;
     border-top-style: solid ;
     color: #000;
-}
-
-.p-footer{
+  }
+  
+  .p-footer{
     font-size: 15px;
     font-weight: 600;
     padding-top: 9px;
     height: 15px;
-}
-
-.sosmed-footer{
+  }
+  
+  .sosmed-footer{
     width: 31px;
     padding-right: 10px;
-}
-
-.sosmed-footer-github{
+  }
+  
+  .sosmed-footer-github{
     padding-right: 0px;
-}
-
-.logo-footer{
+  }
+  
+  .logo-footer{
     height: 40px;
     padding-right: 15px;
     padding-top: 15px;
-}
-
-/* mobile view */
-@media (max-width: 768px){
+  }
+  
+  /* mobile view */
+  @media (max-width: 768px){
     .flex-footer{
         display: flex;
         flex-direction: column;
     }
-
+  
     .sosmed-flex-footer{
-        margin-top: 40px;
+        padding-top: 30px;
+    }
+  
+    .logo-footer{
+        margin-top: 70px;
     }
 
-    .logo-footer{
-        padding-top: 80px;
-    }
-}
+    .card{
+        width: auto;
+        height: 100%;
+      }
+  }
 
 /* slider */
 .slider{
