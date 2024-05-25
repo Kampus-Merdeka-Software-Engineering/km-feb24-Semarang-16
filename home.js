@@ -36,7 +36,7 @@ dots.forEach((li, key) => {
 setInterval(() => {
   active = (active + 1) % items.length;
   reloadSlider();
-}, 5000); 
+}, 6000); 
 
 //pop up
 const messageIcon = document.getElementById('messageIcon');
@@ -44,6 +44,7 @@ const popupContainer = document.getElementById('popupContainer');
 const closePopup = document.getElementById('closePopup');
 const overlay = document.querySelector('.popup-overlay');
 const messageForm = document.getElementById('messageForm');
+const alertBox = document.getElementById('alert');
 
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
@@ -71,7 +72,14 @@ overlay.addEventListener('click', () => {
 messageForm.addEventListener('submit', function(event) {
   event.preventDefault(); 
   messageForm.reset();
-  alert('Form submitted successfully!');
+  showAlert();
 });
+
+function showAlert(){
+    alertBox.style.display = 'block';
+    setTimeout(() => {
+        alertBox.style.display ='none';
+    }, 1500);
+}
 
 
