@@ -232,6 +232,28 @@ nav {
   background-color: rgba(231, 70, 70, 0.1);
 }
 
+.grafik {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding: 20px;
+}
+
+.grafik-item{
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.grafik-title{
+  text-align: center;
+  padding: 10px;
+  background: #edc9c4;
+}
+
+#sales-region, #sales-category td{
+  text-align: center;
+}
+
 /* footer area */
 .footer-side {
   width: auto;

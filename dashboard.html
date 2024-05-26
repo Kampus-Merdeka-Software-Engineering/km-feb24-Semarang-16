@@ -21,6 +21,22 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Import jQuery and DataTables -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+    ></script>
+
     <!-- dataset -->
     <script
       src="./data_set/superstor_dataset.json"
@@ -39,12 +55,14 @@
       <div class="nav-menu-right" id="nav-menu-right">
         <div class="nav-menu-right-container">
           <div class="nav-menu">
-            <a href="home.html" class="nav-section-menu"
-              >Home</a
-            >
+            <a href="home.html" class="nav-section-menu">Home</a>
             <a href="dashboard.html" class="nav-section-menu">Dashboard</a>
-            <a href="insight.html" aria-current="page" class="nav-section-menu">Insight</a>
-            <a href="halaman-recomendation.html" class="nav-section-menu">Recommendation</a>
+            <a href="insight.html" aria-current="page" class="nav-section-menu"
+              >Insight</a
+            >
+            <a href="halaman-recomendation.html" class="nav-section-menu"
+              >Recommendation</a
+            >
             <a href="#" class="nav-section-menu about-team">About Team</a>
           </div>
           <a href="#"
@@ -91,9 +109,7 @@
                 >expand_more</span
               >
             </div>
-            <ul class="list-items">
-              
-            </ul>
+            <ul class="list-items"></ul>
           </div>
           <div class="region">
             <div class="select-btn2">
@@ -102,10 +118,59 @@
                 >expand_more</span
               >
             </div>
-            <ul class="list-items">
-              
-            </ul>
+            <ul class="list-items"></ul>
           </div>
+        </div>
+      </div>
+      <div class="grafik">
+        <div class="grafik-item">
+          <h3 class="grafik-title">Sales vs Profit Over The Time</h3>
+          <canvas id="sales-profit"></canvas>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Sales and Total Order by Region</h3>
+          <div style="padding: 5px;">
+            <table id="sales-region" class="display">
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Region</th>
+                  <th style="text-align: center;">Sales</th>
+                  <th style="text-align: center;">Total Order</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Sales and Total Quantity by Sub-Category</h3>
+          <div style="padding: 5px;">
+            <table id="sales-category" class="display">
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Category</th>
+                  <th style="text-align: center;">Sub-Category</th>
+                  <th style="text-align: center;">Sales</th>
+                  <th style="text-align: center;">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Sales vs Total Item Has A Discount</h3>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Total Customer by Segment of Customer</h3>
+          <canvas id="segmentPieChart"></canvas>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Total Customer by Ship Mode And Region</h3>
         </div>
       </div>
     </div>
@@ -144,30 +209,48 @@
       <img src="./assets/km png.png" class="logo-footer" />
     </div>
 
-<!-- message icon -->
-<button class="message-icon" id="messageIcon">
-  <span class="material-symbols-outlined"> mode_comment</span>
-</button>
+    <!-- message icon -->
+    <button class="message-icon" id="messageIcon">
+      <span class="material-symbols-outlined"> mode_comment</span>
+    </button>
 
-  <!-- message pop pup -->
-  <div class="popup-overlay"></div>
-  <div class="popup-container" id="popupContainer">
+    <!-- message pop pup -->
+    <div class="popup-overlay"></div>
+    <div class="popup-container" id="popupContainer">
       <div class="popup-box">
-          <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
-          <div class="message-head">
-              <h2>Message Us!</h2>
-              <p>Feel free to message with us! </p>
+        <div>
+          <span class="material-symbols-outlined close-button" id="closePopup"
+            >close</span
+          >
+        </div>
+        <div class="message-head">
+          <h2>Message Us!</h2>
+          <p>Feel free to message with us!</p>
+        </div>
+        <form action="#" method="post" id="messageForm">
+          <div class="form-message" id="messageBox">
+            <input
+              type="text"
+              placeholder="Name"
+              required
+              class="form-message-area"
+            />
+            <input
+              type="email"
+              placeholder="E-mail"
+              required
+              class="form-message-area"
+            />
+            <textarea
+              placeholder="Message"
+              required
+              class="form-message-area email"
+            ></textarea>
+            <button class="button-message" type="submit">Submit</button>
           </div>
-          <form action="#" method="post" id="messageForm">
-              <div class="form-message" id="messageBox">
-                  <input type="text" placeholder="Name" required class="form-message-area">
-                  <input type="email" placeholder="E-mail" required class="form-message-area">
-                  <textarea placeholder="Message" required class="form-message-area email"></textarea>
-                  <button class="button-message" type="submit">Submit</button>
-              </div>
-          </form>
+        </form>
       </div>
-  </div>
+    </div>
 
     <script
       type="module"
