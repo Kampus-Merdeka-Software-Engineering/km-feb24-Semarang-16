@@ -483,18 +483,18 @@ document.addEventListener("DOMContentLoaded", function () {
             {
               data: segmentData,
               backgroundColor: [
-                "rgba(183,28,28,255)",
-                "rgba(205,96,96,255)",
-                "rgba(226,164,164,255)",
+                "rgba(183,28,28,1)",
+                "rgba(205,96,96,1)",
+                "rgba(226,164,164,1)",
               ],
             },
           ],
         },
         options: {
-          title: {
-            display: true,
-            text: "Customer Segments",
-            fontSize: 18,
+          maintainAspectRatio: false, // Prevents the chart from maintaining the aspect ratio
+          responsive: true, // Makes the chart responsive
+          legend: {
+            position: "right", // Place legend on the right side of the chart
           },
         },
       });
@@ -558,7 +558,8 @@ document.addEventListener("DOMContentLoaded", function () {
           { data: "Second Class" },
           { data: "First Class" },
           { data: "Same Day" },
-        ], order: [[1, "desc"]],
+        ],
+        order: [[1, "desc"]],
       });
     });
 });

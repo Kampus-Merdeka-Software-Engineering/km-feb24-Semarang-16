@@ -128,6 +128,10 @@
           <canvas id="sales-profit"></canvas>
         </div>
         <div class="grafik-item">
+          <h3 class="grafik-title">Sales vs Total Item Has A Discount</h3>
+          <canvas id="mixedChart"></canvas>
+        </div>
+        <div class="grafik-item">
           <h3 class="grafik-title">Sales and Total Order by Region</h3>
           <div style="padding: 5px">
             <table id="sales-region" class="display">
@@ -141,30 +145,6 @@
               <tbody></tbody>
             </table>
           </div>
-        </div>
-        <div class="grafik-item">
-          <h3 class="grafik-title">Sales and Total Quantity by Sub-Category</h3>
-          <div style="padding: 5px">
-            <table id="sales-category" class="display">
-              <thead>
-                <tr>
-                  <th style="text-align: center">Category</th>
-                  <th style="text-align: center">Sub-Category</th>
-                  <th style="text-align: center">Sales</th>
-                  <th style="text-align: center">Quantity</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-        <div class="grafik-item">
-          <h3 class="grafik-title">Sales vs Total Item Has A Discount</h3>
-          <canvas id="mixedChart"></canvas>
-        </div>
-        <div class="grafik-item">
-          <h3 class="grafik-title">Total Customer by Segment of Customer</h3>
-          <canvas id="segmentPieChart" width="400px" height="400px"></canvas>
         </div>
         <div class="grafik-item">
           <h3 class="grafik-title">Total Customer by Ship Mode And Region</h3>
@@ -182,6 +162,28 @@
               <tbody>
                 <!-- Table body will be populated by JavaScript -->
               </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Total Customer by Segment of Customer</h3>
+          <div id="segmentPieChartContainer">
+            <canvas id="segmentPieChart"></canvas>
+          </div>
+        </div>
+        <div class="grafik-item">
+          <h3 class="grafik-title">Sales and Total Quantity by Sub-Category</h3>
+          <div style="padding: 5px">
+            <table id="sales-category" class="display">
+              <thead>
+                <tr>
+                  <th style="text-align: center">Category</th>
+                  <th style="text-align: center">Sub-Category</th>
+                  <th style="text-align: center">Sales</th>
+                  <th style="text-align: center">Quantity</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
             </table>
           </div>
         </div>

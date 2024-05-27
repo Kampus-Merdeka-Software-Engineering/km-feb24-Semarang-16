@@ -236,7 +236,7 @@ nav {
 .grafik {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 5px;
+  grid-gap: 10px;
   padding: 20px;
 }
 
@@ -254,6 +254,12 @@ nav {
 #sales-region,
 #sales-category td {
   text-align: center;
+}
+
+#segmentPieChartContainer {
+  width: 490px; 
+  height: 490px;
+  margin: auto; 
 }
 
 /* footer area */
