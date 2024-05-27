@@ -236,8 +236,10 @@ nav {
 .grafik {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
   padding: 20px;
+  justify-content: center;
+  justify-items: stretch;
 }
 
 .grafik-item {
@@ -257,9 +259,9 @@ nav {
 }
 
 #segmentPieChartContainer {
-  width: 490px; 
+  width: 490px;
   height: 490px;
-  margin: auto; 
+  margin: auto;
 }
 
 /* footer area */
