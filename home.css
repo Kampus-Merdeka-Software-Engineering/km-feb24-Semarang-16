@@ -217,7 +217,6 @@ nav{
     }
 }
 
-
 /* groupping */
 .groupping{
     display: flex;
@@ -276,7 +275,7 @@ nav{
         margin: 0px;
         width: 100%;
         height: fit-content;
-        margin: 70px auto;
+        margin: 50px auto;
     }
     .box-groupping{
         display: flex;
@@ -320,6 +319,51 @@ nav{
 
     .title-grouping p {
         font-size: 24px;
+    }
+}
+
+/* dataset description metrics dimensions */
+.dataset-desc{
+    margin: 50px;
+    box-sizing: border-box;
+    h3{
+        padding-bottom: 10px;
+        color: #A82E26;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    p{
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+        row-gap: 20px;
+    }
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+    span{
+        padding: 12px;
+        background-color: #EDC9C4;
+        border-radius: 7px;
+        margin-right: 10px;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .span-metrics{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+}
+
+/* mobile view */
+@media (max-width: 768px){
+    .dataset-desc{
+        margin: 50px 30px;
+        span{
+            font-size: 18px;
+        }
     }
 }
 
