@@ -151,13 +151,13 @@ nav {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.p-title{
+.p-title {
   text-align: center;
   font-weight: 300;
   margin: 0px 10px 10px 10px;
 }
 
-.p-result{
+.p-result {
   text-align: center;
   font-weight: 700;
   font-size: 25px;
@@ -204,6 +204,9 @@ nav {
   transform: rotate(-180deg);
 }
 .list-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   position: absolute;
   margin-top: 15px;
   border-radius: 8px;
@@ -214,17 +217,15 @@ nav {
 }
 .select-btn.open ~ .list-items,
 .select-btn2.open ~ .list-items {
-  display: block;
+  display: grid;
 }
 .list-items .item,
 .list-items .item2 {
   display: flex;
   align-items: center;
   list-style: none;
-  height: 50px;
   cursor: pointer;
   transition: 0.3s;
-  padding: 0 15px;
   border-radius: 8px;
 }
 .list-items .item:hover,
@@ -239,18 +240,19 @@ nav {
   padding: 20px;
 }
 
-.grafik-item{
+.grafik-item {
   background-color: #fff;
   border-radius: 15px;
 }
 
-.grafik-title{
+.grafik-title {
   text-align: center;
   padding: 10px;
   background: #edc9c4;
 }
 
-#sales-region, #sales-category td{
+#sales-region,
+#sales-category td {
   text-align: center;
 }
 
@@ -512,23 +514,23 @@ nav {
   }
 
   /* Footer */
-  .flex-footer{
+  .flex-footer {
     display: flex;
     flex-direction: column;
   }
 
-  .sosmed-flex-footer{
-      padding-top: 30px;
+  .sosmed-flex-footer {
+    padding-top: 30px;
   }
 
-  .logo-footer{
-      margin-top: 70px;
+  .logo-footer {
+    margin-top: 70px;
   }
 
-  .card{
-      width: auto;
-      height: 100%;
-    }
+  .card {
+    width: auto;
+    height: 100%;
+  }
 
   /* Popup */
   .popup-box {

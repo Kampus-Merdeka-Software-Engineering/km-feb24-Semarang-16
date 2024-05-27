@@ -327,6 +327,133 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Grafik 4
+      function getMonthName(month) {
+        const monthNames = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        return monthNames[month - 1];
+      }
+
+      function formatDateToMonthYear(date) {
+        const [day, month, year] = date.split("/");
+        return `${getMonthName(Number(month))} ${year}`;
+      }
+
+      const saleData = {};
+      const discountCountData = {};
+
+      data.forEach((item) => {
+        const monthYear = formatDateToMonthYear(item["Order Date"]);
+        if (!saleData[monthYear]) {
+          saleData[monthYear] = 0;
+        }
+        saleData[monthYear] += item.Sales;
+
+        if (item.Discount > 0) {
+          if (!discountCountData[monthYear]) {
+            discountCountData[monthYear] = 0;
+          }
+          discountCountData[monthYear] += 1;
+        }
+      });
+
+      const monthYear = Object.keys(saleData).sort((a, b) => {
+        const aDate = new Date(
+          a.split(" ")[1],
+          getMonthNameIndex(a.split(" ")[0])
+        );
+        const bDate = new Date(
+          b.split(" ")[1],
+          getMonthNameIndex(b.split(" ")[0])
+        );
+        return aDate - bDate;
+      });
+
+      function getMonthNameIndex(monthName) {
+        const monthNames = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        return monthNames.indexOf(monthName);
+      }
+
+      const salesChartData = monthYears.map((monthYear) => saleData[monthYear]);
+      const discountChartData = monthYears.map(
+        (monthYear) => discountCountData[monthYear] || 0
+      );
+
+      const ctx2 = document.getElementById("mixedChart").getContext("2d");
+      const mixedChart = new Chart(ctx2, {
+        data: {
+          labels: monthYear,
+          datasets: [
+            {
+              type: "line",
+              label: "Sales",
+              data: salesChartData,
+              borderColor: "rgba(183,28,28,255)",
+              borderWidth: 2,
+              fill: false,
+              yAxisID: "y-axis-1",
+            },
+            {
+              type: "bar",
+              label: "Discounted Products",
+              data: discountChartData,
+              backgroundColor: "#edc9c4",
+              yAxisID: "y-axis-2",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                type: "linear",
+                display: true,
+                position: "left",
+                id: "y-axis-1",
+                labels: {
+                  show: true,
+                },
+              },
+              {
+                type: "linear",
+                display: true,
+                position: "right",
+                id: "y-axis-2",
+                labels: {
+                  show: true,
+                },
+                gridLines: {
+                  drawOnChartArea: false,
+                },
+              },
+            ],
+          },
+        },
+      });
 
       // Grafik 5
       const segmentCounts = {};
@@ -373,6 +500,65 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       // Grafik 6
-      
+      var groupedData = {};
+      data.forEach(function (item) {
+        var region = item["Region"];
+        var shipMode = item["Ship Mode"];
+        var customerId = item["Customer ID"];
+
+        if (!groupedData[region]) {
+          groupedData[region] = {
+            "Standard Class": new Set(),
+            "Second Class": new Set(),
+            "First Class": new Set(),
+            "Same Day": new Set(),
+          };
+        }
+        groupedData[region][shipMode].add(customerId);
+      });
+
+      // Transforming grouped data into an array
+      var dataArray = [];
+      for (var region in groupedData) {
+        if (groupedData.hasOwnProperty(region)) {
+          dataArray.push({
+            Region: region,
+            "Standard Class": groupedData[region][
+              "Standard Class"
+            ].size.toLocaleString("en-US", {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+            "Second Class": groupedData[region][
+              "Second Class"
+            ].size.toLocaleString("en-US", {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+            "First Class": groupedData[region][
+              "First Class"
+            ].size.toLocaleString("en-US", {
+              minimumFractionDigits: 1,
+              maximumFractionDigits: 1,
+            }),
+            "Same Day": groupedData[region]["Same Day"].size.toLocaleString(
+              "en-US",
+              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+            ),
+          });
+        }
+      }
+
+      // Initializing DataTables
+      $("#myTable").DataTable({
+        data: dataArray,
+        columns: [
+          { data: "Region" },
+          { data: "Standard Class" },
+          { data: "Second Class" },
+          { data: "First Class" },
+          { data: "Same Day" },
+        ], order: [[1, "desc"]],
+      });
     });
 });
