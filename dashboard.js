@@ -236,45 +236,45 @@ document.addEventListener("DOMContentLoaded", function () {
       // Grafik 2
       var groupedData = {};
       data.forEach(function (item) {
-        if (!groupedData[item["Region"]]) {
-          groupedData[item["Region"]] = {
-            Region: item["Region"],
-            "Total Sales": item["Sales"],
-            "Total Orders": 1,
+        var region = item["Region"];
+        var sales = item["Sales"];
+        var orderId = item["Order ID"];
+
+        if (!groupedData[region]) {
+          groupedData[region] = {
+            "Total Sales": 0,
+            "Total Orders": new Set(),
           };
-        } else {
-          groupedData[item["Region"]]["Total Sales"] += item["Sales"];
-          groupedData[item["Region"]]["Total Orders"]++;
         }
+        groupedData[region]["Total Sales"] += sales;
+        groupedData[region]["Total Orders"].add(orderId);
       });
 
       // Transforming grouped data into an array
       var dataArray = [];
       for (var region in groupedData) {
         if (groupedData.hasOwnProperty(region)) {
-          var regionData = groupedData[region];
-          // Format total sales to include thousands separator and 1 decimal place
-          var formattedSales = regionData["Total Sales"].toLocaleString(
-            undefined,
-            { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-          );
           dataArray.push({
-            Region: regionData["Region"],
-            "Total Sales": formattedSales,
-            "Total Orders": regionData["Total Orders"],
+            Region: region,
+            "Total Sales": groupedData[region]["Total Sales"].toLocaleString(
+              "en-US",
+              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+            ),
+            "Total Orders": groupedData[region][
+              "Total Orders"
+            ].size.toLocaleString(),
           });
         }
       }
 
       // Initializing DataTables
-      var table = $("#sales-region").DataTable({
+      $("#sales-region").DataTable({
         data: dataArray,
         columns: [
           { data: "Region" },
           { data: "Total Sales" },
           { data: "Total Orders" },
-        ],
-        order: [[1, "desc"]],
+        ], order: [[1, "desc"]],
       });
 
       // Grafik 3
