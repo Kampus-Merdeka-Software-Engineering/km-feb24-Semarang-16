@@ -306,10 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
               "en-US",
               { minimumFractionDigits: 1, maximumFractionDigits: 1 }
             ),
-            "Total Quantity": subCategoryData["Total Quantity"].toLocaleString(
-              "en-US",
-              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-            ),
+            "Total Quantity": subCategoryData["Total Quantity"].toLocaleString(),
           });
         }
       }
