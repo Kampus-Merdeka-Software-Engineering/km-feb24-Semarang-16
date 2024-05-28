@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.className = "item";
         listItem.innerHTML = `
           <label>
-            <input type="checkbox" name="years" value="${year}" /> ${year}
+            <input type="checkbox" name="years" value="${year}" checked /> ${year}
           </label>
         `;
         listItemsyears.appendChild(listItem);
@@ -144,14 +144,14 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.className = "item";
         listItem.innerHTML = `
           <label>
-            <input type="checkbox" name="regions" value="${region}" /> ${region}
+            <input type="checkbox" name="regions" value="${region}" checked /> ${region}
           </label>
         `;
         listItemsregion.appendChild(listItem);
       });
 
-      // Grafik 1
-      // Fungsi untuk mengonversi angka bulan menjadi nama bulan
+      
+
       function getMonthName(month) {
         const monthNames = [
           "Jan",
@@ -183,46 +183,353 @@ document.addEventListener("DOMContentLoaded", function () {
         return new Date(year, month);
       }
 
-      // Mengelompokkan data berdasarkan bulan dan tahun
-      const salesData = {};
-      const profitData = {};
 
-      data.forEach((item) => {
-        const monthYear = formatDateToMonthYear(item["Order Date"]);
-        if (!salesData[monthYear]) {
-          salesData[monthYear] = 0;
-          profitData[monthYear] = 0;
+      // Fungsi untuk mendapatkan data yang difilter berdasarkan tahun dan region yang dipilih
+      function getFilteredData() {
+        const selectedYears = Array.from(
+          document.querySelectorAll("input[name='years']:checked")
+        ).map((checkbox) => checkbox.value);
+        const selectedRegions = Array.from(
+          document.querySelectorAll("input[name='regions']:checked")
+        ).map((checkbox) => checkbox.value);
+
+        const filteredData = data.filter((item) => {
+          const orderDate = item["Order Date"];
+          const year = orderDate.split("/")[2];
+          const region = item["Region"];
+          return (
+            selectedYears.includes(year) && selectedRegions.includes(region)
+          );
+        });
+
+        // Update total quantity, sales, profit, and order based on filtered data
+        const filteredQty = filteredData.map((item) => item.Quantity);
+        const filteredSales = filteredData.map((item) => item.Sales);
+        const filteredProfit = filteredData.map((item) => item.Profit);
+
+        const totalFilteredQuantity = Math.floor(
+          filteredQty.reduce(
+            (accumulator, currentValue) => accumulator + currentValue,
+            0
+          )
+        ).toLocaleString();
+        document.querySelector(".p-result.quantity").innerHTML =
+          totalFilteredQuantity;
+
+        const totalFilteredSales = Math.floor(
+          filteredSales.reduce(
+            (accumulator, currentValue) => accumulator + currentValue,
+            0
+          )
+        ).toLocaleString();
+        document.querySelector(".p-result.sales").innerHTML =
+          totalFilteredSales;
+
+        const totalFilteredProfit = Math.floor(
+          filteredProfit.reduce(
+            (accumulator, currentValue) => accumulator + currentValue,
+            0
+          )
+        ).toLocaleString();
+        document.querySelector(".p-result.profit").innerHTML =
+          totalFilteredProfit;
+
+        const uniqueFilteredOrderIds = {};
+        filteredData.forEach((item) => {
+          const orderId = item["Order ID"];
+          if (!uniqueFilteredOrderIds[orderId]) {
+            uniqueFilteredOrderIds[orderId] = true;
+          }
+        });
+        const totalFilteredUniqueOrders = Object.keys(
+          uniqueFilteredOrderIds
+        ).length;
+        document.querySelector(".p-result.order").innerHTML =
+          totalFilteredUniqueOrders.toLocaleString();
+      }
+
+      function getFiltered() {
+        const selectedYears = Array.from(
+          document.querySelectorAll("input[name='years']:checked")
+        ).map((checkbox) => checkbox.value);
+        const selectedRegions = Array.from(
+          document.querySelectorAll("input[name='regions']:checked")
+        ).map((checkbox) => checkbox.value);
+
+        console.log("Selected Years: ", selectedYears);
+        console.log("Selected Regions: ", selectedRegions);
+
+        return data.filter((item) => {
+          const orderDate = item["Order Date"];
+          const year = orderDate.split("/")[2];
+          const region = item["Region"];
+          return (
+            selectedYears.includes(year) && selectedRegions.includes(region)
+          );
+        });
+      }
+
+      // Fungsi untuk memperbarui semua chart dan tabel
+      function updateAll() {
+        updateChart1();
+        updateChart2();
+        updateChart3();
+        updateChart4();
+        updateChart5();
+        updateChart6();
+        getFilteredData();
+      }
+
+      // Fungsi untuk memperbarui chart 1
+      function updateChart1() {
+        const filteredData = getFiltered();
+        const salesData = {};
+        const profitData = {};
+
+        filteredData.forEach((item) => {
+          const monthYear = formatDateToMonthYear(item["Order Date"]);
+          if (!salesData[monthYear]) {
+            salesData[monthYear] = 0;
+            profitData[monthYear] = 0;
+          }
+          salesData[monthYear] += item.Sales;
+          profitData[monthYear] += item.Profit;
+        });
+
+        const monthYears = Object.keys(salesData).sort((a, b) => {
+          return getDateFromMonthYear(a) - getDateFromMonthYear(b);
+        });
+
+        const sale = monthYears.map((monthYear) => salesData[monthYear]);
+        const profits = monthYears.map((monthYear) => profitData[monthYear]);
+
+        myChart.data.labels = monthYears;
+        myChart.data.datasets[0].data = sale;
+        myChart.data.datasets[1].data = profits;
+        myChart.update();
+      }
+
+      // Fungsi untuk memperbarui chart 2
+      function updateChart2() {
+        const filteredData = getFiltered();
+
+        var groupedData = {};
+        filteredData.forEach(function (item) {
+          var region = item["Region"];
+          var sales = item["Sales"];
+          var orderId = item["Order ID"];
+
+          if (!groupedData[region]) {
+            groupedData[region] = {
+              "Total Sales": 0,
+              "Total Orders": new Set(),
+            };
+          }
+          groupedData[region]["Total Sales"] += sales;
+          groupedData[region]["Total Orders"].add(orderId);
+        });
+
+        var dataArray = [];
+        for (var region in groupedData) {
+          if (groupedData.hasOwnProperty(region)) {
+            dataArray.push({
+              Region: region,
+              "Total Sales": groupedData[region]["Total Sales"].toLocaleString(
+                "en-US",
+                { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+              ),
+              "Total Orders":
+                groupedData[region]["Total Orders"].size.toLocaleString(),
+            });
+          }
         }
-        salesData[monthYear] += item.Sales;
-        profitData[monthYear] += item.Profit;
-      });
 
-      // Mengambil bulan/tahun dan mengurutkannya
-      const monthYears = Object.keys(salesData).sort((a, b) => {
-        return getDateFromMonthYear(a) - getDateFromMonthYear(b);
-      });
+        const table = $("#sales-region").DataTable();
+        table.clear();
+        table.rows.add(dataArray);
+        table.draw();
+      }
 
-      // Menyiapkan data untuk chart
-      const sale = monthYears.map((monthYear) => salesData[monthYear]);
-      const profits = monthYears.map((monthYear) => profitData[monthYear]);
+      // Fungsi untuk memperbarui chart 3
+      function updateChart3() {
+        const filteredData = getFiltered();
 
-      // Membuat chart
-      const ctx = document.getElementById("sales-profit").getContext("2d");
-      const myChart = new Chart(ctx, {
+        var groupedData = {};
+        filteredData.forEach(function (item) {
+          var key = item["Sub-Category"];
+          if (!groupedData[key]) {
+            groupedData[key] = {
+              Category: item["Category"],
+              "Sub-Category": item["Sub-Category"],
+              "Total Sales": item["Sales"],
+              "Total Quantity": item["Quantity"],
+            };
+          } else {
+            groupedData[key]["Total Sales"] += item["Sales"];
+            groupedData[key]["Total Quantity"] += item["Quantity"];
+          }
+        });
+
+        var dataArray = [];
+        for (var subCategory in groupedData) {
+          if (groupedData.hasOwnProperty(subCategory)) {
+            var subCategoryData = groupedData[subCategory];
+            dataArray.push({
+              Category: subCategoryData["Category"],
+              "Sub-Category": subCategoryData["Sub-Category"],
+              "Total Sales": subCategoryData["Total Sales"].toLocaleString(
+                "en-US",
+                { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+              ),
+              "Total Quantity":
+                subCategoryData["Total Quantity"].toLocaleString(),
+            });
+          }
+        }
+
+        const table = $("#sales-category").DataTable();
+        table.clear();
+        table.rows.add(dataArray);
+        table.draw();
+      }
+
+      // Fungsi untuk memperbarui chart 4
+      function updateChart4() {
+        const filteredData = getFiltered();
+
+        const saleData = {};
+        const discountCountData = {};
+
+        filteredData.forEach((item) => {
+          const monthYear = formatDateToMonthYear(item["Order Date"]);
+          if (!saleData[monthYear]) {
+            saleData[monthYear] = 0;
+          }
+          saleData[monthYear] += item.Sales;
+
+          if (item.Discount > 0) {
+            if (!discountCountData[monthYear]) {
+              discountCountData[monthYear] = 0;
+            }
+            discountCountData[monthYear] += 1;
+          }
+        });
+
+        const monthYears = Object.keys(saleData).sort((a, b) => {
+          return getDateFromMonthYear(a) - getDateFromMonthYear(b);
+        });
+
+        const salesChartData = monthYears.map(
+          (monthYear) => saleData[monthYear]
+        );
+        const discountChartData = monthYears.map(
+          (monthYear) => discountCountData[monthYear] || 0
+        );
+
+        mixedChart.data.labels = monthYears;
+        mixedChart.data.datasets[0].data = salesChartData;
+        mixedChart.data.datasets[1].data = discountChartData;
+        mixedChart.update();
+      }
+
+      // Fungsi untuk memperbarui chart 5
+      function updateChart5() {
+        const filteredData = getFiltered();
+
+        const segmentCounts = {};
+        filteredData.forEach((entry) => {
+          const segment = entry.Segment;
+          if (!segmentCounts[segment]) {
+            segmentCounts[segment] = new Set();
+          }
+          segmentCounts[segment].add(entry["Customer ID"]);
+        });
+
+        const segmentLabels = Object.keys(segmentCounts);
+        const segmentData = segmentLabels.map(
+          (segment) => segmentCounts[segment].size
+        );
+
+        segmentPieChart.data.labels = segmentLabels;
+        segmentPieChart.data.datasets[0].data = segmentData;
+        segmentPieChart.update();
+      }
+
+      // Fungsi untuk memperbarui chart 6
+      function updateChart6() {
+        const filteredData = getFiltered();
+
+        var groupedData = {};
+        filteredData.forEach(function (item) {
+          var region = item["Region"];
+          var shipMode = item["Ship Mode"];
+          var customerId = item["Customer ID"];
+
+          if (!groupedData[region]) {
+            groupedData[region] = {
+              "Standard Class": new Set(),
+              "Second Class": new Set(),
+              "First Class": new Set(),
+              "Same Day": new Set(),
+            };
+          }
+          groupedData[region][shipMode].add(customerId);
+        });
+
+        var dataArray = [];
+        for (var region in groupedData) {
+          if (groupedData.hasOwnProperty(region)) {
+            dataArray.push({
+              Region: region,
+              "Standard Class": groupedData[region][
+                "Standard Class"
+              ].size.toLocaleString("en-US", {
+                minimumFractionDigits: 1,
+                maximumFractionDigits: 1,
+              }),
+              "Second Class": groupedData[region][
+                "Second Class"
+              ].size.toLocaleString("en-US", {
+                minimumFractionDigits: 1,
+                maximumFractionDigits: 1,
+              }),
+              "First Class": groupedData[region][
+                "First Class"
+              ].size.toLocaleString("en-US", {
+                minimumFractionDigits: 1,
+                maximumFractionDigits: 1,
+              }),
+              "Same Day": groupedData[region]["Same Day"].size.toLocaleString(
+                "en-US",
+                { minimumFractionDigits: 1, maximumFractionDigits: 1 }
+              ),
+            });
+          }
+        }
+
+        const table = $("#ship-mode").DataTable();
+        table.clear();
+        table.rows.add(dataArray);
+        table.draw();
+      }
+
+      // Inisialisasi grafik dan tabel
+      const ctx1 = document.getElementById("sales-profit").getContext("2d");
+      const myChart = new Chart(ctx1, {
         type: "line",
         data: {
-          labels: monthYears,
+          labels: [], // Akan diisi saat update
           datasets: [
             {
               label: "Sales",
-              data: sale,
+              data: [],
               borderColor: "rgba(255, 0, 0, 1)",
               backgroundColor: "rgba(255, 0, 0, 0.2)",
               fill: false,
             },
             {
-              label: "Total Profit",
-              data: profits,
+              label: "Profit",
+              data: [],
               borderColor: "rgba(0, 0, 255, 1)",
               backgroundColor: "rgba(0, 0, 255, 0.2)",
               fill: false,
@@ -238,185 +545,15 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
 
-      // Grafik 2
-      var groupedData = {};
-      data.forEach(function (item) {
-        var region = item["Region"];
-        var sales = item["Sales"];
-        var orderId = item["Order ID"];
-
-        if (!groupedData[region]) {
-          groupedData[region] = {
-            "Total Sales": 0,
-            "Total Orders": new Set(),
-          };
-        }
-        groupedData[region]["Total Sales"] += sales;
-        groupedData[region]["Total Orders"].add(orderId);
-      });
-
-      // Transforming grouped data into an array
-      var dataArray = [];
-      for (var region in groupedData) {
-        if (groupedData.hasOwnProperty(region)) {
-          dataArray.push({
-            Region: region,
-            "Total Sales": groupedData[region]["Total Sales"].toLocaleString(
-              "en-US",
-              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-            ),
-            "Total Orders":
-              groupedData[region]["Total Orders"].size.toLocaleString(),
-          });
-        }
-      }
-
-      // Initializing DataTables
-      $("#sales-region").DataTable({
-        data: dataArray,
-        columns: [
-          { data: "Region" },
-          { data: "Total Sales" },
-          { data: "Total Orders" },
-        ],
-        order: [[1, "desc"]],
-      });
-
-      // Grafik 3
-      var groupedData = {};
-      data.forEach(function (item) {
-        var key = item["Sub-Category"];
-        if (!groupedData[key]) {
-          groupedData[key] = {
-            Category: item["Category"],
-            "Sub-Category": item["Sub-Category"],
-            "Total Sales": item["Sales"],
-            "Total Quantity": item["Quantity"],
-          };
-        } else {
-          groupedData[key]["Total Sales"] += item["Sales"];
-          groupedData[key]["Total Quantity"] += item["Quantity"];
-        }
-      });
-
-      // Transforming grouped data into an array
-      var dataArray = [];
-      for (var subCategory in groupedData) {
-        if (groupedData.hasOwnProperty(subCategory)) {
-          var subCategoryData = groupedData[subCategory];
-          dataArray.push({
-            Category: subCategoryData["Category"],
-            "Sub-Category": subCategoryData["Sub-Category"],
-            "Total Sales": subCategoryData["Total Sales"].toLocaleString(
-              "en-US",
-              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-            ),
-            "Total Quantity":
-              subCategoryData["Total Quantity"].toLocaleString(),
-          });
-        }
-      }
-
-      // Initializing DataTables
-      var table = $("#sales-category").DataTable({
-        // scrollX: true,
-        scrollY: 250,
-        data: dataArray,
-        columns: [
-          { data: "Category" },
-          { data: "Sub-Category" },
-          { data: "Total Sales" },
-          { data: "Total Quantity" },
-        ],
-        order: [[2, "desc"]],
-      });
-
-      // Grafik 4
-      function getMonthName(month) {
-        const monthNames = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
-        return monthNames[month - 1];
-      }
-
-      function formatDateToMonthYear(date) {
-        const [day, month, year] = date.split("/");
-        return `${getMonthName(Number(month))} ${year}`;
-      }
-
-      const saleData = {};
-      const discountCountData = {};
-
-      data.forEach((item) => {
-        const monthYear = formatDateToMonthYear(item["Order Date"]);
-        if (!saleData[monthYear]) {
-          saleData[monthYear] = 0;
-        }
-        saleData[monthYear] += item.Sales;
-
-        if (item.Discount > 0) {
-          if (!discountCountData[monthYear]) {
-            discountCountData[monthYear] = 0;
-          }
-          discountCountData[monthYear] += 1;
-        }
-      });
-
-      const monthYear = Object.keys(saleData).sort((a, b) => {
-        const aDate = new Date(
-          a.split(" ")[1],
-          getMonthNameIndex(a.split(" ")[0])
-        );
-        const bDate = new Date(
-          b.split(" ")[1],
-          getMonthNameIndex(b.split(" ")[0])
-        );
-        return aDate - bDate;
-      });
-
-      function getMonthNameIndex(monthName) {
-        const monthNames = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
-        return monthNames.indexOf(monthName);
-      }
-
-      const salesChartData = monthYears.map((monthYear) => saleData[monthYear]);
-      const discountChartData = monthYears.map(
-        (monthYear) => discountCountData[monthYear] || 0
-      );
-
       const ctx2 = document.getElementById("mixedChart").getContext("2d");
       const mixedChart = new Chart(ctx2, {
         data: {
-          labels: monthYear,
+          labels: [], // Akan diisi saat update
           datasets: [
             {
               type: "line",
               label: "Sales",
-              data: salesChartData,
+              data: [],
               borderColor: "rgba(183,28,28,255)",
               borderWidth: 2,
               fill: false,
@@ -425,7 +562,7 @@ document.addEventListener("DOMContentLoaded", function () {
             {
               type: "bar",
               label: "Discounted Products",
-              data: discountChartData,
+              data: [],
               backgroundColor: "#edc9c4",
               yAxisID: "y-axis-2",
             },
@@ -460,33 +597,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
 
-      // Grafik 5
-      const segmentCounts = {};
-      data.forEach((entry) => {
-        const segment = entry.Segment;
-        if (!segmentCounts[segment]) {
-          segmentCounts[segment] = new Set();
-        }
-        segmentCounts[segment].add(entry["Customer ID"]);
-      });
-
-      // Menghitung total jumlah customer untuk setiap segment
-      const segmentLabels = Object.keys(segmentCounts);
-      const segmentData = segmentLabels.map(
-        (segment) => segmentCounts[segment].size
-      );
-
-      // Membuat chart dengan tipe pie
       const segmentPieCtx = document
         .getElementById("segmentPieChart")
         .getContext("2d");
       const segmentPieChart = new Chart(segmentPieCtx, {
         type: "pie",
         data: {
-          labels: segmentLabels,
+          labels: [], // Akan diisi saat update
           datasets: [
             {
-              data: segmentData,
+              data: [],
               backgroundColor: [
                 "rgba(183,28,28,1)",
                 "rgba(205,96,96,1)",
@@ -496,67 +616,35 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         options: {
-          maintainAspectRatio: false, // Prevents the chart from maintaining the aspect ratio
-          responsive: true, // Makes the chart responsive
+          maintainAspectRatio: false,
+          responsive: true,
           legend: {
-            position: "right", // Place legend on the right side of the chart
+            position: "right",
           },
         },
       });
 
-      // Grafik 6
-      var groupedData = {};
-      data.forEach(function (item) {
-        var region = item["Region"];
-        var shipMode = item["Ship Mode"];
-        var customerId = item["Customer ID"];
-
-        if (!groupedData[region]) {
-          groupedData[region] = {
-            "Standard Class": new Set(),
-            "Second Class": new Set(),
-            "First Class": new Set(),
-            "Same Day": new Set(),
-          };
-        }
-        groupedData[region][shipMode].add(customerId);
+      $("#sales-region").DataTable({
+        columns: [
+          { data: "Region" },
+          { data: "Total Sales" },
+          { data: "Total Orders" },
+        ],
+        order: [[1, "desc"]],
       });
 
-      // Transforming grouped data into an array
-      var dataArray = [];
-      for (var region in groupedData) {
-        if (groupedData.hasOwnProperty(region)) {
-          dataArray.push({
-            Region: region,
-            "Standard Class": groupedData[region][
-              "Standard Class"
-            ].size.toLocaleString("en-US", {
-              minimumFractionDigits: 1,
-              maximumFractionDigits: 1,
-            }),
-            "Second Class": groupedData[region][
-              "Second Class"
-            ].size.toLocaleString("en-US", {
-              minimumFractionDigits: 1,
-              maximumFractionDigits: 1,
-            }),
-            "First Class": groupedData[region][
-              "First Class"
-            ].size.toLocaleString("en-US", {
-              minimumFractionDigits: 1,
-              maximumFractionDigits: 1,
-            }),
-            "Same Day": groupedData[region]["Same Day"].size.toLocaleString(
-              "en-US",
-              { minimumFractionDigits: 1, maximumFractionDigits: 1 }
-            ),
-          });
-        }
-      }
+      $("#sales-category").DataTable({
+        scrollY: 250,
+        columns: [
+          { data: "Category" },
+          { data: "Sub-Category" },
+          { data: "Total Sales" },
+          { data: "Total Quantity" },
+        ],
+        order: [[2, "desc"]],
+      });
 
-      // Initializing DataTables
       $("#ship-mode").DataTable({
-        data: dataArray,
         columns: [
           { data: "Region" },
           { data: "Standard Class" },
@@ -566,5 +654,15 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         order: [[1, "desc"]],
       });
+
+      // Event listener untuk checkbox
+      document
+        .querySelectorAll("input[type='checkbox']")
+        .forEach((checkbox) => {
+          checkbox.addEventListener("change", updateAll);
+        });
+
+      // Inisialisasi pertama
+      updateAll();
     });
 });
