@@ -238,8 +238,6 @@ nav {
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   padding: 20px;
-  justify-content: center;
-  justify-items: stretch;
 }
 
 .grafik-item {
@@ -254,13 +252,21 @@ nav {
 }
 
 #sales-region,
-#sales-category td {
+#sales-category,
+#ship-mode td {
   text-align: center;
 }
 
 #segmentPieChartContainer {
-  width: 490px;
-  height: 490px;
+  width: auto;
+  height: 360px;
+  margin: auto;
+}
+
+#sales-profit,
+#mixedChart {
+  width: auto;
+  height: 360px;
   margin: auto;
 }
 
@@ -562,6 +568,11 @@ nav {
   .message-head p {
     font-size: 16px;
   }
+
+  .grafik{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 /* tablet view */
@@ -625,5 +636,10 @@ nav {
 
   .active {
     display: block;
+  }
+
+  .grafik{
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

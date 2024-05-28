@@ -176,6 +176,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return `${getMonthName(Number(month))} ${year}`;
       }
 
+      // Fungsi untuk membuat objek Date dari string bulan/tahun
+      function getDateFromMonthYear(monthYear) {
+        const [monthName, year] = monthYear.split(" ");
+        const month = new Date(`${monthName} 1, ${year}`).getMonth();
+        return new Date(year, month);
+      }
+
       // Mengelompokkan data berdasarkan bulan dan tahun
       const salesData = {};
       const profitData = {};
@@ -192,9 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Mengambil bulan/tahun dan mengurutkannya
       const monthYears = Object.keys(salesData).sort((a, b) => {
-        const [aMonth, aYear] = a.split(" ");
-        const [bMonth, bYear] = b.split(" ");
-        return aYear === bYear ? aMonth.localeCompare(bMonth) : aYear - bYear;
+        return getDateFromMonthYear(a) - getDateFromMonthYear(b);
       });
 
       // Menyiapkan data untuk chart
@@ -260,9 +265,8 @@ document.addEventListener("DOMContentLoaded", function () {
               "en-US",
               { minimumFractionDigits: 1, maximumFractionDigits: 1 }
             ),
-            "Total Orders": groupedData[region][
-              "Total Orders"
-            ].size.toLocaleString(),
+            "Total Orders":
+              groupedData[region]["Total Orders"].size.toLocaleString(),
           });
         }
       }
@@ -274,7 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
           { data: "Region" },
           { data: "Total Sales" },
           { data: "Total Orders" },
-        ], order: [[1, "desc"]],
+        ],
+        order: [[1, "desc"]],
       });
 
       // Grafik 3
@@ -306,13 +311,16 @@ document.addEventListener("DOMContentLoaded", function () {
               "en-US",
               { minimumFractionDigits: 1, maximumFractionDigits: 1 }
             ),
-            "Total Quantity": subCategoryData["Total Quantity"].toLocaleString(),
+            "Total Quantity":
+              subCategoryData["Total Quantity"].toLocaleString(),
           });
         }
       }
 
       // Initializing DataTables
       var table = $("#sales-category").DataTable({
+        // scrollX: true,
+        scrollY: 250,
         data: dataArray,
         columns: [
           { data: "Category" },
@@ -547,7 +555,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Initializing DataTables
-      $("#myTable").DataTable({
+      $("#ship-mode").DataTable({
         data: dataArray,
         columns: [
           { data: "Region" },
