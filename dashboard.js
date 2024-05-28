@@ -625,6 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       $("#sales-region").DataTable({
+        scrollY: 250,
         columns: [
           { data: "Region" },
           { data: "Total Sales" },
@@ -645,6 +646,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       $("#ship-mode").DataTable({
+        scrollY: 250,
         columns: [
           { data: "Region" },
           { data: "Standard Class" },
