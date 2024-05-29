@@ -66,6 +66,8 @@ messageForm.addEventListener("submit", function (event) {
 
 // Manipulasi Data JSON
 document.addEventListener("DOMContentLoaded", function () {
+  let isRegionView = true;
+
   fetch("./data_set/superstor_dataset.json")
     .then((response) => response.json())
     .then((data) => {
@@ -150,8 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
         listItemsregion.appendChild(listItem);
       });
 
-      
-
       function getMonthName(month) {
         const monthNames = [
           "Jan",
@@ -182,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const month = new Date(`${monthName} 1, ${year}`).getMonth();
         return new Date(year, month);
       }
-
 
       // Fungsi untuk mendapatkan data yang difilter berdasarkan tahun dan region yang dipilih
       function getFilteredData() {
@@ -315,31 +314,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var groupedData = {};
         filteredData.forEach(function (item) {
-          var region = item["Region"];
+          var key = isRegionView ? item["Region"] : item["State"];
           var sales = item["Sales"];
           var orderId = item["Order ID"];
 
-          if (!groupedData[region]) {
-            groupedData[region] = {
+          if (!groupedData[key]) {
+            groupedData[key] = {
               "Total Sales": 0,
               "Total Orders": new Set(),
             };
           }
-          groupedData[region]["Total Sales"] += sales;
-          groupedData[region]["Total Orders"].add(orderId);
+          groupedData[key]["Total Sales"] += sales;
+          groupedData[key]["Total Orders"].add(orderId);
         });
 
         var dataArray = [];
-        for (var region in groupedData) {
-          if (groupedData.hasOwnProperty(region)) {
+        for (var key in groupedData) {
+          if (groupedData.hasOwnProperty(key)) {
             dataArray.push({
-              Region: region,
-              "Total Sales": groupedData[region]["Total Sales"].toLocaleString(
+              "Region/State": key,
+              "Total Sales": groupedData[key]["Total Sales"].toLocaleString(
                 "en-US",
                 { minimumFractionDigits: 1, maximumFractionDigits: 1 }
               ),
               "Total Orders":
-                groupedData[region]["Total Orders"].size.toLocaleString(),
+                groupedData[key]["Total Orders"].size.toLocaleString(),
             });
           }
         }
@@ -349,6 +348,16 @@ document.addEventListener("DOMContentLoaded", function () {
         table.rows.add(dataArray);
         table.draw();
       }
+
+      document
+        .getElementById("switch-icon")
+        .addEventListener("click", function () {
+          isRegionView = !isRegionView; // Toggle status tampilan
+          updateChart2(); // Perbarui tabel berdasarkan tampilan baru
+
+          // Ubah ikon sesuai status tampilan
+          this.textContent = isRegionView ? "switch_right" : "switch_left";
+        });
 
       // Fungsi untuk memperbarui chart 3
       function updateChart3() {
@@ -627,7 +636,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $("#sales-region").DataTable({
         scrollY: 250,
         columns: [
-          { data: "Region" },
+          { data: "Region/State" },
           { data: "Total Sales" },
           { data: "Total Orders" },
         ],
