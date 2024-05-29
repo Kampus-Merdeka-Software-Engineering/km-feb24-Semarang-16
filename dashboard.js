@@ -655,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       $("#ship-mode").DataTable({
-        scrollY: 250,
+        scrollY: 150,
         columns: [
           { data: "Region" },
           { data: "Standard Class" },
