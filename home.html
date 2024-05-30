@@ -76,7 +76,7 @@
                     <span class="material-symbols-outlined md-40">dashboard</span>
                     <div class="title-grouping">
                         <h2>Dashboard</h2>
-                        <p class="p-box">A set of graphical of live data</p>
+                        <p class="p-box">A set of graphical of dataset</p>
                     </div>
                 </div>
             </a>
@@ -115,12 +115,24 @@
         <div class="dataset-desc">
             <h3>Metrics</h3>
             <div class="span-metrics">
-                <span>Sales</span>
-                <span>Profit</span>
-                <span>Quantity</span>
-                <span>Total Order</span>
-                <span>Total Customer</span>
-                <span>Total Product on Discount</span>
+                <span class="tooltip">Sales
+                    <span class="tooltip-text">Sales of product</span>
+                </span>
+                <span class="tooltip">Profit
+                    <span class="tooltip-text">Net profit after costs</span>
+                </span>
+                <span class="tooltip">Quantity
+                    <span class="tooltip-text">Number of products that have been sold</span>
+                </span>
+                <span class="tooltip">Total Order
+                    <span class="tooltip-text">Total number of orders that have been processed</span>
+                </span>
+                <span class="tooltip">Total Customer
+                    <span class="tooltip-text">Total customers that have made orders</span>
+                </span>
+                <span class="tooltip">Total Product on Discount
+                    <span class="tooltip-text">Number of products sold at a discount</span>
+                </span>
             </div>
         </div>
 
@@ -128,13 +140,59 @@
         <div class="dataset-desc">
             <h3>Dimensions</h3>
             <div class="span-metrics">
-                <span>Order Date</span>
-                <span>Ship Mode</span>
-                <span>Segment</span>
-                <span>State</span>
-                <span>Region</span>
-                <span>Category</span>
-                <span>Sub-Category</span>
+                <span class="tooltip">Order Date
+                    <span class="tooltip-text-d">Date of the order. <br> It's start from January 2014 until December 2017.</span>
+                </span>
+                <span class="tooltip">Ship Mode
+                    <span class="tooltip-text-d">Customer's choice of shipping mode.
+                        <div class="option">
+                            <p>1. First Class</p>
+                            <p>2. Same Day</p>
+                            <p>3. Second Class</p>
+                            <p>4. Standard Class</p>
+                        </div>
+                    </span>
+                </span>
+                <span class="tooltip">Segment
+                    <span class="tooltip-text-d">Segmentation where customer belongs
+                        <div class="option">
+                            <p>1. Corporate</p>
+                            <p>2. Customer</p>
+                            <p>3. Home Office</p>
+                        </div>
+                    </span>
+                </span>
+                <span class="tooltip">State
+                    <span class="tooltip-text-d">State of residence of the customer, where it is from all states in the United States</span>
+                </span>
+                <span class="tooltip">Region
+                    <span class="tooltip-text-d">Region where the Customer belong.
+                        <div class="option">
+                            <p>1. Central</p>
+                            <p>2. East</p>
+                            <p>3. South</p>
+                            <p>4. West</p>
+                        </div>
+                    </span>
+                </span>
+                <span class="tooltip">Category
+                    <span class="tooltip-text-d">Category of the product ordered.
+                        <div class="option">
+                            <p>1. Furniture</p>
+                            <p>2. Office Supplies</p>
+                            <p>3. Technology</p>
+                        </div>
+                    </span>
+                </span>
+                <span class="tooltip">Sub-Category
+                        <span class="tooltip-text-d">Sub-Category of the product ordered
+                            <div class="option">
+                                <p>1. Furniture : 4 sub-category</p>
+                                <p>2. Office Supplies : 9 sub-category</p>
+                                <p>3. Technology : 4 sub-category</p>
+                            </div>
+                        </span>
+                </span>
             </div>
         </div>
 
@@ -173,18 +231,17 @@
                 </div>
                 <form action="#" method="post" id="messageForm">
                     <div class="form-message" id="messageBox">
-                        <input type="text" placeholder="Name" required class="form-message-area">
-                        <input type="email" placeholder="E-mail" required class="form-message-area">
-                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                        <input type="text" placeholder="Name" class="form-message-area" name="name">
+                        <input type="email" placeholder="E-mail" class="form-message-area" name="email">
+                        <textarea placeholder="Message" class="form-message-area email" name="message"></textarea>
                         <button class="button-message" type="submit">Submit</button>
                     </div>
                 </form>
             </div>
 
             <div id="alert" class="text-alert">
-                <p>Thank you for your message!</p>
+                <p id="alerttext"></p>
             </div>
-
         </div>
 
         <script src="./home.js"></script>

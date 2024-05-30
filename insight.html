@@ -23,6 +23,19 @@
 
         <!-- chart JS -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Import jQuery and DataTables -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css"
+        />
+        <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"
+        ></script>
     </head>
 
     <body>
@@ -71,10 +84,13 @@
                     
                     <div class="expandable__content-wrapper">
                         <div class="expandable__content">
-                            <div class="box-content"></div>
-                            <div>
+                            <span class="title-graph">Sales vs Profit Over The Time</span>
+                            <div class="box-content">
+                                <canvas id="sales-profit" width="650"></canvas>
+                            </div>
+                            <div class="p-explanation">
                                 <p>The highest sales were in November 2017 at 48.520</p>
-                                <p>The sales trend is relatively the same almost every year, namely that in Q4 it increased while in Q1 it decreased.</p>
+                                <p><b>Sales performance has a relatively similar trend</b>, in Q1 it decreased while in Q4 it increased.</p>
                             </div>
                         </div>
                     </div>
@@ -92,19 +108,39 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content-table">
-                            <table id="table1">
-                                <thead>
-                                    <tr>
-                                        <th>Region</th>
-                                        <th>Sales</th>
-                                        <th>Total of Order</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                        <span class="title-graph">Sales and Total Order by The State and Region</span>
+                        <div class="double-table">
+                            <div class="box-content">
+                                <div style="padding: 5px">
+                                    <table id="sales-region" class="display">
+                                      <thead>
+                                        <tr>
+                                          <th style="text-align: center">Region</th>
+                                          <th style="text-align: center">Sales</th>
+                                          <th style="text-align: center">Total Order</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody></tbody>
+                                    </table>
+                                  </div>
+                            </div>
+
+                            <div class="box-content">
+                                <div style="padding: 5px">
+                                    <table id="sales-state" class="display reduced-width-table-2">
+                                      <thead>
+                                        <tr>
+                                          <th style="text-align: center">State</th>
+                                          <th style="text-align: center">Sales</th>
+                                          <th style="text-align: center">Total Order</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody></tbody>
+                                    </table>
+                                  </div>
+                            </div>
                         </div>
-                        <div>
+                        <div class="p-explanation">
                             <p>The <b>West</b> is the region that has <b>the highest sales and total orders</b>.</p>
                             <p>Of all the states in the United States, <b>California is the state with the highest sales and total orders</b>.</p>
                             <p>It can be said that <b>the West is the most profitable state</b>.</p>
@@ -125,11 +161,28 @@
 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"></div>
-                        <div>
-                            <p>Technology and Furniture are the 2 best Selling categories based on Total Sales.</p>
-                            <p>Office Supplies is the most items have been sold.</p>
-                            <p>Products in the Furniture and office supplies category can be the main focus for marketing strategies.</p>
+                        <span class="title-graph">Sales and Total Quantity by Sub-Category</span>
+                        <div class="box-content">
+                            <div style="padding: 5px">
+                                <table id="sales-category" class="display">
+                                  <thead>
+                                    <tr>
+                                      <th style="text-align: center">Category</th>
+                                      <th style="text-align: center">Sub-Category</th>
+                                      <th style="text-align: center">Sales</th>
+                                      <th style="text-align: center">Quantity</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                        <div class="p-explanation">
+                            <p><b>Technology and Furniture</b> are <b>the 2 best Selling</b> categories based on Total Sales.</p>
+                            <p><b>Office Supplies</b> is the <b>most</b> items have been sold.</p>
+                            <p>Products in the <b>Technology and Office Supplies</b> category can be <b>the main focus for marketing strategies</b>.</p>
                         </div>
                     </div>
                 </div>
@@ -147,9 +200,12 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"></div>
-                        <div>
-                            <p>Product’s that have discounts tend to affect the level of sales trend every month.</p>
+                        <span class="title-graph">Sales vs Total Item has A Discount</span>
+                        <div class="box-content">
+                            <canvas id="mixedChart" width="650"></canvas>
+                        </div>
+                        <div class="p-explanation">
+                            <p>Product’s that have discounts <b>tend to affect</b> the level of <b>sales trend every month</b>.</p>
                         </div>
                     </div>
                 </div>
@@ -167,9 +223,15 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"><canvas id="myChart"></canvas></div>
-                        <div>
-                            <p><b>The Consumer</b> is the Segmentation with <b>the highest purchase transactions</b>, followed by the Corporate and Home Officer segments.</p>
+                        <span class="title-graph">Total Customer by Segment of Customer</span>
+                        <div class="box-content">
+                            <div id="segmentPieChartContainer">
+                                <canvas id="segmentPieChart" width="380"></canvas>
+                            </div>
+                        </div>
+                        <div class="p-explanation">
+                            <p class="q5"><b>The Consumer</b> is the Segmentation with <b>the highest purchase transactions</b>, 
+                                followed by the Corporate and Home Officer segments.</p>
                         </div>
                     </div>
                 </div>
@@ -187,9 +249,27 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"></div>
-                        <div>
-                            <p>Standard class as a preferably shipping mode from customer crossover all the region.</p>
+                        <span class="title-graph">Total Customer by Ship Mode and Region</span>
+                        <div class="box-content">
+                            <div style="padding: 5px">
+                                <table id="myTable" class="display">
+                                  <thead>
+                                    <tr>
+                                      <th>Region</th>
+                                      <th>Standard Class</th>
+                                      <th>Second Class</th>
+                                      <th>First Class</th>
+                                      <th>Same Day</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <!-- Table body will be populated by JavaScript -->
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                        <div class="p-explanation">
+                            <p class="q5"><b>Standard class</b> as a <b>preferably shipping mode</b> from customer crossover all the region.</p>
                         </div>
                     </div>
                 </div>
@@ -220,30 +300,29 @@
         <span class="material-symbols-outlined"> mode_comment</span>
     </button>
 
-        <!-- message pop pup -->
-        <div class="popup-overlay"></div>
-        <div class="popup-container" id="popupContainer">
-            <div class="popup-box">
-                <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
-                <div class="message-head">
-                    <h2>Message Us!</h2>
-                    <p>Feel free to message with us! </p>
-                </div>
-                <form action="#" method="post" id="messageForm">
-                    <div class="form-message" id="messageBox">
-                        <input type="text" placeholder="Name" required class="form-message-area">
-                        <input type="email" placeholder="E-mail" required class="form-message-area">
-                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
-                        <button class="button-message" type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-
-            <div id="alert" class="text-alert">
-                <p>Thank you for your message!</p>
-            </div>
-
-        </div>
+          <!-- message pop pup -->
+          <div class="popup-overlay"></div>
+          <div class="popup-container" id="popupContainer">
+              <div class="popup-box">
+                  <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
+                  <div class="message-head">
+                      <h2>Message Us!</h2>
+                      <p>Feel free to message with us! </p>
+                  </div>
+                  <form action="#" method="post" id="messageForm">
+                      <div class="form-message" id="messageBox">
+                          <input type="text" placeholder="Name" class="form-message-area" name="name">
+                          <input type="email" placeholder="E-mail" class="form-message-area" name="email">
+                          <textarea placeholder="Message" class="form-message-area email" name="message"></textarea>
+                          <button class="button-message" type="submit">Submit</button>
+                      </div>
+                  </form>
+              </div>
+  
+              <div id="alert" class="text-alert">
+                  <p id="alerttext"></p>
+              </div>
+          </div>
 
     <!-- icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

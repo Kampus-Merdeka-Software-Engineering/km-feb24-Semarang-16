@@ -45,6 +45,7 @@ const closePopup = document.getElementById('closePopup');
 const overlay = document.querySelector('.popup-overlay');
 const messageForm = document.getElementById('messageForm');
 const alertBox = document.getElementById('alert');
+const alertMessage = document.getElementById('alerttext');
 
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
@@ -69,17 +70,36 @@ overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 
-messageForm.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  messageForm.reset();
-  showAlert();
+messageForm.addEventListener('submit', function(event){
+  event.preventDefault();
+
+  const nameInput = this.elements['name'];
+  const emailInput = this.elements['email'];
+  const messageInput  = this.elements['message'];
+
+  if (nameInput.value.trim() === '') {
+    showAlert('The form is required!');
+    return;
+  }
+  if (emailInput.value.trim() === '') {
+      showAlert('The form is required!');
+      return;
+  }
+  if (messageInput.value.trim() === '') {
+      showAlert('The form is required!');
+      return;
+  }
+
+  this.reset();
+  showAlert('Thank you for the message!');
 });
 
-function showAlert(){
-    alertBox.style.display = 'block';
-    setTimeout(() => {
-        alertBox.style.display ='none';
-    }, 1500);
+function showAlert(message){
+  alertBox.style.display = 'block';
+  alertMessage.innerHTML = '<span class="material-symbols-outlined">error</span> ' + message; 
+  setTimeout(() => {
+      alertBox.style.display = 'none';
+  }, 1500);
 }
 
 
