@@ -743,7 +743,7 @@
   /* mobile view */
   @media (max-width : 768px){
     .popup-box{
-        width: 350px;
+        width: 300px;
     }
 
     .form-message-area{

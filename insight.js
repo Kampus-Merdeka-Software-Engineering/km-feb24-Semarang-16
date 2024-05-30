@@ -18,7 +18,7 @@ document.body.addEventListener("click", (ev) => {
     expandable.classList.toggle("expandable__open");
 });
 
-//pop up
+//pop up message
 const messageIcon = document.getElementById('messageIcon');
 const popupContainer = document.getElementById('popupContainer');
 const closePopup = document.getElementById('closePopup');
