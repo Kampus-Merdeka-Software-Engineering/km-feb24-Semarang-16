@@ -560,4 +560,3 @@ function showAlert(message){
                     })
                 .catch(error => console.error('Error loading the data', error));
             });
-

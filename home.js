@@ -102,4 +102,3 @@ function showAlert(message){
   }, 1500);
 }
 
-
