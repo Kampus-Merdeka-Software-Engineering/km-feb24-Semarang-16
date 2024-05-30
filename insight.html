@@ -18,6 +18,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         />
 
+        <!-- dataset -->
+        <script src="./data_set/superstor_dataset.json" type="application/json"></script>
+
+        <!-- chart JS -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
 
     <body>
@@ -32,10 +37,10 @@
         <div class="nav-menu-right" id="nav-menu-right">
             <div class="nav-menu-right-container">
                 <div class="nav-menu">
-                    <a href="home.html" aria-current="page" class="nav-section-menu">Home</a>
+                    <a href="home.html" class="nav-section-menu">Home</a>
                     <a href="dashboard.html" class="nav-section-menu">Dashboard</a>
-                    <a href="insight.html" class="nav-section-menu">Insight</a>
-                    <a href="halaman-recomendation.html" class="nav-section-menu">Recomendation</a>
+                    <a href="insight.html" aria-current="page" class="nav-section-menu">Insight</a>
+                    <a href="halaman-recomendation.html" class="nav-section-menu">Recommendation</a>
                     <a href="#" class="nav-section-menu about-team">About Team</a>
                 </div>
                     <a href="#"><span class="material-symbols-outlined icon-nav">Group</span></a>
@@ -87,11 +92,22 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"></div>
+                        <div class="box-content-table">
+                            <table id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Region</th>
+                                        <th>Sales</th>
+                                        <th>Total of Order</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                         <div>
-                            <p>The west is the region that has the highest sales and total orders.</p>
-                            <p>Of all the states in the United States, California is the state with the highest sales and total orders.</p>
-                            <p>It can be said that the west is the most profitable State.</p>
+                            <p>The <b>West</b> is the region that has <b>the highest sales and total orders</b>.</p>
+                            <p>Of all the states in the United States, <b>California is the state with the highest sales and total orders</b>.</p>
+                            <p>It can be said that <b>the West is the most profitable state</b>.</p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +127,7 @@
                     <div class="expandable__content">
                         <div class="box-content"></div>
                         <div>
-                            <p>Technology and Furniture are the 2 best Selling categories based on Total Sales. .</p>
+                            <p>Technology and Furniture are the 2 best Selling categories based on Total Sales.</p>
                             <p>Office Supplies is the most items have been sold.</p>
                             <p>Products in the Furniture and office supplies category can be the main focus for marketing strategies.</p>
                         </div>
@@ -151,9 +167,9 @@
                 
                 <div class="expandable__content-wrapper">
                     <div class="expandable__content">
-                        <div class="box-content"></div>
+                        <div class="box-content"><canvas id="myChart"></canvas></div>
                         <div>
-                            <p>The Consumer is the Segmentation with the highest purchase transactions, followed by the Corporate and Home Officer segments.</p>
+                            <p><b>The Consumer</b> is the Segmentation with <b>the highest purchase transactions</b>, followed by the Corporate and Home Officer segments.</p>
                         </div>
                     </div>
                 </div>
@@ -188,15 +204,15 @@
         <div class="flex-footer">
             <p class="p-footer">© 2024 Team 16 Section Semarang, All rights reserved</p>
             <div class="sosmed-flex-footer">
-                <a href="https://www.instagram.com/"><img src="./assets/sosmed-ig.png" class="sosmed-footer"></a>
-                <a href="https://id-id.facebook.com/"><img src="./assets/sosmed-fb.png" class="sosmed-footer"></a>
-                <a href="https://twitter.com/"><img src="./assets/sosmed-x twt.png" class="sosmed-footer"></a>
-                <a href="https://www.linkedin.com/"><img src="./assets/sosmed-linkedin.png" class="sosmed-footer"></a>
-                <a href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-Semarang-16.git"><img src="./assets/sosmed-github.png" class="sosmed-footer sosmed-footer-github"></a>
+                <a href="https://www.instagram.com/"><img src="./pict_CP/sosmed-ig.png" class="sosmed-footer"></a>
+                <a href="https://id-id.facebook.com/"><img src="./pict_CP/sosmed-fb.png" class="sosmed-footer"></a>
+                <a href="https://twitter.com/"><img src="./pict_CP/sosmed-x twt.png" class="sosmed-footer"></a>
+                <a href="https://www.linkedin.com/"><img src="./pict_CP/sosmed-linkedin.png" class="sosmed-footer"></a>
+                <a href="https://github.com/Kampus-Merdeka-Software-Engineering/km-feb24-Semarang-16.git"><img src="./pict_CP/sosmed-github.png" class="sosmed-footer sosmed-footer-github"></a>
             </div>
         </div>
-            <img src="./assets/revou_png-removebg-preview.png" class="logo-footer">
-            <img src="./assets/km png.png" class="logo-footer">
+            <img src="./pict_CP/revou_png-removebg-preview.png" class="logo-footer">
+            <img src="./pict_CP/km png.png" class="logo-footer">
     </div>
 
     <!-- message icon -->
@@ -222,9 +238,14 @@
                     </div>
                 </form>
             </div>
+
+            <div id="alert" class="text-alert">
+                <p>Thank you for your message!</p>
+            </div>
+
         </div>
 
-
+    <!-- icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 

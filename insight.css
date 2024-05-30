@@ -232,8 +232,6 @@ nav{
 
 .overlay-title{
   background-color: rgba(237, 201, 196, 0.65);
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -261,7 +259,7 @@ font-family: "Montserrat", sans-serif;
 
 .p-question{
 font-size: 24px;
-font-weight: 400;
+font-weight: 500;
 margin: 0px;
 padding-top: 1px;
 font-family: "Montserrat", sans-serif;
@@ -307,8 +305,6 @@ cursor: pointer;
 
 .expandable__content{
 background-color: #FFF3E2;
-border: 1px solid #999;
-border-top: none;
 border-radius: 0px 0px var(--border-radius) var(--border-radius);
 overflow: hidden;
 display: flex;
@@ -318,8 +314,13 @@ justify-content: center;
 height: 100%;
 }
 
+.expandable__open .expandable__content-wrapper{
+  border: #ccc 1px solid;
+  border-top: none;
+}
+
 .expandable__content p{
-  width: 750px;
+  width: 700px;
   margin: 25px 0px 25px 0px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -344,18 +345,58 @@ transition: transform var(--transition-ms);
 }
 
 .question{
-padding: 100px 0px;
+padding: 50px 0px;
 }
 
 .box-content{
+box-sizing: border-box;
 background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
 width: 400px !important;
-height: 300px !important;
+height: 300px;
 margin: 25px;
+padding: 20px;
+border-radius: 10px;
 }
 
 .q6{
-  margin-bottom: 0px;
+  margin-bottom: 0px !important;
+}
+
+.box-content-table{
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin: 25px;
+  border-radius: 10px;
+  gap: 40px;
+  }
+
+table{
+  border-collapse: collapse;
+  width: 350px;
+
+  td,th{
+    font-weight: 500;
+    padding: 10px;
+    border: #000 1px solid;
+  }
+
+  th{
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+
+  td:nth-child(2), td:nth-child(3) {
+    text-align: center;
+  }
+  
 }
 
 /* mobile view */
@@ -387,7 +428,8 @@ margin: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 15px 10px 15px;
+    margin: 20px 0px 10px 0px;
+    padding: 0px;
   }
 
   .expandable__content p{
@@ -412,7 +454,6 @@ text-align: center;
 margin: 20px 15px;
 }
 }
-
 
 /* footer area */
 .footer-side{
@@ -479,109 +520,17 @@ margin: 20px 15px;
   }
 
   .sosmed-flex-footer{
-      margin-top: 40px;
+      padding-top: 30px;
   }
 
   .logo-footer{
-      padding-top: 80px;
-  }
-}
-
-/* slider */
-.slider{
-  background-image: url(./assets/delivery-man-giving-groceries-order-customer\ 1.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  width: auto;
-  position: relative;
-  overflow: hidden;
-}
-
-.list{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  top: 0;
-  left: 0;
-  transition: 3s ease;
-}
-
-.list p{
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 30px;
-  font-weight: 600;
-  margin: auto 312px;
-}
-
-.item{
-  background-color: rgba(232, 182, 175, 0.65);
-  width: 100%;
-  max-width: 1920px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
-
-.item p{
-  width: 900px;
-  margin: auto 312px;
-}
-
-.dots{
-  position: absolute;
-  bottom: 10px;
-  color: #fff;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.dots li{
-  list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  margin: 10px;
-  border-radius: 25px;
-  transition: 3s;
-}
-
-.dots li.active{
-  width: 40px;
-}
-
-@media (max-width: 768px){
-  .item p{
-      width: 500px;
-      margin: auto 50px;
+      margin-top: 70px;
   }
 
-  .list p {
-      font-size: 20px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px){
-  .item p{
-      width: 700px;
-      margin: auto 187px;
-  }
-
-  .list p {
-      font-size: 28px;
-  }
+  .card{
+      width: auto;
+      height: 100%;
+    }
 }
 
 /* message icon */
@@ -706,6 +655,25 @@ margin: 20px 15px;
   z-index: 1000;
 }
 
+.text-alert{
+  background-color: #EDC9C4;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 30px;
+  border-radius: 10px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  box-sizing: border-box;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
 /* mobile view */
 @media (max-width : 768px){
   .popup-box{
@@ -728,5 +696,9 @@ margin: 20px 15px;
   
   .message-head p{
       font-size: 16px;
+  }
+
+  .text-alert{
+    width: 360px;
   }
 }

@@ -95,7 +95,7 @@ nav {
   padding: 10px;
 }
 
-/* title insight */
+/* title */
 .title {
   position: relative;
   display: flex;
@@ -151,13 +151,13 @@ nav {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.p-title{
+.p-title {
   text-align: center;
   font-weight: 300;
   margin: 0px 10px 10px 10px;
 }
 
-.p-result{
+.p-result {
   text-align: center;
   font-weight: 700;
   font-size: 25px;
@@ -204,6 +204,9 @@ nav {
   transform: rotate(-180deg);
 }
 .list-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   position: absolute;
   margin-top: 15px;
   border-radius: 8px;
@@ -214,22 +217,67 @@ nav {
 }
 .select-btn.open ~ .list-items,
 .select-btn2.open ~ .list-items {
-  display: block;
+  display: grid;
 }
 .list-items .item,
 .list-items .item2 {
   display: flex;
   align-items: center;
   list-style: none;
-  height: 50px;
   cursor: pointer;
   transition: 0.3s;
-  padding: 0 15px;
   border-radius: 8px;
 }
 .list-items .item:hover,
 .list-items .item2:hover {
   background-color: rgba(231, 70, 70, 0.1);
+}
+
+.grafik {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.grafik-item {
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.grafik-title {
+  /* text-align: center; */
+  padding: 10px;
+  background: #edc9c4;
+}
+
+#sales-region,
+#sales-category,
+#ship-mode td {
+  text-align: center;
+}
+
+#segmentPieChartContainer {
+  width: auto;
+  height: 300px;
+  margin: auto;
+}
+
+#sales-profit,
+#mixedChart {
+  width: 300px;
+  height: auto;
+  margin: auto;
+}
+
+#switch-icon{
+  cursor: pointer;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
 }
 
 /* footer area */
@@ -496,11 +544,16 @@ nav {
   }
 
   .sosmed-flex-footer {
-    margin-top: 40px;
+    padding-top: 30px;
   }
 
   .logo-footer {
-    padding-top: 80px;
+    margin-top: 70px;
+  }
+
+  .card {
+    width: auto;
+    height: 100%;
   }
 
   /* Popup */
@@ -524,6 +577,28 @@ nav {
 
   .message-head p {
     font-size: 16px;
+  }
+
+  .grafik {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .grafik-item{
+    width: 350px;
+  }
+
+  #segmentPieChartContainer {
+    width: 100%;
+    height: 200px;
+    margin: auto;
+  }
+
+  #sales-profit,
+  #mixedChart {
+    width: 100%;
+    height: 200px;
+    margin: auto;
   }
 }
 
@@ -588,5 +663,10 @@ nav {
 
   .active {
     display: block;
+  }
+
+  .grafik {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

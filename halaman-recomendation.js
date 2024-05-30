@@ -1,3 +1,10 @@
+// const hm = document.querySelector('.menu-footer');
+
+// document.querySelector('#hamburger-menu-button').onclick = (e) => {
+//     hm.classList.toggle('active');
+//     e.preventDefault();
+// }
+
 //toggle menu
 const toggleButton = document.getElementById('toggle-button');
 const navLists = document.getElementById('nav-menu-right');
@@ -6,24 +13,13 @@ toggleButton.addEventListener('click', () => {
     navLists.classList.toggle('active');
 })
 
-//question
-document.body.addEventListener("click", (ev) => {
-    const isExpandableTitle = !!ev.target.closest(".expandable__title-bar");
-    const expandable = ev.target.closest(".expandable");
-
-    if(!isExpandableTitle) {
-        return;
-    }
-
-    expandable.classList.toggle("expandable__open");
-});
-
 //pop up
 const messageIcon = document.getElementById('messageIcon');
 const popupContainer = document.getElementById('popupContainer');
 const closePopup = document.getElementById('closePopup');
 const overlay = document.querySelector('.popup-overlay');
 const messageForm = document.getElementById('messageForm');
+const alertBox = document.getElementById('alert');
 
 window.addEventListener('DOMContentLoaded', () => {
     // mengatur agar popup message tidak muncul saat pertama kali membuka webpage
@@ -51,5 +47,12 @@ overlay.addEventListener('click', () => {
 messageForm.addEventListener('submit', function(event) {
   event.preventDefault(); 
   messageForm.reset();
-  alert('Form submitted successfully!');
+  showAlert();
 });
+
+function showAlert(){
+    alertBox.style.display = 'block';
+    setTimeout(() => {
+        alertBox.style.display ='none';
+    }, 1500);
+}
