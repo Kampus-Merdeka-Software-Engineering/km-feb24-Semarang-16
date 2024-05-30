@@ -6,17 +6,37 @@ toggleButton.addEventListener('click', () => {
     navLists.classList.toggle('active');
 })
 
-//question
-document.body.addEventListener("click", (ev) => {
-    const isExpandableTitle = !!ev.target.closest(".expandable__title-bar");
-    const expandable = ev.target.closest(".expandable");
+// slider
+let list = document.querySelector('.slider .list');
+let items = document.querySelectorAll('.slider .list .item');
+let dots = document.querySelectorAll('.slider .dots li');
 
-    if(!isExpandableTitle) {
-        return;
-    }
+let active = 0;
 
-    expandable.classList.toggle("expandable__open");
+let refreshSlider = setInterval(() => { 
+dots[active].click(); 
+}, 5000); 
+
+function reloadSlider() {
+  let checkLeft = items[active].offsetLeft;
+  list.style.left = -checkLeft + 'px';
+
+  let lastActiveDot = document.querySelector('.slider .dots li.active');
+  if (lastActiveDot) lastActiveDot.classList.remove('active');
+  dots[active].classList.add('active');
+}
+
+dots.forEach((li, key) => {
+  li.addEventListener('click', function() {
+    active = key;
+    reloadSlider();
+  });
 });
+
+setInterval(() => {
+  active = (active + 1) % items.length;
+  reloadSlider();
+}, 5000); 
 
 //pop up
 const messageIcon = document.getElementById('messageIcon');
@@ -53,3 +73,5 @@ messageForm.addEventListener('submit', function(event) {
   messageForm.reset();
   alert('Form submitted successfully!');
 });
+
+
