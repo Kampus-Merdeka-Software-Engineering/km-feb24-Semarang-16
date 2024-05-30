@@ -348,7 +348,7 @@ canvas {
   border: none;
   background-color: #edc9c4;
   right: 20px;
-  bottom: 30px;
+  bottom: 20px;
   width: 60px;
   height: 60px;
   display: flex;
@@ -557,9 +557,9 @@ canvas {
   }
 
   /* Popup */
-  .popup-box {
-    width: 350px;
-  }
+  .popup-box{
+    width: 300px;
+}
 
   .form-message-area {
     width: 270px;
