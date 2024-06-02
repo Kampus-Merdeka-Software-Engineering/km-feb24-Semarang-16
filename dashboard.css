@@ -459,6 +459,33 @@ canvas {
   z-index: 1000;
 }
 
+.text-alert{
+  background-color: #EDC9C4;
+  text-align: center;
+  padding: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 5px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  box-sizing: border-box;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+
+  .material-symbols-outlined {
+    font-size: 40px !important;
+    top: 50%;
+    left: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+}
+
 /* Mobile View */
 @media (max-width: 768px) {
   /* Navbar */
@@ -577,6 +604,10 @@ canvas {
 
   .message-head p {
     font-size: 16px;
+  }
+
+  .text-alert{
+    width: 360px;
   }
 
   .grafik {

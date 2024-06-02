@@ -132,8 +132,8 @@
     </button>
 
         <!-- message pop pup -->
-        <div class="popup-overlay"></div>
-        <div class="popup-container" id="popupContainer">
+        <div class="popup-overlay" style="display: none;"></div>
+        <div class="popup-container" id="popupContainer" style="display: none;">
             <div class="popup-box">
                 <div><span class="material-symbols-outlined close-button" id="closePopup">close</span></div>
                 <div class="message-head">
@@ -142,12 +142,16 @@
                 </div>
                 <form action="#" method="post" id="messageForm">
                     <div class="form-message" id="messageBox">
-                        <input type="text" placeholder="Name" required class="form-message-area">
-                        <input type="email" placeholder="E-mail" required class="form-message-area">
-                        <textarea placeholder="Message" required class="form-message-area email"></textarea>
+                        <input type="text" placeholder="Name" class="form-message-area" name="name">
+                        <input type="email" placeholder="E-mail" class="form-message-area" name="email">
+                        <textarea placeholder="Message" class="form-message-area email" name="message"></textarea>
                         <button class="button-message" type="submit">Submit</button>
                     </div>
                 </form>
+            </div>
+
+            <div id="alert" class="text-alert">
+                <p id="alerttext"></p>
             </div>
         </div>
 
@@ -156,6 +160,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!--js-->
-    <script src="./insight.js" ></script>
+    <script src="./halaman-recomendation.js" ></script>
     </body>
 </html>
