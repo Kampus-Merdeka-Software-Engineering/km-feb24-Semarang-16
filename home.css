@@ -344,6 +344,11 @@ nav{
     bottom: 0px;
   }
 
+  .sosmed-flex-footer a {
+    z-index: 1;
+    position: relative;
+}
+
   .sosmed-flex-footer{
     display: flex;
     flex-direction: row;
@@ -554,6 +559,7 @@ nav{
     background-color: #fff;
     border: none;
     cursor: pointer;
+    color: #000;
   }
 
   .button-message:hover{
@@ -672,6 +678,10 @@ nav{
     .text-alert{
       width: 360px;
     }
+
+    .button-message{
+        color: #000;
+    }
   }
 
 /* dataset description metrics dimensions */
@@ -687,7 +697,7 @@ nav{
         font-weight: 500;
         font-size: 18px;
         color: #000;
-        row-gap: 20px;
+        line-height: 30px;
     }
     a{
         color: #000;
@@ -711,7 +721,7 @@ nav{
     border-radius: 7px;
     margin-right: 10px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
     cursor: pointer;
     text-align: center;
