@@ -614,6 +614,7 @@ canvas {
   .grafik {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
   }
   
   .grafik-item{
