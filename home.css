@@ -560,6 +560,7 @@ nav{
     border: none;
     cursor: pointer;
     color: #000;
+    font-weight: 500;
   }
 
   .button-message:hover{
@@ -665,6 +666,7 @@ nav{
         width: 100px;
         border-radius: 7px;
         font-size: 16px;
+        color: #000;
     }
 
     .message-head h2{
@@ -678,9 +680,11 @@ nav{
     .text-alert{
       width: 360px;
     }
+  }
 
-    .button-message{
-        color: #000;
+  @supports (-webkit-touch-callout: none) {
+    .button-message {
+        font-weight: 500; 
     }
   }
 
@@ -698,6 +702,7 @@ nav{
         font-size: 18px;
         color: #000;
         line-height: 30px;
+        text-decoration: none;
     }
     a{
         color: #000;
@@ -803,6 +808,15 @@ nav{
     .tooltip .tooltip-text-d {
         width: 140px;
         left: 50%;
+    }
+
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+    a:hover{
+        color: #A82E26;
+        font-weight: 700;
     }
 }
   
