@@ -255,6 +255,7 @@ nav {
 #sales-category,
 #ship-mode td {
   text-align: center;
+  font-size: 12px;
 }
 
 #segmentPieChartContainer {
@@ -616,7 +617,7 @@ canvas {
   }
   
   .grafik-item{
-    width: 350px;
+    width: 380px;
   }
 
   #segmentPieChartContainer {

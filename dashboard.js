@@ -668,6 +668,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       $("#sales-region").DataTable({
         scrollY: 250,
+        scrollX: true,
+        autoWidth: false,
+        fixedColumns: true,
         columns: [
           { data: "Region/State" },
           { data: "Total Sales" },
@@ -678,6 +681,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       $("#sales-category").DataTable({
         scrollY: 250,
+        scrollX: true,
+        autoWidth: false,
+        fixedColumns: true,
         columns: [
           { data: "Category" },
           { data: "Sub-Category" },
@@ -689,6 +695,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       $("#ship-mode").DataTable({
         scrollY: 150,
+        scrollX: true,
+        autoWidth: false,
+        fixedColumns: true,
         columns: [
           { data: "Region" },
           { data: "Standard Class" },
