@@ -692,7 +692,6 @@ nav{
     a{
         color: #000;
         text-decoration: none;
-        font-weight: bold;
     }
     a:hover{
         color: #A82E26;
@@ -725,10 +724,9 @@ nav{
 
 .tooltip .tooltip-text {
     visibility: hidden;
-    width: 230px;
-    max-width: max-content;
+    width: 120px;
     top: 125%;
-    left: auto;
+    left: 55%;
     transform: translateX(-50%);
     background-color: #c23f37;
     color: #fff;
@@ -746,9 +744,8 @@ nav{
 .tooltip .tooltip-text-d {
     visibility: hidden;
     width: 200px;
-    max-width: max-content;
     bottom: 125%;
-    left: 75%;
+    left: 65%;
     transform: translateX(-50%);
     background-color: #c23f37;
     color: #fff;
@@ -789,8 +786,13 @@ nav{
         margin: 30px;
     }
     .tooltip .tooltip-text {
-        width: 170px;
-        left: 60%;
+        width: 120px;
+        left: 65%;
+    }
+
+    .tooltip .tooltip-text-d {
+        width: 140px;
+        left: 50%;
     }
 }
   
