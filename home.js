@@ -106,3 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
   }
 });
+
+//tap tool tip
+document.addEventListener('DOMContentLoaded', () => {
+  const tooltips = document.querySelectorAll('.tooltip');
+
+  tooltips.forEach(tooltip => {
+      tooltip.addEventListener('click', () => {
+          tooltip.classList.toggle('active');
+      });
+
+      document.addEventListener('click', event => {
+          if (!tooltip.contains(event.target)) {
+              tooltip.classList.remove('active');
+          }
+      });
+  });
+});
+

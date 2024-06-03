@@ -730,7 +730,6 @@ nav{
     position: relative;
     cursor: pointer;
     text-align: center;
-    z-index: 1;
 }
 
 .tooltip:hover {
@@ -751,7 +750,7 @@ nav{
     border-radius: 5px;
     padding: 8px;
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
     opacity: 0;
     transition: visibility 0s, opacity 0.6s;
     font-size: 14px;
@@ -770,7 +769,7 @@ nav{
     border-radius: 5px;
     padding: 8px;
     position: absolute;
-    z-index: 1;
+    z-index: 1000;
     opacity: 0;
     transition: visibility 0s, opacity 0.6s;
     font-size: 14px;
