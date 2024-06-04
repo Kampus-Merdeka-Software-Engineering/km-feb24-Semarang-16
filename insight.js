@@ -319,6 +319,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         lengthChange: false,
                         autoWidth: false,
                         fixedColumns: true,
+                        scrollX : true,
+                        scrollY : 250,
                         columns: [
                             { data: "Category" },
                             { data: "Sub-Category" },
@@ -559,6 +561,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         searching : false,
                         autoWidth: false,
                         fixedColumns: true,
+                        scrollX : true,
+                        scrollY : 250,
                         columns: [
                             { data: "Region" },
                             { data: "Standard Class" },
