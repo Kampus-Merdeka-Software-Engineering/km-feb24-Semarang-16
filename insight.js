@@ -268,15 +268,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             // Initializing DataTables
                             $("#sales-state").DataTable({
                             data: statedataArray,
-                            autoWidth: false,
-                            fixedColumns: true,
                             lengthChange: false,
                             columns: [
                                 { data: "State" },
                                 { data: "Total Sales" },
                                 { data: "Total Orders" },
                             ], order: [[1, "desc"]],
-                            pageLength: 5 
+                            pageLength: 5
                             });              
 
                     //question 3
@@ -317,10 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         var table = $("#sales-category").DataTable({
                         data: dataArray,
                         lengthChange: false,
-                        autoWidth: false,
-                        fixedColumns: true,
                         scrollX : true,
-                        scrollY : 250,
                         columns: [
                             { data: "Category" },
                             { data: "Sub-Category" },
@@ -559,10 +554,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         data: dataArray,
                         lengthChange: false,
                         searching : false,
-                        autoWidth: false,
-                        fixedColumns: true,
                         scrollX : true,
-                        scrollY : 250,
+                        paging: false,
                         columns: [
                             { data: "Region" },
                             { data: "Standard Class" },
