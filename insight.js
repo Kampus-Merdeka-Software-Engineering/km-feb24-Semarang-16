@@ -85,8 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alertBox.style.display = 'none';
         }, 1500);
     }
-  });
-  
+  });  
 
 //fetch data and manipulation 
     //Event on ready DOM
@@ -315,7 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         var table = $("#sales-category").DataTable({
                         data: dataArray,
                         lengthChange: false,
-                        scrollX : true,
+                        autoWidth: true,
+                        fixedColumns: true,
                         columns: [
                             { data: "Category" },
                             { data: "Sub-Category" },
@@ -554,7 +554,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         data: dataArray,
                         lengthChange: false,
                         searching : false,
-                        scrollX : true,
+                        autoWidth: true,
+                        fixedColumns: true,
                         paging: false,
                         columns: [
                             { data: "Region" },
