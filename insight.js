@@ -174,11 +174,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             ],
                             },
                             options: {
-                            scales: {
-                                y: {
-                                beginAtZero: true,
+                                scales: {
+                                    y: {
+                                    beginAtZero: true,
+                                    },
                                 },
-                            },
                             },
                         });
 
@@ -314,7 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         var table = $("#sales-category").DataTable({
                         data: dataArray,
                         lengthChange: false,
-                        autoWidth: true,
+                        scrollX : true,
+                        autoWidth: false,
                         fixedColumns: true,
                         columns: [
                             { data: "Category" },
@@ -323,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             { data: "Total Quantity" },
                         ],
                         order: [[2, "desc"]],
-                        pageLength: 5 
+                        pageLength: 5
                         });
 
                     //question 4
@@ -554,7 +555,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         data: dataArray,
                         lengthChange: false,
                         searching : false,
-                        autoWidth: true,
+                        scrollX : true,
+                        autoWidth: false,
                         fixedColumns: true,
                         paging: false,
                         columns: [
@@ -569,3 +571,4 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                 .catch(error => console.error('Error loading the data', error));
             });
+
