@@ -269,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             $("#sales-state").DataTable({
                             data: statedataArray,
                             autoWidth: false,
+                            fixedColumns: true,
                             lengthChange: false,
                             columns: [
                                 { data: "State" },
@@ -316,6 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         var table = $("#sales-category").DataTable({
                         data: dataArray,
                         lengthChange: false,
+                        autoWidth: false,
+                        fixedColumns: true,
                         columns: [
                             { data: "Category" },
                             { data: "Sub-Category" },
@@ -554,6 +557,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         data: dataArray,
                         lengthChange: false,
                         searching : false,
+                        autoWidth: false,
+                        fixedColumns: true,
                         columns: [
                             { data: "Region" },
                             { data: "Standard Class" },
