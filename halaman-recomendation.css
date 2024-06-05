@@ -353,8 +353,8 @@ font-size: 50px !important ;
   }
 }
 
-/* footer area */
-.footer-side{
+ /* footer area */
+ .footer-side{
   width: auto;
   bottom: 0%;
   padding: 20px;
@@ -374,6 +374,11 @@ font-size: 50px !important ;
   padding-top: 10px;
   height: 31px;
   bottom: 0px;
+}
+
+.sosmed-flex-footer a {
+  z-index: 1;
+  position: relative;
 }
 
 .sosmed-flex-footer{
@@ -431,8 +436,8 @@ font-size: 50px !important ;
     }
 }
 
-/* message icon */
-.message-icon{
+ /* message icon */
+ .message-icon{
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -489,6 +494,8 @@ font-size: 50px !important ;
   background-color: #fff;
   border: none;
   cursor: pointer;
+  color: #000;
+  font-weight: 500;
 }
 
 .button-message:hover{
@@ -528,7 +535,7 @@ font-size: 50px !important ;
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -559,15 +566,15 @@ font-size: 50px !important ;
   padding: 15px;
   font-size: 24px;
   font-weight: 500;
-  border-radius: 5px;
+  border-radius: 3px;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1001;
+  z-index: 1000;
   box-sizing: border-box;
-  width: 500px;
+  width: 640px;
   justify-content: center;
   align-items: center;
 
@@ -583,8 +590,8 @@ font-size: 50px !important ;
 /* mobile view */
 @media (max-width : 768px){
   .popup-box{
-    width: 300px;
-}
+      width: 300px;
+  }
 
   .form-message-area{
       width: 270px;
@@ -594,14 +601,19 @@ font-size: 50px !important ;
       width: 100px;
       border-radius: 7px;
       font-size: 16px;
+      color: #000;
   }
 
   .message-head h2{
       font-size: 24px;
   }
-  
+
   .message-head p{
       font-size: 16px;
+  }
+
+  .text-alert{
+    width: 340px;
   }
 
   .card{
@@ -612,8 +624,10 @@ font-size: 50px !important ;
   .overlay-title{
       margin: 2.5rem;
   }
+}
 
-  .text-alert{
-    width: 360px;
+@supports (-webkit-touch-callout: none) {
+  .button-message {
+      font-weight: 500; 
   }
 }

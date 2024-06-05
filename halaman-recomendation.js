@@ -73,5 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
             alertBox.style.display = 'none';
         }, 1500);
     }
-  });
+  });  
   

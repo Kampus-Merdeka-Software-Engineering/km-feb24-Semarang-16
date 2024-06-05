@@ -282,16 +282,16 @@ canvas {
 }
 
 /* footer area */
-.footer-side {
+.footer-side{
   width: auto;
   bottom: 0%;
   padding: 20px;
-  background-color: #edc9c4;
+  background-color: #EDC9C4;
   background-size: cover;
   bottom: 0;
 }
 
-.left-h1 {
+.left-h1{
   font-size: 20px;
   padding-bottom: 10px;
 }
@@ -304,42 +304,47 @@ canvas {
   bottom: 0px;
 }
 
-.sosmed-flex-footer {
+.sosmed-flex-footer a {
+  z-index: 1;
+  position: relative;
+}
+
+.sosmed-flex-footer{
   display: flex;
   flex-direction: row;
 }
 
-.line {
+.line{
   box-sizing: border-box;
   border-top-width: 2px;
-  border-top-style: solid;
+  border-top-style: solid ;
   color: #000;
 }
 
-.p-footer {
+.p-footer{
   font-size: 15px;
   font-weight: 600;
   padding-top: 9px;
   height: 15px;
 }
 
-.sosmed-footer {
+.sosmed-footer{
   width: 31px;
   padding-right: 10px;
 }
 
-.sosmed-footer-github {
+.sosmed-footer-github{
   padding-right: 0px;
 }
 
-.logo-footer {
+.logo-footer{
   height: 40px;
   padding-right: 15px;
   padding-top: 15px;
 }
 
 /* message icon */
-.message-icon {
+.message-icon{
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -347,11 +352,11 @@ canvas {
   border-radius: 50%;
   position: fixed;
   border: none;
-  background-color: #edc9c4;
+  background-color: #EDC9C4;
   right: 20px;
   bottom: 20px;
   width: 60px;
-  height: 60px;
+  height: 60px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,21 +364,21 @@ canvas {
   z-index: 1000;
 }
 
-.message-icon:hover {
+.message-icon:hover{
   color: #fff;
-  background-color: #e15240;
+  background-color: #E15240;
 }
 
 /* message area */
-.form-message {
+.form-message{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.form-message-area {
-  font-family: "Montserrat, sans-serif";
+.form-message-area{
+  font-family: 'Montserrat, sans-serif';
   font-size: 18px;
   width: 400px;
   height: 10px;
@@ -387,7 +392,7 @@ canvas {
   height: 120px;
 }
 
-.button-message {
+.button-message{
   width: 150px;
   padding: 10px;
   border-radius: 10px;
@@ -396,43 +401,45 @@ canvas {
   background-color: #fff;
   border: none;
   cursor: pointer;
+  color: #000;
+  font-weight: 500;
 }
 
-.button-message:hover {
+.button-message:hover{
   background-color: #ffe5ca;
 }
 
-.message-head {
+.message-head{
   text-align: center;
   justify-items: center;
   color: #fff;
 }
 
-.message-head h2 {
+.message-head h2{
   margin-bottom: 15px;
   font-size: 28px;
 }
 
-.message-head p {
+.message-head p{
   margin-bottom: 25px;
   font-size: 20px;
 }
 
-.popup-box {
+.popup-box{
   width: 600px;
   border-radius: 10px;
   padding: 20px;
-  background-color: #e15240;
+  background-color: #E15240;
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.popup-container {
+.popup-container{
   display: none;
   width: auto;
   position: fixed;
-  top: 50%;
+  top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -441,7 +448,7 @@ canvas {
   z-index: 1000;
 }
 
-.close-button {
+.close-button{
   color: #fff !important;
   font-size: 40px !important;
   cursor: pointer;
@@ -466,15 +473,15 @@ canvas {
   padding: 15px;
   font-size: 24px;
   font-weight: 500;
-  border-radius: 5px;
+  border-radius: 3px;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1001;
+  z-index: 1000;
   box-sizing: border-box;
-  width: 500px;
+  width: 640px;
   justify-content: center;
   align-items: center;
 
@@ -566,50 +573,52 @@ canvas {
   }
 
   /* Footer */
-  .flex-footer {
+  .flex-footer{
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .sosmed-flex-footer {
+.sosmed-flex-footer{
     padding-top: 30px;
-  }
+}
 
-  .logo-footer {
+.logo-footer{
     margin-top: 70px;
-  }
+}
 
-  .card {
+.card{
     width: auto;
     height: 100%;
   }
 
   /* Popup */
   .popup-box{
-    width: 300px;
-}
-
-  .form-message-area {
-    width: 270px;
+      width: 300px;
   }
 
-  .button-message {
-    width: 100px;
-    border-radius: 7px;
-    font-size: 16px;
+  .form-message-area{
+      width: 270px;
   }
 
-  .message-head h2 {
-    font-size: 24px;
+  .button-message{
+      width: 100px;
+      border-radius: 7px;
+      font-size: 16px;
+      color: #000;
   }
 
-  .message-head p {
-    font-size: 16px;
+  .message-head h2{
+      font-size: 24px;
+  }
+
+  .message-head p{
+      font-size: 16px;
   }
 
   .text-alert{
-    width: 360px;
-  }
+    width: 340px;
+    }
+  
 
   .grafik {
     display: grid;
@@ -618,7 +627,7 @@ canvas {
   }
   
   .grafik-item{
-    width: 380px;
+    width: 350px;
   }
 
   #segmentPieChartContainer {
@@ -701,5 +710,11 @@ canvas {
   .grafik {
     display: grid;
     grid-template-columns: 1fr;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .button-message {
+      font-weight: 500; 
   }
 }

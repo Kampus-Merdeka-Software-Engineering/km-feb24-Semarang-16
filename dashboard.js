@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
           alertBox.style.display = 'none';
       }, 1500);
   }
-});
+});  
 
 // Manipulasi Data JSON
 document.addEventListener("DOMContentLoaded", function () {

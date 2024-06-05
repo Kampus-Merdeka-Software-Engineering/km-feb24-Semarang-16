@@ -224,14 +224,14 @@ nav{
     padding: 20px;
     background-color: #EDC9C4;
     background-size: cover;
-    bottom: 0px;
+    bottom: 0;
   }
-  
+
   .left-h1{
     font-size: 20px;
     padding-bottom: 10px;
   }
-  
+
   .flex-footer {
     display: flex;
     justify-content: space-between;
@@ -239,52 +239,57 @@ nav{
     height: 31px;
     bottom: 0px;
   }
-  
+
+  .sosmed-flex-footer a {
+    z-index: 1;
+    position: relative;
+}
+
   .sosmed-flex-footer{
     display: flex;
     flex-direction: row;
   }
-  
+
   .line{
     box-sizing: border-box;
     border-top-width: 2px;
     border-top-style: solid ;
     color: #000;
   }
-  
+
   .p-footer{
     font-size: 15px;
     font-weight: 600;
     padding-top: 9px;
     height: 15px;
   }
-  
+
   .sosmed-footer{
     width: 31px;
     padding-right: 10px;
   }
-  
+
   .sosmed-footer-github{
     padding-right: 0px;
   }
-  
+
   .logo-footer{
     height: 40px;
     padding-right: 15px;
     padding-top: 15px;
   }
-  
+
   /* mobile view */
   @media (max-width: 768px){
     .flex-footer{
         display: flex;
         flex-direction: column;
     }
-  
+
     .sosmed-flex-footer{
         padding-top: 30px;
     }
-  
+
     .logo-footer{
         margin-top: 70px;
     }
@@ -295,8 +300,8 @@ nav{
       }
   }
 
-/* message icon */
-.message-icon{
+  /* message icon */
+  .message-icon{
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -353,6 +358,8 @@ nav{
     background-color: #fff;
     border: none;
     cursor: pointer;
+    color: #000;
+    font-weight: 500;
   }
   
   .button-message:hover{
@@ -423,15 +430,15 @@ nav{
     padding: 15px;
     font-size: 24px;
     font-weight: 500;
-    border-radius: 5px;
+    border-radius: 3px;
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1001;
+    z-index: 1000;
     box-sizing: border-box;
-    width: 500px;
+    width: 640px;
     justify-content: center;
     align-items: center;
   
@@ -458,6 +465,7 @@ nav{
         width: 100px;
         border-radius: 7px;
         font-size: 16px;
+        color: #000;
     }
   
     .message-head h2{
@@ -469,293 +477,12 @@ nav{
     }
   
     .text-alert{
-      width: 360px;
+      width: 340px;
     }
-  }
-
-/* title */
-.title {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
-    width: auto;
-    background-image: url('./assets/delivery-man-giving-groceries-order-customer\ 1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
   }
   
-  .overlay-title{
-    background-color: rgba(237, 201, 196, 0.65);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .h1-title{
-    padding-left: 30px;
-    font-size: 50px;
-  }
-  
-  .md-50{
-  font-size: 50px !important ;
-  }
-
-  /* mobile view */
-  @media (max-width :768px){
-    .h1-title{
-      font-size: 44px;
-      padding-left: 10px;
-    }
-
-    .overlay-title{
-      margin: 0px !important;
-    }
-  }
-
-/* who we are */
-.whoweare{
-    margin: 50px 50px 30px 50px;
-    font-weight: 500;
-
-    h3{
-        color: #A82E26;
-    }
-
-    .team{
-        display: flex;
-        flex-direction: row;
-        margin-top: 15px;
-        p:last-child{
-            font-size: 20px;
-            line-height: 30px;
-        }
-    }
-    .team16{
-        background-color: #A82E26;
-        color: #fff;
-        padding: 25px;
-        margin-right: 40px;
-        p:nth-child(1){
-            font-size: 70px;
-            margin-bottom: 10px;
-        }
-        p:last-child{
-            font-size: 20px;
-        }
-    }
-}
-
-/* special thanks */
-.specialthanks{
-    margin: 0px 50px 30px 50px;
-    font-weight: 500;
-
-    h3{
-        color: #A82E26;
-    }
-
-    .img-container{
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img{
-            height: 90px;
-            padding: 15px 0px;
-            margin-right: 40px;
-        }
-    }
-}
-
-/* member */
-.member-team{
-    margin: 0px 50px 30px 50px;
-    h3{
-        color: #A82E26;
-    }
-    .member{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    .box-member{
-        background-color: #EDC9C4;
-        padding: 20px;
-        margin: 15px auto;
-        border-radius: 10px;
-        font-weight: 500;
-        font-size: 18px;
-        width: 260px;
-
-        &:hover{
-            animation-name: boxAnimation;
-            animation-duration: 500ms;
-            animation-fill-mode: forwards;
-            animation-iteration-count: 1;
-            animation-direction: alternate;
-            .information p:nth-child(1), .information p:nth-child(2){
-                color: #fff;
-            }
-
-            .sosmed img {
-                filter: brightness(0) invert(1);
-            }
-        }
-    }
-
-    .information-member{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        img{
-            border-radius: 50%;
-            background-color: #fff;
-            width: 120px;
-            height: 120px;
-            margin: 20px 0px;
-        }
-        p{
-            text-align: center;
-        }
-    }
-    .role{
-        background-color: #FFE5CA;
-        margin: 15px 0px 20px 0px;
-        padding: 15px;
-        border-radius: 5px;
-        p:nth-child(1){
-            margin-bottom : 10px;
-        }
-        p:nth-child(3){
-            margin-bottom: 10px;
-        }
-    }
-    .sosmed{
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        img{
-            height: 30px;
-            width: 30px;
-            margin-right: 10px;
-        }
-    }
-
-    .information{
-        justify-content: center;
-        align-items: center;
-    }
-
-    .information p:nth-child(1){
-        height: 30px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        padding: 10px;
-        font-size: 20px;
-    }
-
-    .information p:nth-child(2){
-        height: 50px;
-        padding: 10px 0;
-        margin-bottom: 10px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        font-size: 16px;
-    }
-}
-
-@keyframes boxAnimation {
-    0%{
-        background-color: #EDC9C4;
-        transform: translateY(0);
-        scale: 0.99;
-    }
-    
-    100%{
-        background-color: #E15240;
-        transform: translateY(-15px);
-        scale: 1.05;
-    }
-}
-
-  /* mobile view */
-  @media (max-width : 768px){
-    .whoweare{
-        margin: 50px 30px 0px 30px;
-
-        .team{
-            display: flex;
-            flex-direction: column;
-
-            p:last-child{
-                font-size: 18px;
-                line-height: 30px;
-            }
-        }
-
-        .team16{
-            margin: 0px 0px 20px 0px;
-            width: max-content;
-
-            p:nth-child(1){
-                font-size: 66px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-
-    .member-team{
-        margin: 25px 30px 0px 30px;
-    }
-
-    .specialthanks{
-        margin: 25px 30px 50px 30px;
-
-        .img-container{
-            margin-top: 10px;
-            justify-content: center;
-            align-items: center;
-
-            img{
-                margin: 0px;
-                height: 70px;
-                margin-right: 20px;
-            }
-
-            .revou{
-                margin-right: 0px;
-            }
-        }
-    }
-  }
-
-  @media (min-width : 768px)and (max-width: 1024px){
-    .whoweare{
-        margin: 50px;
-
-        .team16{
-            margin: 0px 0px 20px 0px;
-            width: max-content;
-            height: fit-content;
-            margin-right: 15px;
-        }
-
-        .team{
-            p:last-child{
-                font-size: 18px;
-                line-height: 30px;
-            }
-    
-        }
+  @supports (-webkit-touch-callout: none) {
+    .button-message {
+        font-weight: 500; 
     }
   }
