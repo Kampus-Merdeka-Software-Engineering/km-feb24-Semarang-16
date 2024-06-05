@@ -364,7 +364,8 @@
 
        table {
         width: 100%;
-        table-layout: auto;
+        table-layout: fixed;
+        border-collapse: collapse;
       }
     }
 
@@ -421,6 +422,10 @@
   #ship-mode td {
     text-align: center;
     font-size: 16px;
+  }
+
+  .category-column {
+    width: min-content;
   }
 
   /* mobile view */
@@ -498,8 +503,8 @@
     }
 
     .chart-container {
-      width: fit-content;
-      max-width: 100%;
+      width: 100%;
+      max-width: 300px;
       height: 300px;
     }
 
