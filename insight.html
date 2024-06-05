@@ -23,6 +23,7 @@
 
         <!-- chart JS -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.2.1/dist/chartjs-plugin-zoom.min.js"></script>
 
         <!-- Import jQuery and DataTables -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -86,7 +87,9 @@
                         <div class="expandable__content">
                             <span class="title-graph">Sales vs Profit Over The Time</span>
                             <div class="box-content">
-                                <canvas id="sales-profit" width="650"></canvas>
+                                <div class="chart-container">
+                                    <canvas id="sales-profit" width="650" height="400"></canvas>
+                                </div>
                             </div>
                             <div class="p-explanation">
                                 <p>The highest sales were in November 2017 at 48.520</p>
@@ -111,7 +114,6 @@
                         <span class="title-graph">Sales and Total Order by The State and Region</span>
                         <div class="double-table">
                             <div class="box-content">
-                                <div style="padding: 5px">
                                     <table id="sales-region" class="display">
                                       <thead>
                                         <tr>
@@ -122,11 +124,10 @@
                                       </thead>
                                       <tbody></tbody>
                                     </table>
-                                  </div>
                             </div>
 
                             <div class="box-content">
-                                <div style="padding: 5px">
+                                <div class="table-container">
                                     <table id="sales-state" class="display">
                                       <thead>
                                         <tr>
@@ -135,9 +136,11 @@
                                           <th style="text-align: center">Total Order</th>
                                         </tr>
                                       </thead>
-                                      <tbody></tbody>
+                                      <tbody>
+
+                                      </tbody>
                                     </table>
-                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div class="p-explanation">
@@ -163,19 +166,21 @@
                     <div class="expandable__content">
                         <span class="title-graph">Sales and Total Quantity by Sub-Category</span>
                         <div class="box-content">
+                            <div class="table-container">
                                 <table id="sales-category" class="display">
-                                  <thead>
-                                    <tr>
-                                      <th style="text-align: center">Category</th>
-                                      <th style="text-align: center">Sub-Category</th>
-                                      <th style="text-align: center">Sales</th>
-                                      <th style="text-align: center">Quantity</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-
-                                  </tbody>
-                                </table>
+                                    <thead>
+                                      <tr>
+                                        <th style="text-align: center">Category</th>
+                                        <th style="text-align: center">Sub-Category</th>
+                                        <th style="text-align: center">Sales</th>
+                                        <th style="text-align: center">Quantity</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+  
+                                    </tbody>
+                                  </table>
+                            </div>
                         </div>
                         <div class="p-explanation">
                             <p><b>Technology and Furniture</b> are <b>the 2 best Selling</b> categories based on Total Sales.</p>
@@ -200,7 +205,9 @@
                     <div class="expandable__content">
                         <span class="title-graph">Sales vs Total Item has A Discount</span>
                         <div class="box-content">
-                            <canvas id="mixedChart" width="650"></canvas>
+                            <div class="chart-container">
+                                <canvas id="mixedChart" width="650" height="400"></canvas>
+                            </div>
                         </div>
                         <div class="p-explanation">
                             <p>Product’s that have discounts <b>tend to affect</b> the level of <b>sales trend every month</b>.</p>
@@ -224,7 +231,7 @@
                         <span class="title-graph">Total Customer by Segment of Customer</span>
                         <div class="box-content">
                             <div id="segmentPieChartContainer">
-                                <canvas id="segmentPieChart" width="380"></canvas>
+                                <canvas id="segmentPieChart"></canvas>
                             </div>
                         </div>
                         <div class="p-explanation">
@@ -249,20 +256,22 @@
                     <div class="expandable__content">
                         <span class="title-graph">Total Customer by Ship Mode and Region</span>
                         <div class="box-content">
+                            <div class="table-container">
                                 <table id="myTable" class="display">
-                                  <thead>
-                                    <tr>
-                                      <th>Region</th>
-                                      <th>Standard Class</th>
-                                      <th>Second Class</th>
-                                      <th>First Class</th>
-                                      <th>Same Day</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <!-- Table body will be populated by JavaScript -->
-                                  </tbody>
+                                    <thead>
+                                      <tr>
+                                        <th>Region</th>
+                                        <th>Standard Class</th>
+                                        <th>Second Class</th>
+                                        <th>First Class</th>
+                                        <th>Same Day</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <!-- Table body will be populated by JavaScript -->
+                                    </tbody>
                                 </table>
+                            </div>
                         </div>
                         <div class="p-explanation">
                             <p class="q5"><b>Standard class</b> as a <b>preferably shipping mode</b> from customer crossover all the region.</p>

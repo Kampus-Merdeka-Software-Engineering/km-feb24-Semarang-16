@@ -174,11 +174,29 @@ document.addEventListener('DOMContentLoaded', () => {
                             ],
                             },
                             options: {
+                                responsive : true,
+                                maintainAspectRatio : false,
                                 scales: {
                                     y: {
                                     beginAtZero: true,
                                     },
+                                    x: {
+                                        beginAtZero: true
+                                    }
                                 },
+                                plugins: {
+                                    zoom: {
+                                        pan: {
+                                            enabled: true,
+                                            mode: 'x' // Enable panning on the x-axis only
+                                        },
+                                        zoom: {
+                                            drag: true,
+                                            mode: 'x', // Enable zooming on the x-axis only
+                                            speed: 0.1
+                                        }
+                                    }
+                                }
                             },
                         });
 
@@ -268,6 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             $("#sales-state").DataTable({
                             data: statedataArray,
                             lengthChange: false,
+                            scrollX : true,
+                            autoWidth: false,
+                            fixedColumns: true,
                             columns: [
                                 { data: "State" },
                                 { data: "Total Sales" },
@@ -428,31 +449,46 @@ document.addEventListener('DOMContentLoaded', () => {
                             ],
                             },
                             options: {
-                            scales: {
-                                yAxes: [
-                                {
-                                    type: "linear",
-                                    display: true,
-                                    position: "left",
-                                    id: "y-axis-1",
-                                    labels: {
-                                    show: true,
+                                responsive : true,
+                                maintainAspectRatio : false,
+                                scales: {
+                                    yAxes: [
+                                    {
+                                        type: "linear",
+                                        display: true,
+                                        position: "left",
+                                        id: "y-axis-1",
+                                        labels: {
+                                        show: true,
+                                        },
                                     },
+                                    {
+                                        type: "linear",
+                                        display: true,
+                                        position: "right",
+                                        id: "y-axis-2",
+                                        labels: {
+                                        show: true,
+                                        },
+                                        gridLines: {
+                                        drawOnChartArea: false,
+                                        },
+                                    },
+                                    ],
                                 },
-                                {
-                                    type: "linear",
-                                    display: true,
-                                    position: "right",
-                                    id: "y-axis-2",
-                                    labels: {
-                                    show: true,
-                                    },
-                                    gridLines: {
-                                    drawOnChartArea: false,
-                                    },
-                                },
-                                ],
-                            },
+                                plugins: {
+                                    zoom: {
+                                        pan: {
+                                            enabled: true,
+                                            mode: 'x' // Enable panning on the x-axis only
+                                        },
+                                        zoom: {
+                                            drag: true,
+                                            mode: 'x', // Enable zooming on the x-axis only
+                                            speed: 0.1
+                                        }
+                                    }
+                                }
                             },
                         });
 
@@ -492,7 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ],
                             },
                             options: {
-                            maintainAspectRatio: false, // Prevents the chart from maintaining the aspect ratio
+                            maintainAspectRatio: true, // Prevents the chart from maintaining the aspect ratio
                             responsive: true, // Makes the chart responsive
                             legend: {
                                 position: "right", // Place legend on the right side of the chart
