@@ -416,6 +416,13 @@
     width: fit-content;
   }
 
+  #sales-region,
+  #sales-category, #sales-state,
+  #ship-mode td {
+    text-align: center;
+    font-size: 12px;
+  }
+
   /* mobile view */
   @media (max-width : 768px){
     .question{
@@ -447,7 +454,7 @@
       margin: 0px;
       padding: 10px;
       width: 100%;
-      max-width: 400px;
+      max-width: 320px;
       flex-wrap: nowrap;
       overflow-x: auto;
       .table-container{
