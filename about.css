@@ -543,6 +543,15 @@ font-size: 50px !important ;
       animation-iteration-count: 1;
       animation-direction: alternate;
     }
+
+    .member-team .box-member:hover .information p:nth-child(1),
+    .member-team .box-member:hover .information p:nth-child(2) {
+      color: #fff;
+    }
+    
+    .member-team .box-member:hover .sosmed img {
+      filter: brightness(0) invert(1);
+    }
   }  
 
 /* footer area */
