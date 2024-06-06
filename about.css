@@ -347,10 +347,15 @@ font-size: 50px !important ;
   }
   
   .member-team .box-member:hover {
+    -webkit-animation-name: boxAnimation;
     animation-name: boxAnimation;
+    -webkit-animation-duration: 500ms;
     animation-duration: 500ms;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
     animation-direction: alternate;
   }
   
@@ -434,17 +439,30 @@ font-size: 50px !important ;
     font-size: 16px;
   }
   
-  @keyframes boxAnimation {
+  @-webkit-keyframes boxAnimation {
     0% {
       background-color: #EDC9C4;
-      transform: translateY(0);
-      scale: 0.99;
+      -webkit-transform: translateY(0) scale(0.99);
+      transform: translateY(0) scale(0.99);
     }
     100% {
       background-color: #E15240;
-      transform: translateY(-15px);
-      scale: 1.05;
+      -webkit-transform: translateY(-15px) scale(1.05);
+      transform: translateY(-15px) scale(1.05);
     }
+  }
+
+  @keyframes boxAnimation {
+      0% {
+        background-color: #EDC9C4;
+        -webkit-transform: translateY(0) scale(0.99);
+        transform: translateY(0) scale(0.99);
+      }
+      100% {
+        background-color: #E15240;
+        -webkit-transform: translateY(-15px) scale(1.05);
+        transform: translateY(-15px) scale(1.05);
+      }
   }
   
   /* mobile view */
