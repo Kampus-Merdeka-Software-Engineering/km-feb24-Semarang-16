@@ -18,6 +18,16 @@ document.body.addEventListener("click", (ev) => {
     expandable.classList.toggle("expandable__open");
 });
 
+//hover di mobile view
+document.querySelectorAll('.expandable__title-bar').forEach(function (element) {
+    element.addEventListener('click', function () {
+        element.classList.add('hover');
+        setTimeout(function () {
+            element.classList.remove('hover');
+        }, 150);
+    });
+});
+
 //pop up
 document.addEventListener('DOMContentLoaded', () => {
     const messageIcon = document.getElementById('messageIcon');
