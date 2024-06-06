@@ -74,3 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     }
   });  
+
+  // Jmengtap box-member
+function toggleAnimation(element) {
+    element.classList.toggle('animate');
+
+    var boxes = document.querySelectorAll('.box-member');
+    boxes.forEach(function(box) {
+        if (box !== element) {
+        box.classList.remove('animate');
+        }
+    });
+  }

@@ -500,6 +500,23 @@ font-size: 50px !important ;
     .specialthanks .img-container .revou {
       margin-right: 0px;
     }
+
+    .animate {
+      animation-name: boxAnimation;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      animation-direction: alternate;
+    }
+
+    .member-team .box-member:hover .information p:nth-child(1),
+    .member-team .box-member:hover .information p:nth-child(2) {
+      color: #fff;
+    }
+    
+    .member-team .box-member:hover .sosmed img {
+      filter: brightness(0) invert(1);
+    }
   }
   
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -517,6 +534,14 @@ font-size: 50px !important ;
     .whoweare .team p:last-child {
       font-size: 18px;
       line-height: 30px;
+    }
+
+    .animate {
+      animation-name: boxAnimation;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      animation-direction: alternate;
     }
   }  
 
