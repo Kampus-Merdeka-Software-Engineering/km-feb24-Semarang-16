@@ -8,26 +8,35 @@ toggleButton.addEventListener('click', () => {
 
 // slider
 let list = document.querySelector('.slider .list');
-        let items = document.querySelectorAll('.slider .list .item');
-        let dots = document.querySelectorAll('.slider .dots li');
+let items = document.querySelectorAll('.slider .list .item');
+let dots = document.querySelectorAll('.slider .dots li');
 
-        let active = 0;
+let active = 0;
 
-        function reloadSlider() {
-            let checkLeft = items[active].offsetLeft;
-            list.style.left = -checkLeft + 'px';
+let refreshSlider = setInterval(() => { 
+dots[active].click(); 
+}, 5000); 
 
-            let lastActiveDot = document.querySelector('.slider .dots li.active');
-            if (lastActiveDot) lastActiveDot.classList.remove('active');
-            dots[active].classList.add('active');
-        }
+function reloadSlider() {
+  let checkLeft = items[active].offsetLeft;
+  list.style.left = -checkLeft + 'px';
 
-        dots.forEach((li, key) => {
-            li.addEventListener('click', function() {
-                active = key;
-                reloadSlider();
-            });
-        });
+  let lastActiveDot = document.querySelector('.slider .dots li.active');
+  if (lastActiveDot) lastActiveDot.classList.remove('active');
+  dots[active].classList.add('active');
+}
+
+dots.forEach((li, key) => {
+  li.addEventListener('click', function() {
+    active = key;
+    reloadSlider();
+  });
+});
+
+setInterval(() => {
+  active = (active + 1) % items.length;
+  reloadSlider();
+}, 10000); 
 
 //pop up
 document.addEventListener('DOMContentLoaded', () => {
