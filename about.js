@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });  
 
-  // Jmengtap box-member
+  // mengtap box-member
 function toggleAnimation(element) {
     element.classList.toggle('animate');
 
@@ -86,3 +86,13 @@ function toggleAnimation(element) {
         }
     });
   }
+
+  document.addEventListener('click', function(event) {
+    var isClickInside = event.target.closest('.box-member');
+    if (!isClickInside) {
+        var boxes = document.querySelectorAll('.box-member');
+        boxes.forEach(function(box) {
+            box.classList.remove('animate');
+        });
+    }
+    });

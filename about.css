@@ -224,7 +224,7 @@ nav{
   align-items: center;
   justify-content: center;
   height: 400px;
-  width: auto;
+  width: 100%;
   background-image: url('./assets/delivery-man-giving-groceries-order-customer\ 1.png');
   background-size: cover;
   background-position: center;
@@ -460,6 +460,7 @@ font-size: 50px !important ;
   
     .whoweare .team {
       flex-direction: column;
+      align-items: center;
     }
   
     .whoweare .team p:last-child {
@@ -469,7 +470,7 @@ font-size: 50px !important ;
   
     .whoweare .team16 {
       margin: 0px 0px 20px 0px;
-      width: max-content;
+      width: fit-content;
     }
   
     .whoweare .team16 p:nth-child(1) {
@@ -556,12 +557,15 @@ font-size: 50px !important ;
 
 /* footer area */
 .footer-side{
-    width: auto;
+    width: 100%;
     bottom: 0%;
     padding: 20px;
     background-color: #EDC9C4;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     bottom: 0;
+    box-sizing: border-box;
   }
 
   .left-h1{
@@ -580,6 +584,8 @@ font-size: 50px !important ;
   .sosmed-flex-footer a {
     z-index: 1;
     position: relative;
+    display: inline-block;
+    pointer-events: auto;
 }
 
   .sosmed-flex-footer{

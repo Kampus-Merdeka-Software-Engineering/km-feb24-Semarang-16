@@ -223,7 +223,7 @@
     align-items: center;
     justify-content: center;
     height: 400px;
-    width: auto;
+    width: 100%;
     background-image: url('./assets/delivery-man-giving-groceries-order-customer\ 1.png');
     background-size: cover;
     background-position: center;
@@ -571,87 +571,92 @@
   }
 
   /* footer area */
-  .footer-side{
-    width: auto;
-    bottom: 0%;
-    padding: 20px;
-    background-color: #EDC9C4;
-    background-size: cover;
-    bottom: 0;
-  }
-
-  .left-h1{
-    font-size: 20px;
-    padding-bottom: 10px;
-  }
-
-  .flex-footer {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    height: 31px;
-    bottom: 0px;
-  }
-
-  .sosmed-flex-footer a {
-    z-index: 1;
-    position: relative;
+.footer-side{
+  width: 100%;
+  bottom: 0%;
+  padding: 20px;
+  background-color: #EDC9C4;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 0;
+  box-sizing: border-box;
 }
 
+.left-h1{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.flex-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  height: 31px;
+  bottom: 0px;
+}
+
+.sosmed-flex-footer a {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  pointer-events: auto;
+}
+
+.sosmed-flex-footer{
+  display: flex;
+  flex-direction: row;
+}
+
+.line{
+  box-sizing: border-box;
+  border-top-width: 2px;
+  border-top-style: solid ;
+  color: #000;
+}
+
+.p-footer{
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 9px;
+  height: 15px;
+}
+
+.sosmed-footer{
+  width: 31px;
+  padding-right: 10px;
+}
+
+.sosmed-footer-github{
+  padding-right: 0px;
+}
+
+.logo-footer{
+  height: 40px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+/* mobile view */
+@media (max-width: 768px){
+  .flex-footer{
+      display: flex;
+      flex-direction: column;
+  }
+
   .sosmed-flex-footer{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .line{
-    box-sizing: border-box;
-    border-top-width: 2px;
-    border-top-style: solid ;
-    color: #000;
-  }
-
-  .p-footer{
-    font-size: 15px;
-    font-weight: 600;
-    padding-top: 9px;
-    height: 15px;
-  }
-
-  .sosmed-footer{
-    width: 31px;
-    padding-right: 10px;
-  }
-
-  .sosmed-footer-github{
-    padding-right: 0px;
+      padding-top: 30px;
   }
 
   .logo-footer{
-    height: 40px;
-    padding-right: 15px;
-    padding-top: 15px;
+      margin-top: 70px;
   }
 
-  /* mobile view */
-  @media (max-width: 768px){
-    .flex-footer{
-        display: flex;
-        flex-direction: column;
+  .card{
+      width: auto;
+      height: 100%;
     }
-
-    .sosmed-flex-footer{
-        padding-top: 30px;
-    }
-
-    .logo-footer{
-        margin-top: 70px;
-    }
-
-    .card{
-        width: auto;
-        height: 100%;
-      }
-  }
+}
 
    /* message icon */
  .message-icon{

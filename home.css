@@ -322,13 +322,16 @@ nav{
 }
 
   /* footer area */
-  .footer-side{
-    width: auto;
+.footer-side{
+    width: 100%;
     bottom: 0%;
     padding: 20px;
     background-color: #EDC9C4;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     bottom: 0;
+    box-sizing: border-box;
   }
 
   .left-h1{
@@ -347,6 +350,8 @@ nav{
   .sosmed-flex-footer a {
     z-index: 1;
     position: relative;
+    display: inline-block;
+    pointer-events: auto;
 }
 
   .sosmed-flex-footer{
@@ -411,9 +416,10 @@ nav{
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
-    width: auto;
+    width: 100%;
     position: relative;
     overflow: hidden;
+    align-items: center;
 }
 
 .list{

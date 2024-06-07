@@ -102,7 +102,7 @@ nav {
   align-items: center;
   justify-content: center;
   height: 400px;
-  width: auto;
+  width: 100%;
   background-image: url("./assets/delivery-man-giving-groceries-order-customer\ 1.png");
   background-size: cover;
   background-position: center;
@@ -283,12 +283,15 @@ canvas {
 
 /* footer area */
 .footer-side{
-  width: auto;
+  width: 100%;
   bottom: 0%;
   padding: 20px;
   background-color: #EDC9C4;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   bottom: 0;
+  box-sizing: border-box;
 }
 
 .left-h1{
@@ -307,6 +310,8 @@ canvas {
 .sosmed-flex-footer a {
   z-index: 1;
   position: relative;
+  display: inline-block;
+  pointer-events: auto;
 }
 
 .sosmed-flex-footer{
