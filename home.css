@@ -424,7 +424,7 @@ nav{
 
 .list{
     height: 100%;
-    width: 150%;
+    width: 100%;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -495,7 +495,6 @@ nav{
     }
 
     .list {
-        overflow-x: scroll;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
     }
@@ -516,7 +515,6 @@ nav{
     }
 
     .list {
-        overflow-x: scroll;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
     }
