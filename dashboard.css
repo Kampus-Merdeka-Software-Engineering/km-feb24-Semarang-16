@@ -103,7 +103,7 @@ nav {
   justify-content: center;
   height: 400px;
   width: 100%;
-  background-image: url("./assets/delivery-man-giving-groceries-order-customer\ 1.png");
+  background-image: url('./assets/delivery-man-giving-groceries-order-customer\ 1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -122,11 +122,11 @@ nav {
 
 .h1-title {
   padding-left: 30px;
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .md-50 {
-  font-size: 50px !important ;
+  font-size: 40px !important ;
 }
 
 /* Dashboard */
@@ -577,6 +577,10 @@ canvas {
     grid-gap: 10px;
   }
 
+  .grafik-title{
+    font-size: 16px;
+  }
+
   /* Footer */
   .flex-footer{
     display: flex;
@@ -624,7 +628,6 @@ canvas {
     width: 340px;
     }
   
-
   .grafik {
     display: grid;
     grid-template-columns: 1fr;
@@ -632,7 +635,7 @@ canvas {
   }
   
   .grafik-item{
-    width: 350px;
+    width: 325px;
   }
 
   #segmentPieChartContainer {
@@ -715,6 +718,11 @@ canvas {
   .grafik {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .filter{
+    display: flex;
+    flex-direction: column;
   }
 }
 
