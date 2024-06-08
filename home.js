@@ -13,10 +13,6 @@ let dots = document.querySelectorAll('.slider .dots li');
 
 let active = 0;
 
-let refreshSlider = setInterval(() => { 
-dots[active].click(); 
-}, 5000); 
-
 function reloadSlider() {
   let checkLeft = items[active].offsetLeft;
   list.style.left = -checkLeft + 'px';
@@ -33,10 +29,17 @@ dots.forEach((li, key) => {
   });
 });
 
-setInterval(() => {
-  active = (active + 1) % items.length;
-  reloadSlider();
-}, 10000); 
+// Handle touch events for mobile devices
+list.addEventListener('scroll', () => {
+  let scrollLeft = list.scrollLeft;
+  items.forEach((item, index) => {
+    if (scrollLeft >= item.offsetLeft && scrollLeft < item.offsetLeft + item.offsetWidth) {
+      active = index;
+      reloadSlider();
+    }
+  });
+});
+
 
 //pop up
 document.addEventListener('DOMContentLoaded', () => {
