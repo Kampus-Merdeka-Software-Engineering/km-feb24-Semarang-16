@@ -425,9 +425,9 @@ font-size: 40px !important ;
   }
   
   .member-team .information p:nth-child(2) {
-    height: 50px;
+    height: 15px;
     padding: 10px 0;
-    margin-bottom: 10px;
+    margin: 10px 0;
     justify-content: center;
     align-items: center;
     display: flex;
