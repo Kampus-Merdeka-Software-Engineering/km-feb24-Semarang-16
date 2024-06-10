@@ -393,10 +393,6 @@
     margin-bottom: 0px !important;
   }
 
-  .q5{
-    width: 960px;
-  }
-
   .p-explanation{
     margin-top: 20px;
     margin-bottom: 15px
@@ -480,7 +476,7 @@
     }
 
     .title-graph{
-      width: 310px;
+      width: 280px;
       margin: 30px 20px 15px 20px;
       font-size: 16px;
     }
@@ -565,16 +561,20 @@
       max-width: 650px;
     }
 
-    .q5{
-      width: 510px;
-    }
-
     .double-table{
       gap: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .p-explanation p{
+      width: 530px;
+    }
+
+    .p-question{
+      font-size: 20px;
     }
   }
 
